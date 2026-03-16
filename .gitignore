@@ -1,0 +1,17 @@
+# Huge files
+*.zip
+!raw_data/related.zip
+raw_data/plateau_data.zip
+raw_data/20*.zip
+
+# Excel
+*.xlsx
+raw_data/*.xlsx
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+Thumbs.db

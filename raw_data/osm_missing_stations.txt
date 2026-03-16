@@ -1,0 +1,1 @@
+Stations WITH possible OSM elevator data: 0\nStations WITHOUT OSM elevator data (within 200m): 0\n\nStations that might be missing elevator data in OSM:\n

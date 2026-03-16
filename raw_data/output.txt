@@ -1,0 +1,5 @@
+In GeoJSON but NOT in timetable:
+- 新栄
+- 新瑞橋駅
+
+In timetable but NOT in GeoJSON:

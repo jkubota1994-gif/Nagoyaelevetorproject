@@ -1,0 +1,106 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.10 2d4cfc48",
+  "osm3s": {
+    "timestamp_osm_base": "2026-02-28T13:01:07Z",
+    "timestamp_areas_base": "2026-01-23T01:22:35Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+    {
+      "type": "node",
+      "id": 4919810141,
+      "lat": 35.1707285,
+      "lon": 136.8818431,
+      "tags": {
+        "name": "名古屋",
+        "name:en": "Nagoya",
+        "name:fr": "Nagoya",
+        "name:it": "Nagoya",
+        "name:ja": "名古屋",
+        "name:ko": "나고야",
+        "operator": "東海旅客鉄道",
+        "operator:en": "Central Japan Railway Company",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "CA68;CF00;CJ00",
+        "tourism": "yes",
+        "train": "yes",
+        "website": "https://railway.jr-central.co.jp/station-guide/shinkansen/nagoya/map.html",
+        "wheelchair": "yes",
+        "wikidata": "Q49381",
+        "wikipedia": "ja:名古屋駅"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6689865382,
+      "lat": 35.1687934,
+      "lon": 136.882394,
+      "tags": {
+        "KSJ2:LIN": "西名古屋港線",
+        "name": "名古屋",
+        "name:en": "Nagoya",
+        "name:ko": "나고야",
+        "note": "National-Land Numerical Information (Railway) 2007, MLIT Japan",
+        "note:ja": "国土数値情報（鉄道データ）平成19年　国土交通省",
+        "operator": "東海旅客鉄道",
+        "operator:en": "Central Japan Railway Company",
+        "operator:ja": "東海旅客鉄道",
+        "public_transport": "station",
+        "railway": "station",
+        "source": "KSJ2",
+        "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-N02-v1_1.html",
+        "toilets:wheelchair": "yes",
+        "train": "yes",
+        "website": "https://www.aonamiline.co.jp/pc/stinfo_nagoya.html",
+        "wheelchair": "yes",
+        "wikidata": "Q49381",
+        "wikipedia": "ja:名古屋駅"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7784263289,
+      "lat": 35.1711834,
+      "lon": 136.8839084,
+      "tags": {
+        "KSJ2:STN": "名古屋",
+        "name": "名古屋",
+        "name:en": "Nagoya",
+        "name:ja": "名古屋",
+        "name:ko": "나고야",
+        "operator": "名古屋市営地下鉄",
+        "operator:en": "Nagoya Municipal Subway",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "H08;S02",
+        "wikidata": "Q49381",
+        "wikipedia": "ja:名古屋駅"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11361374044,
+      "lat": 35.170581,
+      "lon": 136.8809822,
+      "tags": {
+        "name": "名古屋",
+        "name:en": "Nagoya",
+        "name:fr": "Nagoya",
+        "name:it": "Nagoya",
+        "name:ja": "名古屋",
+        "name:ko": "나고야",
+        "operator": "東海旅客鉄道",
+        "operator:en": "Central Japan Railway Company",
+        "public_transport": "station",
+        "railway": "station",
+        "train": "yes",
+        "website": "https://railway.jr-central.co.jp/station-guide/shinkansen/nagoya/map.html",
+        "wheelchair": "yes",
+        "wikidata": "Q49381",
+        "wikipedia": "ja:名古屋駅"
+      }
+    }
+  ]
+}

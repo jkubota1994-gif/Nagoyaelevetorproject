@@ -1,0 +1,23 @@
+﻿Querying Nagoya City Subway stations...
+Found 24 subway stations.
+Querying elevators in Nagoya...
+Found 49 elevators in Nagoya on OSM.
+Stations WITH possible OSM elevator data: 9
+Stations WITHOUT OSM elevator data (within 200m): 15
+
+Stations that might be missing elevator data in OSM:
+一社
+上社
+中村日赤
+亀島
+伏見
+名古屋大学
+国際センター
+新栄町
+星ヶ丘
+本山
+本郷
+本陣
+東山公園
+覚王山
+高畑

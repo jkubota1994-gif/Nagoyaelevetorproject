@@ -1,0 +1,61 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [136.881537, 35.170915]
+      },
+      "properties": {
+        "id": "e_nagoya_01",
+        "station": "名古屋",
+        "location": "東山線 中改札外・桜通線 東改札外",
+        "description": "地上〜コンコース間エレベーター",
+        "status": "稼働中"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [136.882587, 35.171415]
+      },
+      "properties": {
+        "id": "e_nagoya_02",
+        "station": "名古屋",
+        "location": "桜通線 プラットホーム",
+        "description": "コンコース〜ホーム間エレベーター",
+        "status": "稼働中"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [136.908332, 35.169824]
+      },
+      "properties": {
+        "id": "e_sakae_01",
+        "station": "栄",
+        "location": "東山線・名城線 連絡通路",
+        "description": "地上〜地下街〜コンコース間エレベーター",
+        "status": "点検中(12:00まで)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [136.907900, 35.170200]
+      },
+      "properties": {
+        "id": "e_sakae_02",
+        "station": "栄",
+        "location": "東山線 プラットホーム(藤が丘方面)",
+        "description": "コンコース〜ホーム間エレベーター",
+        "status": "稼働中"
+      }
+    }
+  ]
+}

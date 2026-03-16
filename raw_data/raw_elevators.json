@@ -1,0 +1,721 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.10 2d4cfc48",
+  "osm3s": {
+    "timestamp_osm_base": "2026-03-04T22:26:45Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 1943774875,
+  "lat": 35.1500965,
+  "lon": 136.9042256,
+  "tags": {
+    "highway": "elevator",
+    "name": "東別院",
+    "railway": "subway_entrance",
+    "ref": "4",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 1958035516,
+  "lat": 35.1841221,
+  "lon": 136.8906246,
+  "tags": {
+    "highway": "elevator",
+    "name": "浅間町駅",
+    "railway": "subway_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 1966014688,
+  "lat": 35.1573811,
+  "lon": 136.9065173,
+  "tags": {
+    "bicycle": "no",
+    "highway": "elevator",
+    "level": "0",
+    "railway": "subway_entrance",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2026333588,
+  "lat": 35.1614906,
+  "lon": 136.8818002,
+  "tags": {
+    "entrance": "yes",
+    "highway": "elevator",
+    "railway": "train_station_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 2026333600,
+  "lat": 35.1627796,
+  "lon": 136.8806790,
+  "tags": {
+    "highway": "elevator"
+  }
+},
+{
+  "type": "node",
+  "id": 2108183326,
+  "lat": 35.1677740,
+  "lon": 136.8722030,
+  "tags": {
+    "entrance": "yes",
+    "highway": "elevator",
+    "local_ref": "1",
+    "name": "太閤通",
+    "railway": "subway_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 2397448518,
+  "lat": 35.1734025,
+  "lon": 136.8987330,
+  "tags": {
+    "elevator": "yes",
+    "railway": "subway_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 4430843434,
+  "lat": 35.1213293,
+  "lon": 137.0182970,
+  "tags": {
+    "highway": "elevator"
+  }
+},
+{
+  "type": "node",
+  "id": 5655391723,
+  "lat": 35.0349738,
+  "lon": 136.9544319,
+  "tags": {
+    "highway": "elevator"
+  }
+},
+{
+  "type": "node",
+  "id": 5655391725,
+  "lat": 35.0349711,
+  "lon": 136.9548525,
+  "tags": {
+    "highway": "elevator"
+  }
+},
+{
+  "type": "node",
+  "id": 5793084113,
+  "lat": 35.1678229,
+  "lon": 136.8720613,
+  "tags": {
+    "entrance": "yes",
+    "highway": "elevator",
+    "railway": "subway_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 6398253885,
+  "lat": 35.1727866,
+  "lon": 136.9081762,
+  "tags": {
+    "highway": "elevator"
+  }
+},
+{
+  "type": "node",
+  "id": 6398372358,
+  "lat": 35.1708364,
+  "lon": 136.9096750,
+  "tags": {
+    "highway": "elevator"
+  }
+},
+{
+  "type": "node",
+  "id": 8764136793,
+  "lat": 35.2432800,
+  "lon": 136.9849519,
+  "tags": {
+    "highway": "elevator"
+  }
+},
+{
+  "type": "node",
+  "id": 8764136796,
+  "lat": 35.2427434,
+  "lon": 136.9853890,
+  "tags": {
+    "highway": "elevator"
+  }
+},
+{
+  "type": "node",
+  "id": 8868098413,
+  "lat": 35.1565353,
+  "lon": 136.9164124,
+  "tags": {
+    "highway": "elevator",
+    "level": "0;1",
+    "name": "中央棟",
+    "name:en": "Central Elevator",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 8868117326,
+  "lat": 35.1564944,
+  "lon": 136.9159363,
+  "tags": {
+    "highway": "elevator",
+    "level": "0;1",
+    "name": "西棟",
+    "name:en": "West Elevator",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 8868117328,
+  "lat": 35.1561999,
+  "lon": 136.9167200,
+  "tags": {
+    "highway": "elevator",
+    "level": "0;1;-1",
+    "name": "東棟",
+    "name:en": "East Elevator",
+    "ref": "EV. 3",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 9433069574,
+  "lat": 35.1703576,
+  "lon": 136.9309275,
+  "tags": {
+    "highway": "elevator",
+    "name": "EV. 3",
+    "railway": "subway_entrance",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 9631471630,
+  "lat": 35.1946518,
+  "lon": 136.9098649,
+  "tags": {
+    "highway": "elevator"
+  }
+},
+{
+  "type": "node",
+  "id": 9631471676,
+  "lat": 35.1942565,
+  "lon": 136.9103399,
+  "tags": {
+    "highway": "elevator"
+  }
+},
+{
+  "type": "node",
+  "id": 10065694589,
+  "lat": 35.1917128,
+  "lon": 136.9368971,
+  "tags": {
+    "highway": "elevator",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 10694158090,
+  "lat": 35.1676511,
+  "lon": 136.9468003,
+  "tags": {
+    "highway": "elevator",
+    "name": "Ikeshita"
+  }
+},
+{
+  "type": "node",
+  "id": 10913817634,
+  "lat": 35.1263000,
+  "lon": 136.9116618,
+  "tags": {
+    "access": "yes",
+    "highway": "elevator",
+    "level": "0;1"
+  }
+},
+{
+  "type": "node",
+  "id": 10913817640,
+  "lat": 35.1262960,
+  "lon": 136.9125187,
+  "tags": {
+    "access": "yes",
+    "highway": "elevator",
+    "level": "0;1"
+  }
+},
+{
+  "type": "node",
+  "id": 11228275748,
+  "lat": 35.0516870,
+  "lon": 136.9960179,
+  "tags": {
+    "highway": "elevator",
+    "level": "-1;1;2"
+  }
+},
+{
+  "type": "node",
+  "id": 11353769384,
+  "lat": 35.0787058,
+  "lon": 136.9499620,
+  "tags": {
+    "highway": "elevator",
+    "level": "0;1"
+  }
+},
+{
+  "type": "node",
+  "id": 11514127899,
+  "lat": 35.0717881,
+  "lon": 136.9043148,
+  "tags": {
+    "highway": "elevator"
+  }
+},
+{
+  "type": "node",
+  "id": 11881114160,
+  "lat": 35.1740709,
+  "lon": 136.9088276,
+  "tags": {
+    "highway": "elevator",
+    "level": "0;-1",
+    "railway": "subway_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 12135713572,
+  "lat": 35.1810859,
+  "lon": 136.9101063,
+  "tags": {
+    "highway": "elevator",
+    "level": "0;1;2",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12381096887,
+  "lat": 35.1228162,
+  "lon": 137.0071445,
+  "tags": {
+    "highway": "elevator",
+    "level": "0;-1",
+    "railway": "subway_entrance",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12799999958,
+  "lat": 35.0421393,
+  "lon": 137.0497507,
+  "tags": {
+    "highway": "elevator",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12799999964,
+  "lat": 35.0420196,
+  "lon": 137.0492601,
+  "tags": {
+    "highway": "elevator",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13226928909,
+  "lat": 35.1919780,
+  "lon": 136.9367053,
+  "tags": {
+    "entrance": "yes",
+    "highway": "elevator",
+    "railway": "train_station_entrance",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13298966431,
+  "lat": 35.1326729,
+  "lon": 136.8933737,
+  "tags": {
+    "entrance": "yes",
+    "highway": "elevator",
+    "name": "日比野駅",
+    "railway": "subway_entrance",
+    "ref": "6",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 13312485630,
+  "lat": 35.1998387,
+  "lon": 136.8613469,
+  "tags": {
+    "entrance": "yes",
+    "highway": "elevator",
+    "railway": "train_station_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 13313027077,
+  "lat": 35.2209458,
+  "lon": 136.8802090,
+  "tags": {
+    "entrance": "yes",
+    "highway": "elevator",
+    "railway": "train_station_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 13318439696,
+  "lat": 35.1575797,
+  "lon": 136.8540603,
+  "tags": {
+    "entrance": "yes",
+    "highway": "elevator",
+    "railway": "subway_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 13318441595,
+  "lat": 35.1676274,
+  "lon": 136.8552083,
+  "tags": {
+    "entrance": "yes",
+    "highway": "elevator",
+    "railway": "subway_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 13318471618,
+  "lat": 35.1489367,
+  "lon": 136.8530040,
+  "tags": {
+    "entrance": "yes",
+    "highway": "elevator",
+    "railway": "subway_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 13318665147,
+  "lat": 35.1418398,
+  "lon": 136.7935457,
+  "tags": {
+    "entrance": "yes",
+    "highway": "elevator",
+    "railway": "train_station_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 13318665152,
+  "lat": 35.1421352,
+  "lon": 136.7934879,
+  "tags": {
+    "entrance": "yes",
+    "highway": "elevator",
+    "railway": "train_station_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 13321462027,
+  "lat": 35.1059462,
+  "lon": 136.8848536,
+  "tags": {
+    "entrance": "yes",
+    "highway": "elevator",
+    "railway": "subway_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 13321466302,
+  "lat": 35.0992831,
+  "lon": 136.8828231,
+  "tags": {
+    "entrance": "yes",
+    "highway": "elevator",
+    "railway": "subway_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 13321476939,
+  "lat": 35.1135410,
+  "lon": 136.8857853,
+  "tags": {
+    "entrance": "yes",
+    "highway": "elevator",
+    "railway": "subway_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 13329496613,
+  "lat": 35.1278826,
+  "lon": 136.9068372,
+  "tags": {
+    "entrance": "yes",
+    "highway": "elevator",
+    "railway": "train_station_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 13329528896,
+  "lat": 35.1219725,
+  "lon": 136.9479601,
+  "tags": {
+    "entrance": "yes",
+    "highway": "elevator",
+    "name": "瑞穂運動場東",
+    "railway": "subway_entrance",
+    "ref": "2"
+  }
+},
+{
+  "type": "node",
+  "id": 13332746293,
+  "lat": 35.1952517,
+  "lon": 136.9296172,
+  "tags": {
+    "entrance": "yes",
+    "highway": "elevator",
+    "railway": "subway_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 13332769384,
+  "lat": 35.1836583,
+  "lon": 136.9087284,
+  "tags": {
+    "entrance": "yes",
+    "highway": "elevator",
+    "railway": "train_station_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 13332804965,
+  "lat": 35.1960940,
+  "lon": 136.9223753,
+  "tags": {
+    "entrance": "yes",
+    "highway": "elevator",
+    "railway": "subway_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 13332805848,
+  "lat": 35.1819812,
+  "lon": 136.9058117,
+  "tags": {
+    "entrance": "yes",
+    "highway": "elevator",
+    "railway": "train_station_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 13332817868,
+  "lat": 35.1605944,
+  "lon": 136.8984787,
+  "tags": {
+    "entrance": "yes",
+    "highway": "elevator",
+    "railway": "subway_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 13332890985,
+  "lat": 35.1921116,
+  "lon": 136.8902240,
+  "tags": {
+    "entrance": "yes",
+    "highway": "elevator",
+    "railway": "subway_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 13332998555,
+  "lat": 35.1700244,
+  "lon": 136.9381049,
+  "tags": {
+    "entrance": "yes",
+    "highway": "elevator",
+    "railway": "subway_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 13333082934,
+  "lat": 35.1731297,
+  "lon": 136.9300080,
+  "tags": {
+    "entrance": "yes",
+    "highway": "elevator",
+    "railway": "subway_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 13346904971,
+  "lat": 35.1439782,
+  "lon": 136.9547131,
+  "tags": {
+    "entrance": "yes",
+    "highway": "elevator",
+    "railway": "subway_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 13346982564,
+  "lat": 35.1498032,
+  "lon": 136.9257015,
+  "tags": {
+    "entrance": "yes",
+    "highway": "elevator",
+    "railway": "subway_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 13347042170,
+  "lat": 35.2036808,
+  "lon": 136.9294829,
+  "tags": {
+    "entrance": "yes",
+    "highway": "elevator",
+    "railway": "subway_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 13347383830,
+  "lat": 35.2109779,
+  "lon": 137.0114011,
+  "tags": {
+    "entrance": "yes",
+    "highway": "elevator",
+    "railway": "train_station_entrance"
+  }
+},
+{
+  "type": "node",
+  "id": 13477245018,
+  "lat": 35.1897662,
+  "lon": 136.9033753,
+  "tags": {
+    "highway": "elevator",
+    "level": "0;1"
+  }
+},
+{
+  "type": "way",
+  "id": 352746959,
+  "center": {
+    "lat": 35.1567636,
+    "lon": 136.9782209
+  },
+  "nodes": [
+    3585206546,
+    3585206547
+  ],
+  "tags": {
+    "highway": "elevator",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1452246688,
+  "center": {
+    "lat": 35.1489497,
+    "lon": 136.8530386
+  },
+  "nodes": [
+    13318471614,
+    13318471618,
+    13318471615,
+    13318471616,
+    13318471617,
+    13318471614
+  ],
+  "tags": {
+    "entrance": "yes",
+    "highway": "elevator",
+    "railway": "subway_entrance"
+  }
+},
+{
+  "type": "way",
+  "id": 1476260672,
+  "center": {
+    "lat": 35.1898966,
+    "lon": 136.9030748
+  },
+  "nodes": [
+    13541498779,
+    13541498780,
+    13541498781,
+    13541498777,
+    13541498782,
+    13541498779
+  ],
+  "tags": {
+    "elevator": "yes",
+    "indoor": "room",
+    "level": "0;1;3"
+  }
+}
+
+  ]
+}

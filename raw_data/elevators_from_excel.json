@@ -1,0 +1,716 @@
+[
+  {
+    "Station": "金山",
+    "Latitude, Longitude": "35.14352575088913, 136.90126333568702",
+    "Description": "地上～地下鉄改札口",
+    "Status": "稼働中",
+    "ID": "M01"
+  },
+  {
+    "Station": "西高蔵",
+    "Latitude, Longitude": "35.13492352434503, 136.90184827999252",
+    "Description": "地上～地下鉄改札口",
+    "Status": "稼働中",
+    "ID": "M28"
+  },
+  {
+    "Station": "熱田神宮西（神宮西）",
+    "Latitude, Longitude": "35.127921811143935, 136.90687228540892",
+    "Description": "地上～地下鉄改札口",
+    "Status": "稼働中",
+    "ID": "M27"
+  },
+  {
+    "Station": "熱田神宮伝馬町（伝馬町）",
+    "Latitude, Longitude": "35.120641660354416, 136.91006822561445",
+    "Description": "地上～地下鉄改札口",
+    "Status": "稼働中",
+    "ID": "M26"
+  },
+  {
+    "Station": "堀田",
+    "Latitude, Longitude": "35.11645674004519, 136.92204080138805",
+    "Description": "地上～地下鉄改札口",
+    "Status": "稼働中",
+    "ID": "M25"
+  },
+  {
+    "Station": "妙音通",
+    "Latitude, Longitude": "35.11737065857523, 136.92924050291654",
+    "Description": "地上～地下鉄改札口",
+    "Status": "稼働中",
+    "ID": "M24"
+  },
+  {
+    "Station": "新瑞橋",
+    "Latitude, Longitude": "35.11760672561257, 136.93803621467265",
+    "Description": "地上～地下鉄改札口",
+    "Status": "稼働中",
+    "ID": "M23"
+  },
+  {
+    "Station": "瑞穂運動場東",
+    "Latitude, Longitude": "35.12195594045511, 136.94796564757414",
+    "Description": "地上～地下鉄改札口",
+    "Status": "稼働中",
+    "ID": "M22"
+  },
+  {
+    "Station": "総合リハビリセンター",
+    "Latitude, Longitude": "35.12987151584732, 136.95387584140585",
+    "Description": "地上～地下鉄改札口",
+    "Status": "稼働中",
+    "ID": "M21"
+  },
+  {
+    "Station": "八事",
+    "Latitude, Longitude": "35.13681620650574, 136.96462532996372",
+    "Description": "地上～地下鉄改札口",
+    "Status": "稼働中",
+    "ID": "M20"
+  },
+  {
+    "Station": "八事",
+    "Latitude, Longitude": "35.13736862377779, 136.96532366809058",
+    "Description": "中京大学アネックス～地下鉄改札口",
+    "Status": "稼働中",
+    "ID": "M20"
+  },
+  {
+    "Station": "八事日赤",
+    "Latitude, Longitude": "35.14500548033085, 136.9649141207083",
+    "Description": "地上～地下鉄改札口",
+    "Status": "稼働中",
+    "ID": "M19"
+  },
+  {
+    "Station": "名古屋大学",
+    "Latitude, Longitude": "35.1546953090824, 136.96649561461183",
+    "Description": "地上～地下鉄改札口",
+    "Status": "稼働中",
+    "ID": "M18"
+  },
+  {
+    "Station": "本山",
+    "Latitude, Longitude": "35.16351047603824, 136.96380452607983",
+    "Description": "地上～地下鉄改札口",
+    "Status": "稼働中",
+    "ID": "M17"
+  },
+  {
+    "Station": "自由ヶ丘",
+    "Latitude, Longitude": "35.17576494774919, 136.96692599196865",
+    "Description": "地上～地下鉄改札口",
+    "Status": "稼働中",
+    "ID": "M16"
+  },
+  {
+    "Station": "茶屋ヶ坂",
+    "Latitude, Longitude": "35.18428042661961, 136.9627630281031",
+    "Description": "地上～地下鉄改札口",
+    "Status": "稼働中",
+    "ID": "M15"
+  },
+  {
+    "Station": "砂田橋",
+    "Latitude, Longitude": "35.1886879662537, 136.95554172003628",
+    "Description": "地上～地下鉄改札口",
+    "Status": "稼働中",
+    "ID": "M14"
+  },
+  {
+    "Station": "ナゴヤドーム前矢田",
+    "Latitude, Longitude": "35.1899082121667, 136.94721884706038",
+    "Description": "地上～地下鉄改札口",
+    "Status": "稼働中",
+    "ID": "M13"
+  },
+  {
+    "Station": "大曽根",
+    "Latitude, Longitude": "35.19198405322812, 136.93670799341476",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": "M12"
+  },
+  {
+    "Station": "平安通",
+    "Latitude, Longitude": "35.19527158333424, 136.92960501002096",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": "M11"
+  },
+  {
+    "Station": "志賀本通",
+    "Latitude, Longitude": "35.196105568787445, 136.92244232315468",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": "M10"
+  },
+  {
+    "Station": "黒川",
+    "Latitude, Longitude": "35.19738366912528, 136.90963872482197",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": "M9"
+  },
+  {
+    "Station": "名城公園",
+    "Latitude, Longitude": "35.191131011302716, 136.90466193158102",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": "M8"
+  },
+  {
+    "Station": "名古屋城（市役所）",
+    "Latitude, Longitude": "35.18191501256532, 136.9058682539478",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": "M7"
+  },
+  {
+    "Station": "久屋大通",
+    "Latitude, Longitude": "35.17407099853699, 136.9087934849016",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": "M6"
+  },
+  {
+    "Station": "久屋大通",
+    "Latitude, Longitude": "35.17317724434748, 136.90920822680383",
+    "Description": "地上～ブロッサ～地下鉄改札口",
+    "Status": "稼働中（7:00-22:30）",
+    "ID": "M6"
+  },
+  {
+    "Station": "栄",
+    "Latitude, Longitude": "35.17056211305382, 136.90935522065666",
+    "Description": "地上～オアシス21~地下鉄改札口フロア",
+    "Status": "稼働中（7:00-22:30）",
+    "ID": "M5"
+  },
+  {
+    "Station": "栄",
+    "Latitude, Longitude": "35.169516750777206, 136.90653772481298",
+    "Description": "地上～サンシャイン栄~地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": "M5"
+  },
+  {
+    "Station": "矢場町",
+    "Latitude, Longitude": "35.16331431061121, 136.90922510583894",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中（5:40-24:30）",
+    "ID": "M4"
+  },
+  {
+    "Station": "矢場町",
+    "Latitude, Longitude": "35.164659714129435, 136.90841250238051",
+    "Description": "地上～松坂屋~地下鉄改札口フロア",
+    "Status": "稼働中（松坂屋営業時間外は呼び出し必要）",
+    "ID": "M4"
+  },
+  {
+    "Station": "上前津",
+    "Latitude, Longitude": "35.157390780810715, 136.90647493792957",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": "M3"
+  },
+  {
+    "Station": "東別院",
+    "Latitude, Longitude": "35.15010039503002, 136.90442540454126",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": "M2"
+  },
+  {
+    "Station": "日比野",
+    "Latitude, Longitude": "35.132633461049856, 136.89339671564503",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": "E2"
+  },
+  {
+    "Station": "六番町",
+    "Latitude, Longitude": "35.1251946722954, 136.88929977136385",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": "E3"
+  },
+  {
+    "Station": "東海通",
+    "Latitude, Longitude": "35.11349789288392, 136.88580807801446",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": "E4"
+  },
+  {
+    "Station": "築地口",
+    "Latitude, Longitude": "35.09921546338242, 136.88277664401951",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": "E6"
+  },
+  {
+    "Station": "名古屋港",
+    "Latitude, Longitude": "35.09284354994157, 136.88171166449283",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": "E7"
+  },
+  {
+    "Station": "港区役所",
+    "Latitude, Longitude": "35.10593161035203, 136.88485547903858",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": "E5"
+  },
+  {
+    "Station": "高畑",
+    "Latitude, Longitude": "35.14022467884596, 136.85318915638462",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": "H1"
+  },
+  {
+    "Station": "八田",
+    "Latitude, Longitude": "35.148949148461114, 136.8530926156442",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": "H2"
+  },
+  {
+    "Station": "岩塚",
+    "Latitude, Longitude": "35.157613916580395, 136.85404578115006",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": "H3"
+  },
+  {
+    "Station": "中村公園",
+    "Latitude, Longitude": "35.16760131938087, 136.85520173665122",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": "H4"
+  },
+  {
+    "Station": "中村日赤",
+    "Latitude, Longitude": "35.17271348000175, 136.86184856578998",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": "H5"
+  },
+  {
+    "Station": "中村日赤",
+    "Latitude, Longitude": "35.172220947595505, 136.86172279208895",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": "H5"
+  },
+  {
+    "Station": "本陣",
+    "Latitude, Longitude": "35.17678306369316, 136.86649456540803",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": "H6"
+  },
+  {
+    "Station": "亀島",
+    "Latitude, Longitude": "35.177410902106054, 136.87608986296067",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": "H7"
+  },
+  {
+    "Station": "名古屋",
+    "Latitude, Longitude": "35.17034182355029, 136.88176595832843",
+    "Description": "地上～地下鉄桜通線改札口フロア",
+    "Status": "稼働中",
+    "ID": "H8"
+  },
+  {
+    "Station": "名古屋",
+    "Latitude, Longitude": "35.171943496364435, 136.88439859613004",
+    "Description": "地上～大名古屋ビルヂング～地下鉄改札口",
+    "Status": "稼働中",
+    "ID": "H8"
+  },
+  {
+    "Station": "名古屋",
+    "Latitude, Longitude": "35.17004425067506, 136.8848259165238",
+    "Description": "地上～ミッドランドスクエア～地下鉄改札口",
+    "Status": "稼働中",
+    "ID": "H8"
+  },
+  {
+    "Station": "伏見",
+    "Latitude, Longitude": "35.16960655082021, 136.89701913337058",
+    "Description": "地上～名古屋インターシティ～地下鉄改札口",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "伏見",
+    "Latitude, Longitude": "35.16802113175943, 136.89727231189246",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "栄",
+    "Latitude, Longitude": "35.16883771090792, 136.90941800055919",
+    "Description": "地上～中日ビル～地下鉄改札口",
+    "Status": "稼働中（5:15-24:00）",
+    "ID": NaN
+  },
+  {
+    "Station": "新栄（藤が丘方面）",
+    "Latitude, Longitude": "35.170945154516914, 136.91976359607887",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "新栄（高畑方面）",
+    "Latitude, Longitude": "35.17069166984739, 136.9205349282056",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "千種",
+    "Latitude, Longitude": "35.170399364751994, 136.93092409555783",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "今池",
+    "Latitude, Longitude": "35.16996919618479, 136.938050363098",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "今池",
+    "Latitude, Longitude": "35.1687918090605, 136.93673805676892",
+    "Description": "地上～今池ガスビル～地下鉄改札口",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "池下",
+    "Latitude, Longitude": "35.16707712299581, 136.94693840288016",
+    "Description": "地上～サンクレア池下～地下鉄改札口",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "覚王山",
+    "Latitude, Longitude": "35.166642231772954, 136.95245412755898",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "東山公園",
+    "Latitude, Longitude": "35.16019423196712, 136.97302830832882",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "星ヶ丘",
+    "Latitude, Longitude": "35.16248329486088, 136.98452354319676",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "一社",
+    "Latitude, Longitude": "35.167975039361764, 136.99603679975473",
+    "Description": "地上からエレベーターあり改札口",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "上社",
+    "Latitude, Longitude": "35.173858629093324, 137.0070753005847",
+    "Description": "地上からエレベーターあり改札口",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "本郷",
+    "Latitude, Longitude": "35.17559278029146, 137.01412125783585",
+    "Description": "地上からエレベーターあり改札口",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "藤が丘",
+    "Latitude, Longitude": "35.18196754385792, 137.02117360004374",
+    "Description": "地上からエレベーターあり改札口",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "太閤通",
+    "Latitude, Longitude": "35.16782726497688, 136.87201985286575",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "国際センター",
+    "Latitude, Longitude": "35.17259893201185, 136.88996651028054",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "国際センター",
+    "Latitude, Longitude": "35.17234080613147, 136.88914037740452",
+    "Description": "地上～三交ビル～地下鉄改札口",
+    "Status": NaN,
+    "ID": NaN
+  },
+  {
+    "Station": "伏見",
+    "Latitude, Longitude": "35.1733724314956, 136.89888656866916",
+    "Description": "地上～地下鉄改札口フロア（桜通線が近い）",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "伏見",
+    "Latitude, Longitude": "35.17461266575973, 136.89658379050982",
+    "Description": "地上～地下鉄改札口フロア（鶴舞線が近い）",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "高岳",
+    "Latitude, Longitude": "35.174378494000074, 136.9159574729742",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "車道",
+    "Latitude, Longitude": "35.17332167785559, 136.9293275667999",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "吹上",
+    "Latitude, Longitude": "35.158964825602226, 136.93493855820623",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "御器所",
+    "Latitude, Longitude": "35.150336218655, 136.93397697121497",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "桜山",
+    "Latitude, Longitude": "35.13966075867039, 136.93358531242419",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "瑞穂区役所",
+    "Latitude, Longitude": "35.13160802242787, 136.93468542139595",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "桜本町",
+    "Latitude, Longitude": "35.109106360840755, 136.93699342281784",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "鶴里",
+    "Latitude, Longitude": "35.1054801269913, 136.94433209604384",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "野並",
+    "Latitude, Longitude": "35.101940913171774, 136.95620226748977",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "鳴子北",
+    "Latitude, Longitude": "35.10241823612636, 136.9652937462331",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "相生山",
+    "Latitude, Longitude": "35.10239195033042, 136.97618461108223",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "相生山",
+    "Latitude, Longitude": "35.102558331219754, 136.97702171312812",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "神沢",
+    "Latitude, Longitude": "35.09912666541869, 136.98894296891854",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "神沢",
+    "Latitude, Longitude": "35.09829480619749, 136.9895806230546",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "徳重",
+    "Latitude, Longitude": "35.09501366477112, 136.99786103739376",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "徳重",
+    "Latitude, Longitude": "35.093579522571275, 136.99871037042126",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "上小田井",
+    "Latitude, Longitude": "35.22288547013626, 136.8771043208065",
+    "Description": "地上～EVあり改札",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "庄内緑地公園",
+    "Latitude, Longitude": "35.21552082450057, 136.88684592836282",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "庄内通",
+    "Latitude, Longitude": "35.20409630286912, 136.89111351522706",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "浄心",
+    "Latitude, Longitude": "35.19208909319671, 136.8902771414943",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "浅間町",
+    "Latitude, Longitude": "35.184127194627486, 136.89057644870476",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "大須観音",
+    "Latitude, Longitude": "35.16058917303234, 136.89846288700758",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "鶴舞",
+    "Latitude, Longitude": "35.156184246141656, 136.91673367231905",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "荒畑",
+    "Latitude, Longitude": "35.149803830686494, 136.92567185972206",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "川名",
+    "Latitude, Longitude": "35.14889029539034, 136.94817443814074",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "いりなか",
+    "Latitude, Longitude": "35.144016818411224, 136.9547214327865",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "塩釜口",
+    "Latitude, Longitude": "35.132328920058896, 136.9779256054422",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "植田",
+    "Latitude, Longitude": "35.12881558935717, 136.9874327617627",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "原",
+    "Latitude, Longitude": "35.126000645031056, 136.99615445500723",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "平針",
+    "Latitude, Longitude": "35.1227960256475, 137.0071624538047",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "赤池",
+    "Latitude, Longitude": "35.121359195624095, 137.01831047759953",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": NaN
+  },
+  {
+    "Station": "上飯田",
+    "Latitude, Longitude": "35.2036735465891, 136.9294966467654",
+    "Description": "地上～地下鉄改札口フロア",
+    "Status": "稼働中",
+    "ID": NaN
+  }
+]
