@@ -68,26 +68,43 @@
 
         <!-- 現在地ボタン -->
         <div class="map-controls">
-            <button id="locate-btn" class="map-btn locate-btn" title="現在位置を取得">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M12 8C9.79 8 8 9.79 8 12C8 14.21 9.79 16 12 16C14.21 16 16 14.21 16 12C16 9.79 14.21 8 12 8ZM20.94 11C20.48 6.83 17.17 3.52 13 3.06V1H11V3.06C6.83 3.52 3.52 6.83 3.06 11H1V13H3.06C3.52 17.17 6.83 20.48 11 20.94V23H13V20.94C17.17 20.48 20.48 17.17 20.94 13H23V11H20.94ZM12 19C8.13 19 5 15.87 5 12C5 8.13 8.13 5 12 5C15.87 5 19 8.13 19 12C19 15.87 15.87 19 12 19Z"
-                        fill="currentColor" />
-                </svg>
-            </button>
-            <button id="custom-start-btn" class="map-btn custom-start-btn" title="出発地点を手動で指定">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM7 9C7 6.24 9.24 4 12 4C14.76 4 17 6.24 17 9C17 11.88 14.12 16.19 12 18.88C9.92 16.21 7 11.85 7 9Z"
-                        fill="currentColor" />
-                    <circle cx="12" cy="9" r="2.5" fill="currentColor" />
-                </svg>
-            </button>
-            <button id="custom-dest-btn" class="map-btn custom-dest-btn" title="到着地点を手動で指定">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M14.4 6L14 4H5V21H7V14H12.6L13 16H20V6H14.4Z" fill="currentColor" />
-                </svg>
-            </button>
+            <div class="map-control-group">
+                <span class="map-btn-label">使い方</span>
+                <button id="how-to-use-btn" class="map-btn how-to-use-btn" title="ツールの使い方">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11 18H13V16H11V18ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM12 6C9.79 6 8 7.79 8 10H10C10 8.9 10.9 8 12 8C13.1 8 14 8.9 14 10C14 12 11 11.75 11 15H13C13 12.75 16 12.5 16 10C16 7.79 14.21 6 12 6Z" fill="currentColor"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="map-control-group">
+                <span class="map-btn-label">現在地</span>
+                <button id="locate-btn" class="map-btn locate-btn" title="現在位置を取得">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 8C9.79 8 8 9.79 8 12C8 14.21 9.79 16 12 16C14.21 16 16 14.21 16 12C16 9.79 14.21 8 12 8ZM20.94 11C20.48 6.83 17.17 3.52 13 3.06V1H11V3.06C6.83 3.52 3.52 6.83 3.06 11H1V13H3.06C3.52 17.17 6.83 20.48 11 20.94V23H13V20.94C17.17 20.48 20.48 17.17 20.94 13H23V11H20.94ZM12 19C8.13 19 5 15.87 5 12C5 8.13 8.13 5 12 5C15.87 5 19 8.13 19 12C19 15.87 15.87 19 12 19Z"
+                            fill="currentColor" />
+                    </svg>
+                </button>
+            </div>
+            <div class="map-control-group">
+                <span class="map-btn-label">出発地</span>
+                <button id="custom-start-btn" class="map-btn custom-start-btn" title="出発地点を手動で指定">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM7 9C7 6.24 9.24 4 12 4C14.76 4 17 6.24 17 9C17 11.88 14.12 16.19 12 18.88C9.92 16.21 7 11.85 7 9Z"
+                            fill="currentColor" />
+                        <circle cx="12" cy="9" r="2.5" fill="currentColor" />
+                    </svg>
+                </button>
+            </div>
+            <div class="map-control-group">
+                <span class="map-btn-label">目的地</span>
+                <button id="custom-dest-btn" class="map-btn custom-dest-btn" title="到着地点を手動で指定">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.4 6L14 4H5V21H7V14H12.6L13 16H20V6H14.4Z" fill="currentColor" />
+                    </svg>
+                </button>
+            </div>
         </div>
 
         <div class="map-overlay" id="info-panel">
@@ -126,6 +143,29 @@
                     <ul id="route-instructions-list" class="instructions-list">
                         <!-- ここに手順が追加されます -->
                     </ul>
+                </div>
+
+                <!-- タクシー配車エリア -->
+                <div class="taxi-contact-container">
+                    <h5 class="instructions-title">タクシーを呼ぶ</h5>
+                    <div class="taxi-grid">
+                        <a href="tel:0522031212" class="taxi-card">
+                            <span class="taxi-name">つばめグループ</span>
+                            <span class="taxi-phone">052-203-1212</span>
+                        </a>
+                        <a href="tel:0525715121" class="taxi-card">
+                            <span class="taxi-name">名鉄タクシー</span>
+                            <span class="taxi-phone">052-571-5121</span>
+                        </a>
+                        <a href="tel:0529125489" class="taxi-card">
+                            <span class="taxi-name">名古屋MK</span>
+                            <span class="taxi-phone">052-912-5489</span>
+                        </a>
+                        <a href="tel:0529150505" class="taxi-card">
+                            <span class="taxi-name">フジタクシー</span>
+                            <span class="taxi-phone">052-915-0505</span>
+                        </a>
+                    </div>
                 </div>
                 <div class="basis-link-area">
                     <button id="show-basis-btn" class="basis-btn">算出根拠を見る</button>
@@ -167,6 +207,51 @@
                         <a href="https://www.meitakyo.com/price/" target="_blank" rel="noopener noreferrer">出典:
                             名タク（名鉄交通） 料金案内</a>
                     </p>
+                </div>
+            </div>
+        </div>
+        <!-- 使い方モーダル -->
+        <div id="how-to-use-modal" class="modal-overlay" style="display: none;">
+            <div class="modal-content elder-friendly">
+                <div class="modal-header">
+                    <h2 class="elder-title">ツールの使い方</h2>
+                    <button id="close-how-to-use-modal" class="close-btn">&times;</button>
+                </div>
+                <div class="modal-body elder-text">
+                    <section class="how-to-step">
+                        <h3>1. 地図を見る</h3>
+                        <p>地図上のアイコンをタップすると、その場所の詳細（エレベーター、駅、多目的トイレ）が表示されます。</p>
+                        <div class="icon-legend">
+                            <div class="legend-item"><span class="legend-icon elevator-ico"></span> エレベーター</div>
+                            <div class="legend-item"><span class="legend-icon station-ico"></span> 駅の入口</div>
+                            <div class="legend-item"><span class="legend-icon toilet-ico"></span> 多目的トイレ</div>
+                        </div>
+                    </section>
+                    <section class="how-to-step">
+                        <h3>2. 場所を探す</h3>
+                        <p>画面上の3つの検索欄を使い分けて場所を探せます。</p>
+                        <div class="search-explanation">
+                            <div class="exp-item"><span class="exp-tag start-tag">出発地</span>：出発する場所を住所や地名で検索</div>
+                            <div class="exp-item"><span class="exp-tag dest-tag">目的地</span>：行きたい場所を住所や地名で検索</div>
+                            <div class="exp-item"><span class="exp-tag station-tag-small">駅名</span>：特定の駅を名前で検索</div>
+                            <div class="exp-item"><span class="exp-tag elevator-tag-small">エレベーター</span>：地図上の赤いピンを直接タップして選択</div>
+                        </div>
+                    </section>
+                    <section class="how-to-step">
+                        <h3>3. 道程をつくる</h3>
+                        <p>出発地と目的地を両方設定すると、おすすめの道順が表示されます。</p>
+                        <ul class="step-bullets">
+                            <li>地図を長押し（または右側のボタン）して地点を指定することもできます。</li>
+                            <li>道順が表示されている間は、目的地に近いエレベーターも一緒に案内します。</li>
+                        </ul>
+                    </section>
+                    <section class="how-to-step">
+                        <h3>4. 現在地を表示</h3>
+                        <p>右側の<svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="vertical-align: middle;"><path d="M12 8C9.79 8 8 9.79 8 12C8 14.21 9.79 16 12 16C14.21 16 16 14.21 16 12C16 9.79 14.21 8 12 8ZM20.94 11C20.48 6.83 17.17 3.52 13 3.06V1H11V3.06C6.83 3.52 3.52 6.83 3.06 11H1V13H3.06C3.52 17.17 6.83 20.48 11 20.94V23H13V20.94C17.17 20.48 20.48 17.17 20.94 13H23V11H20.94ZM12 19C8.13 19 5 15.87 5 12C5 8.13 8.13 5 12 5C15.87 5 19 8.13 19 12C19 15.87 15.87 19 12 19Z" fill="black" /></svg>ボタンを押すと、今いる場所が表示されます。</p>
+                    </section>
+                </div>
+                <div class="modal-footer">
+                    <button id="close-how-to-use-modal-bottom" class="elder-close-btn">閉じる</button>
                 </div>
             </div>
         </div>

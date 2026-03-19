@@ -68,6 +68,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const startSearchBtn = document.getElementById('start-search-btn');
     const destSearchInput = document.getElementById('dest-search-input');
     const destSearchBtn = document.getElementById('dest-search-btn');
+    
+    // 使い方モーダルの要素
+    const howToUseModal = document.getElementById('how-to-use-modal');
+    const howToUseBtn = document.getElementById('how-to-use-btn');
+    const closeHowToUseModalBtn = document.getElementById('close-how-to-use-modal');
+    const closeHowToUseModalBottomBtn = document.getElementById('close-how-to-use-modal-bottom');
+
+    // 使い方モーダルのイベント
+    howToUseBtn.addEventListener('click', () => {
+        howToUseModal.style.display = 'flex';
+    });
+    [closeHowToUseModalBtn, closeHowToUseModalBottomBtn].forEach(btn => {
+        btn.addEventListener('click', () => {
+            howToUseModal.style.display = 'none';
+        });
+    });
+    howToUseModal.addEventListener('click', (e) => {
+        if (e.target === howToUseModal) {
+            howToUseModal.style.display = 'none';
+        }
+    });
 
     // 算出根拠モーダルのイベント
     showBasisBtn.addEventListener('click', () => {
@@ -599,15 +620,25 @@ document.addEventListener('DOMContentLoaded', () => {
         L.geoJSON(data, {
             pointToLayer: function (feature, latlng) {
                 const isStation = feature.properties.type === 'station';
+                const isToilet = feature.properties.type === 'toilet';
 
                 if (isStation) {
                     return L.circleMarker(latlng, {
                         radius: 8,
-                        fillColor: "#0b57d0", // 青色
+                        fillColor: "#0b57d0",
                         color: "#ffffff",
                         weight: 2,
                         opacity: 1,
                         fillOpacity: 0.8
+                    });
+                } else if (isToilet) {
+                    return L.circleMarker(latlng, {
+                        radius: 6,
+                        fillColor: "#1aa260", // 緑色
+                        color: "#ffffff",
+                        weight: 2,
+                        opacity: 1,
+                        fillOpacity: 0.9
                     });
                 } else {
                     // エレベーター
@@ -623,6 +654,21 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             onEachFeature: function (feature, layer) {
                 const props = feature.properties;
+
+                // ピンの横に説明文を追加
+                let labelText = "";
+                if (props.type === 'station') labelText = props.station + "駅";
+                else if (props.type === 'toilet') labelText = props.name || "多目的トイレ";
+                else labelText = props.station ? props.station + "駅" : "エレベーター";
+
+                if (labelText) {
+                    layer.bindTooltip(labelText, {
+                        permanent: true,
+                        direction: 'right',
+                        className: 'pin-label',
+                        offset: [10, 0]
+                    });
+                }
 
                 if (props.type === 'station') {
                     const hasElevatorText = props.has_elevator ? "✔ エレベーター情報あり" : "✖ エレベーター情報なし (OSM)";
@@ -663,6 +709,33 @@ document.addEventListener('DOMContentLoaded', () => {
                         infoPanel.classList.add('active');
                     });
 
+                } else if (props.type === 'toilet') {
+                    layer.bindPopup(`<div style="font-weight:bold;">${props.name}</div><div style="font-size:12px;">${props.location}</div>`, {
+                        closeButton: false
+                    });
+
+                    layer.on('click', () => {
+                        elevatorDetails.innerHTML = `
+                            <div class="detail-card">
+                                <h4><span class="station-tag" style="background-color: #1aa260;">${props.name}</span></h4>
+                                <p style="margin-top:10px;"><strong>場所:</strong> ${props.location}</p>
+                                <p><strong>詳細:</strong> ${props.description}</p>
+                                <div class="detail-status" style="display: flex; align-items: center; gap: 8px; margin-top: 10px;">
+                                    <span style="width: 10px; height: 10px; border-radius: 50%; background-color: #1aa260;"></span>
+                                    <span style="font-size: 0.9rem; font-weight: 600;">利用可能</span>
+                                </div>
+                                <div class="action-area" style="margin-top: 20px;">
+                                    <button id="find-route-to-toilet-btn" class="route-btn" style="width: 100%; padding: 10px; background: #0b57d0; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">
+                                        ここへのルート検索
+                                    </button>
+                                </div>
+                            </div>
+                        `;
+                        infoPanel.classList.add('active');
+                        document.getElementById('find-route-to-toilet-btn').onclick = () => {
+                            findRoute(layer.getLatLng().lat, layer.getLatLng().lng);
+                        };
+                    });
                 } else {
                     const statusClass = getStatusClass(props.status);
                     const statusText = props.status || '稼働中';

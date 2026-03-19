@@ -161,7 +161,7 @@ main {
 
 .popup-title {
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     margin-bottom: 8px;
     color: var(--secondary-color);
     border-bottom: 1px solid var(--border-color);
@@ -269,9 +269,9 @@ main {
 }
 
 .detail-value {
-    font-size: 0.95rem;
+    font-size: 1.15rem;
     color: var(--text-primary);
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .tag {
@@ -302,15 +302,34 @@ main {
     right: 20px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
     z-index: 1000;
 }
 
+.map-control-group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.map-btn-label {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--secondary-color);
+    box-shadow: var(--shadow-sm);
+    white-space: nowrap;
+    border: 2px solid var(--primary-color);
+}
+
 .map-btn {
-    width: 44px;
-    height: 44px;
+    width: 56px;
+    height: 56px;
     background-color: var(--surface-color);
-    border: none;
+    border: 2px solid var(--primary-color);
     border-radius: 50%;
     box-shadow: var(--shadow-md);
     cursor: pointer;
@@ -734,3 +753,191 @@ main {
     max-height: 100%;
     overflow-y: auto;
 }
+
+/* --- Elder Friendly "How to Use" Modal --- */
+.elder-friendly {
+    max-width: 600px;
+    border: 4px solid var(--primary-color);
+}
+.elder-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+.elder-text {
+    font-size: 1.6rem;
+    line-height: 1.6;
+}
+.how-to-step {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px dashed var(--border-color);
+}
+.how-to-step:last-child {
+    border-bottom: none;
+}
+.how-to-step h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+.icon-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+    background: #f0f0f0;
+    padding: 15px;
+    border-radius: 10px;
+}
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.legend-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.elevator-ico { background: #FF3B30; border: 2px solid white; }
+.station-ico { background: #0b57d0; border: 2px solid white; }
+.toilet-ico { background: #1aa260; border: 2px solid white; }
+
+.elder-close-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    background: var(--primary-color);
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.elder-close-btn:hover {
+    background: var(--secondary-color);
+}
+
+/* Pin Label Style */
+.pin-label {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    box-shadow: var(--shadow-sm);
+    color: var(--text-primary);
+}
+
+/* Toilet Marker Style */
+.toilet-marker .marker-pin {
+    background: #1aa260; /* Green for toilets */
+}
+.toilet-marker:hover .marker-pin {
+    background: #13804b;
+}
+
+/* Taxi Contact Section */
+.taxi-contact-container {
+    background: white;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.taxi-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.taxi-card {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: #fff8f1;
+    border: 1px solid #ffeada;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.taxi-card:hover {
+    background-color: #fff0e0;
+    border-color: #ffccbc;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+.taxi-name {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 4px;
+}
+
+.taxi-phone {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #e65100;
+}
+
+/* How-to-use enhancements */
+.search-explanation {
+    background: #fdfdfd;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+.exp-item {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.exp-item:last-child {
+    margin-bottom: 0;
+}
+
+.exp-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    min-width: 80px;
+    text-align: center;
+}
+
+.start-tag { background-color: #4285F4; }
+.dest-tag { background-color: #0F9D58; }
+.station-tag-small { background-color: var(--primary-color); }
+.elevator-tag-small { background-color: #FF3B30; }
+
+.step-bullets {
+    margin-top: 10px;
+    padding-left: 25px;
+}
+
+.step-bullets li {
+    margin-bottom: 8px;
+}
+
+@media (max-width: 480px) {
+    .taxi-grid {
+        grid-template-columns: 1fr;
+    }
+}
+

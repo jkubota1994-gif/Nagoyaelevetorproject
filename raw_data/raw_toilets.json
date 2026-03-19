@@ -1,0 +1,2392 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-03-19T13:07:19Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 712605596,
+  "lat": 35.1184991,
+  "lon": 136.9060437,
+  "tags": {
+    "amenity": "toilets",
+    "fee": "no",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 712905855,
+  "lat": 35.1247205,
+  "lon": 136.9079996,
+  "tags": {
+    "amenity": "toilets",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 1423947258,
+  "lat": 35.1434330,
+  "lon": 136.9015420,
+  "tags": {
+    "addr:block_number": "17",
+    "addr:city": "名古屋市",
+    "addr:housenumber": "18",
+    "addr:neighbourhood": "金山1丁目",
+    "addr:postcode": "460-0022",
+    "addr:province": "愛知県",
+    "addr:suburb": "中区",
+    "amenity": "post_office",
+    "atm": "yes",
+    "name": "ループ金山郵便局",
+    "name:en": "Loop Kanayama Post Office",
+    "name:es": "Oficina de Correos de Loop Kanayama",
+    "name:ja": "ループ金山郵便局",
+    "name:ja-Hira": "るーぷかなやま ゆうびんきょく",
+    "name:pt": "Correio de Loop Kanayama",
+    "note": "National-Land Numerical Information (Public Facility) 2006, MLIT Japan",
+    "note:ja": "国土数値情報（公共施設データ）平成19年　国土交通省",
+    "opening_hours": "Mo-Fr 09:00-17:00; Sa 09:00-17:00; Su 09:00-12:30",
+    "operator": "日本郵便",
+    "operator:en": "Japan Post",
+    "operator:ja": "日本郵便",
+    "operator:short": "郵便局",
+    "operator:short:en": "JP",
+    "operator:short:ja": "郵便局",
+    "operator:wikidata": "Q11509260",
+    "phone": "+81 52-323-0151",
+    "source": "KSJ2",
+    "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-P02-v2_0.html",
+    "toilets:wheelchair": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 1423948307,
+  "lat": 35.1415910,
+  "lon": 136.8550790,
+  "tags": {
+    "addr:full": "名古屋市中川区高畑1-223",
+    "addr:postcode": "454-8501",
+    "amenity": "townhall",
+    "name": "中川区役所",
+    "name:en": "Nakagawa Ward",
+    "name:es": "Ayuntamiento de Nakagawa",
+    "name:ja": "中川区",
+    "note": "National-Land Numerical Information (Public Facility) 2006, MLIT Japan",
+    "note:ja": "国土数値情報（公共施設データ）平成19年　国土交通省",
+    "opening_hours": "Mo-Fr 08:45-17:15; PH off",
+    "phone": "+81-52-3621111",
+    "source": "KSJ2;(URL)",
+    "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-P02-v2_0.html",
+    "website": "https://www.city.nagoya.jp/nakagawa/",
+    "wheelchair": "yes",
+    "wikidata": "Q1155226",
+    "wikipedia": "ja:中川区"
+  }
+},
+{
+  "type": "node",
+  "id": 1423949094,
+  "lat": 35.2455790,
+  "lon": 136.8659630,
+  "tags": {
+    "addr:postcode": "481-8531",
+    "amenity": "townhall",
+    "fax": "+81-568-251800",
+    "name": "北名古屋市役所",
+    "name:en": "Kitanagoya City Hall",
+    "name:ja": "北名古屋市役所",
+    "note": "National-Land Numerical Information (Public Facility) 2006, MLIT Japan",
+    "note:ja": "国土数値情報（公共施設データ）平成19年　国土交通省",
+    "opening_hours": "Mo-Fr 08:30-17:15; PH off",
+    "phone": "+81-568-221111",
+    "source": "KSJ2;(URL)",
+    "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-P02-v2_0.html",
+    "website": "https://www.city.kitanagoya.lg.jp/",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 1423950183,
+  "lat": 35.1573568,
+  "lon": 136.9212989,
+  "tags": {
+    "amenity": "hospital",
+    "emergency": "yes",
+    "healthcare": "hospital",
+    "name": "名古屋大学医学部附属病院",
+    "name:en": "Nagoya University Hospital",
+    "name:ja-Hira": "なごやだいがくいがくぶふぞくびょういん",
+    "name:ja-Latn": "Nagoya Daigaku Igakubu Fuzoku Byōin",
+    "note": "National-Land Numerical Information (Public Facility) 2006, MLIT Japan",
+    "note:ja": "国土数値情報（公共施設データ）平成19年　国土交通省",
+    "source": "KSJ2",
+    "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-P02-v2_0.html",
+    "toilets:wheelchair": "yes",
+    "website": "https://www.med.nagoya-u.ac.jp/hospital/",
+    "wheelchair": "yes",
+    "wikidata": "Q11414908",
+    "wikimedia_commons": "Category:Nagoya University Hospital",
+    "wikipedia": "ja:名古屋大学医学部附属病院"
+  }
+},
+{
+  "type": "node",
+  "id": 1423950185,
+  "lat": 35.1574830,
+  "lon": 136.9206200,
+  "tags": {
+    "addr:block_number": "65",
+    "addr:city": "名古屋市",
+    "addr:neighbourhood": "鶴舞",
+    "addr:postcode": "466-0065",
+    "addr:province": "愛知県",
+    "addr:suburb": "昭和区",
+    "amenity": "post_office",
+    "level": "0",
+    "name": "名古屋大学病院内郵便局",
+    "name:en": "Nagoya Daigakubyoin-nai Post Office",
+    "name:es": "Oficina de Correos de Nagoya Daigakubyoin-nai",
+    "name:ja": "名古屋大学病院内郵便局",
+    "name:ja-Hira": "なごや だいがくびょういんない ゆうびんきょく",
+    "name:pt": "Correio de Nagoya Daigakubyoin-nai",
+    "note": "National-Land Numerical Information (Public Facility) 2006, MLIT Japan",
+    "note:ja": "国土数値情報（公共施設データ）平成19年　国土交通省",
+    "opening_hours": "Mo-Fr 09:00-17:00",
+    "operator": "日本郵便",
+    "operator:en": "Japan Post",
+    "operator:ja": "日本郵便",
+    "operator:short": "郵便局",
+    "operator:short:en": "JP",
+    "operator:short:ja": "郵便局",
+    "operator:wikidata": "Q11509260",
+    "phone": "+81-52-731-9732",
+    "source": "KSJ2",
+    "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-P02-v2_0.html",
+    "toilets:wheelchair": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 1423950541,
+  "lat": 35.1813862,
+  "lon": 136.9063875,
+  "tags": {
+    "addr:full": "愛知県名古屋市中区三の丸3-1-1",
+    "addr:postcode": "460-8508",
+    "amenity": "townhall",
+    "name": "名古屋市役所 (Nagoya City Hall)",
+    "name:en": "Nagoya City Hall",
+    "name:ja": "名古屋市役所",
+    "name:ja-Hira": "なごやしやくしょ",
+    "name:zh": "名古屋市公所",
+    "note": "National-Land Numerical Information (Public Facility) 2006, MLIT Japan",
+    "note:ja": "国土数値情報（公共施設データ）平成19年 国土交通省",
+    "opening_hours": "Mo-Fr 08:45-17:15; PH off",
+    "phone": "+81-52-9611111",
+    "source": "KSJ2;(URL)",
+    "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-P02-v2_0.html",
+    "townhall:type": "city",
+    "website": "https://www.city.nagoya.jp/",
+    "wheelchair": "yes",
+    "wikidata": "Q4352786",
+    "wikipedia": "ja:名古屋市役所"
+  }
+},
+{
+  "type": "node",
+  "id": 1423950683,
+  "lat": 35.1220722,
+  "lon": 136.9412923,
+  "tags": {
+    "addr:city": "名古屋市",
+    "addr:housenumber": "29番地",
+    "addr:neighbourhood": "3丁目",
+    "addr:province": "愛知県",
+    "addr:quarter": "豊岡通",
+    "addr:suburb": "瑞穂区",
+    "amenity": "library",
+    "level": "0",
+    "name": "名古屋市瑞穂図書館",
+    "note:ja": "国土数値情報（公共施設データ）平成19年　国土交通省",
+    "operator": "名古屋市",
+    "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-P02-v2_0.html",
+    "wheelchair": "yes",
+    "wikidata": "Q28491756",
+    "wikimedia_commons": "Category:Nagoya City Mizuho Library",
+    "wikipedia": "ja:名古屋市瑞穂図書館"
+  }
+},
+{
+  "type": "node",
+  "id": 1423952515,
+  "lat": 35.2032820,
+  "lon": 136.9765380,
+  "tags": {
+    "addr:full": "名古屋市守山区小幡1-3-1",
+    "addr:postcode": "463-8510",
+    "amenity": "townhall",
+    "name": "守山区役所",
+    "name:en": "Moriyama Ward Hall",
+    "name:ja": "守山区役所",
+    "note": "National-Land Numerical Information (Public Facility) 2006, MLIT Japan",
+    "note:ja": "国土数値情報（公共施設データ）平成19年　国土交通省",
+    "opening_hours": "Mo-Fr 08:45-17:15; PH off",
+    "phone": "+81-52-7933434",
+    "source": "KSJ2;(URL)",
+    "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-P02-v2_0.html",
+    "website": "https://www.city.nagoya.jp/moriyama/",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 1423987244,
+  "lat": 35.1501832,
+  "lon": 136.9341432,
+  "tags": {
+    "addr:full": "名古屋市昭和区阿由知通3-19",
+    "addr:postcode": "466-8585",
+    "amenity": "townhall",
+    "name": "昭和区役所",
+    "name:en": "Showa Ward Office",
+    "name:ja": "昭和区役所",
+    "name:km": "សាលាខណ្ឌ ស្យូវ៉ា",
+    "note": "National-Land Numerical Information (Public Facility) 2006, MLIT Japan",
+    "note:ja": "国土数値情報（公共施設データ）平成19年　国土交通省",
+    "opening_hours": "Mo-Fr 08:45-17:15; PH off",
+    "phone": "+81-52-7311511",
+    "source": "KSJ2;(URL)",
+    "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-P02-v2_0.html",
+    "website": "https://www.city.nagoya.jp/showa/",
+    "wheelchair": "yes",
+    "wikidata": "Q1155273",
+    "wikipedia": "ja:昭和区"
+  }
+},
+{
+  "type": "node",
+  "id": 1423987590,
+  "lat": 35.1793222,
+  "lon": 136.9260145,
+  "tags": {
+    "addr:full": "名古屋市東区筒井1-7-74",
+    "addr:postcode": "461-8640",
+    "amenity": "townhall",
+    "name": "東区役所",
+    "name:en": "Higashi Ward",
+    "name:ja": "東区役所",
+    "note": "National-Land Numerical Information (Public Facility) 2006, MLIT Japan",
+    "note:ja": "国土数値情報（公共施設データ）平成19年　国土交通省",
+    "opening_hours": "Mo-Fr 08:45-17:15; PH off",
+    "phone": "+81-52-9352271",
+    "source": "KSJ2; (URL)",
+    "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-P02-v2_0.html",
+    "website": "https://www.city.nagoya.jp/higashi/",
+    "wheelchair": "yes",
+    "wikidata": "Q578824",
+    "wikipedia": "ja:東区 (名古屋市)"
+  }
+},
+{
+  "type": "node",
+  "id": 1423991210,
+  "lat": 35.1077630,
+  "lon": 136.8856050,
+  "tags": {
+    "amenity": "townhall",
+    "name": "港区役所",
+    "name:en": "Minato Ward Hall",
+    "name:ja": "港区役所",
+    "note": "National-Land Numerical Information (Public Facility) 2006, MLIT Japan",
+    "note:ja": "国土数値情報（公共施設データ）平成19年　国土交通省",
+    "opening_hours": "Mo-Fr 08:45-17:15; PH off",
+    "phone": "+81-52-6513251",
+    "source": "KSJ2; (URL)",
+    "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-P02-v2_0.html",
+    "website": "https://www.city.nagoya.jp/minato/",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 1423991859,
+  "lat": 35.1285370,
+  "lon": 136.9102300,
+  "tags": {
+    "addr:full": "名古屋市熱田区神宮3-1-15",
+    "addr:postcode": "456-8501",
+    "amenity": "townhall",
+    "name": "熱田区役所",
+    "name:en": "Atsuta Ward",
+    "name:ja": "熱田区",
+    "note": "National-Land Numerical Information (Public Facility) 2006, MLIT Japan",
+    "note:ja": "国土数値情報（公共施設データ）平成19年　国土交通省",
+    "opening_hours": "Mo-Fr 08:45-17:15; PH off",
+    "phone": "+81-52-6811431",
+    "source": "KSJ2",
+    "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-P02-v2_0.html",
+    "website": "https://www.city.nagoya.jp/atsuta/",
+    "wheelchair": "yes",
+    "wikidata": "Q56876286",
+    "wikimedia_commons": "Category:Nagoya City Atsuta Ward Office"
+  }
+},
+{
+  "type": "node",
+  "id": 1423992605,
+  "lat": 35.1314667,
+  "lon": 136.9349491,
+  "tags": {
+    "addr:full": "名古屋市瑞穂区瑞穂通3-32",
+    "addr:postcode": "467-8531",
+    "amenity": "townhall",
+    "name": "瑞穂区役所",
+    "name:en": "Mizuho Ward Hall",
+    "name:ja": "瑞穂区役所",
+    "note": "National-Land Numerical Information (Public Facility) 2006, MLIT Japan",
+    "note:ja": "国土数値情報（公共施設データ）平成19年　国土交通省",
+    "opening_hours": "Mo-Fr 08:45-17:15; PH off",
+    "phone": "+81-52-8411521",
+    "source": "KSJ2; (URL)",
+    "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-P02-v2_0.html",
+    "website": "https://www.city.nagoya.jp/mizuho/",
+    "wheelchair": "yes",
+    "wikidata": "Q1207957",
+    "wikipedia": "ja:瑞穂区"
+  }
+},
+{
+  "type": "node",
+  "id": 1423996086,
+  "lat": 35.0708253,
+  "lon": 136.9523336,
+  "tags": {
+    "addr:full": "名古屋市緑区青山2-15",
+    "addr:postcode": "458-8585",
+    "amenity": "townhall",
+    "name": "緑区役所",
+    "name:en": "Midori Ward Hall",
+    "name:ja": "緑区役所",
+    "note": "National-Land Numerical Information (Public Facility) 2006, MLIT Japan",
+    "note:ja": "国土数値情報（公共施設データ）平成19年　国土交通省",
+    "opening_hours": "Mo-Fr 08:45-17:15; PH off",
+    "phone": "+81-52-6212111",
+    "source": "KSJ2; (URL)",
+    "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-P02-v2_0.html",
+    "website": "https://www.city.nagoya.jp/midori/",
+    "wheelchair": "yes",
+    "wikidata": "Q96632107",
+    "wikimedia_commons": "Category:Nagoya City Midori Ward Office"
+  }
+},
+{
+  "type": "node",
+  "id": 1766090940,
+  "lat": 35.1344933,
+  "lon": 136.9648024,
+  "tags": {
+    "brand": "ヤマナカ",
+    "brand:en": "Yamanaka",
+    "brand:ja": "ヤマナカ",
+    "brand:wikidata": "Q11345199",
+    "brand:wikipedia": "ja:ヤマナカ",
+    "name": "ヤマナカ",
+    "name:en": "Yamanaka",
+    "name:ja": "ヤマナカ",
+    "shop": "supermarket",
+    "toilets:wheelchair": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 1872259431,
+  "lat": 35.1719437,
+  "lon": 136.8789505,
+  "tags": {
+    "addr:block_number": "1",
+    "addr:city": "名古屋市",
+    "addr:housenumber": "23",
+    "addr:neighbourhood": "椿町",
+    "addr:postcode": "453-0015",
+    "addr:province": "愛知県",
+    "addr:suburb": "中村区",
+    "branch": "名古屋新幹線口",
+    "fax": "+81 52-452-7056",
+    "name": "ダイワロイネットホテル",
+    "name:en": "Daiwa Roynet Hotel Nagoya Shinkansenguchi",
+    "name:ja": "ダイワロイネットホテル 名古屋新幹線口",
+    "phone": "+81 52-452-7055",
+    "toilets:wheelchair": "yes",
+    "tourism": "hotel",
+    "website": "https://www.daiwaroynet.jp/nagoya-shinkansenguchi/",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2076963569,
+  "lat": 35.1571355,
+  "lon": 136.9216662,
+  "tags": {
+    "addr:full": "愛知県名古屋市昭和区鶴舞町65",
+    "atm": "no",
+    "branch": "S名大病院病棟",
+    "brand": "ローソン",
+    "brand:en": "LAWSON",
+    "brand:ja": "ローソン",
+    "brand:wikidata": "Q1557223",
+    "brand:wikipedia": "ja:ローソン",
+    "internet_access": "wlan",
+    "level": "0",
+    "name": "ローソン",
+    "name:en": "Lawson",
+    "name:ja": "ローソン",
+    "name:ja_rm": "Rōson",
+    "name:ko": "로손",
+    "opening_hours": "Mo-Su 08:0-19:00",
+    "operator": "ローソン",
+    "phone": "+81-52-7442889",
+    "shop": "convenience",
+    "source": "(URL) 2012",
+    "toilets:wheelchair": "yes",
+    "website": "https://www.lawson.co.jp/",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2076963570,
+  "lat": 35.1577602,
+  "lon": 136.9209802,
+  "tags": {
+    "addr:full": "愛知県名古屋市昭和区鶴舞町65",
+    "atm": "yes",
+    "branch": "名古屋大学病院",
+    "brand": "ローソン",
+    "brand:en": "LAWSON",
+    "brand:ja": "ローソン",
+    "brand:wikidata": "Q1557223",
+    "brand:wikipedia": "ja:ローソン",
+    "internet_access": "wlan",
+    "level": "0",
+    "name": "ローソン",
+    "name:en": "Lawson",
+    "name:ja": "ローソン",
+    "name:ja_rm": "Rōson",
+    "name:ko": "로손",
+    "opening_hours": "Mo-Su 07:30-19:30",
+    "operator": "ローソン",
+    "phone": "+81-52-7442938",
+    "shop": "convenience",
+    "source": "Bing 2010; (URL) 2012",
+    "toilets:wheelchair": "yes",
+    "website": "https://www.lawson.co.jp/",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2076963571,
+  "lat": 35.1577803,
+  "lon": 136.9222987,
+  "tags": {
+    "addr:full": "愛知県名古屋市昭和区鶴舞町65",
+    "atm": "no",
+    "branch": "S名大病院研究棟",
+    "brand": "ローソン",
+    "brand:en": "LAWSON",
+    "brand:ja": "ローソン",
+    "brand:wikidata": "Q1557223",
+    "brand:wikipedia": "ja:ローソン",
+    "internet_access": "wlan",
+    "level": "0",
+    "name": "ローソン",
+    "name:en": "Lawson",
+    "name:ja": "ローソン",
+    "name:ja_rm": "Rōson",
+    "name:ko": "로손",
+    "opening_hours": "Mo-Su 08:0-19:00",
+    "operator": "ローソン",
+    "phone": "+81-52-7442890",
+    "shop": "convenience",
+    "source": "Bing 2010; (URL) 2012",
+    "toilets:wheelchair": "yes",
+    "website": "https://www.lawson.co.jp/",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2397340272,
+  "lat": 35.1715111,
+  "lon": 136.9016567,
+  "tags": {
+    "amenity": "toilets",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2397672342,
+  "lat": 35.1637875,
+  "lon": 136.9010952,
+  "tags": {
+    "amenity": "toilets",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2397672345,
+  "lat": 35.1691911,
+  "lon": 136.8974289,
+  "tags": {
+    "amenity": "toilets",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2397672346,
+  "lat": 35.1706316,
+  "lon": 136.9116200,
+  "tags": {
+    "amenity": "toilets",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2397672348,
+  "lat": 35.1724418,
+  "lon": 136.9081095,
+  "tags": {
+    "amenity": "toilets",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2397672349,
+  "lat": 35.1733508,
+  "lon": 136.8970955,
+  "tags": {
+    "amenity": "toilets",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2397672350,
+  "lat": 35.1737538,
+  "lon": 136.9080544,
+  "tags": {
+    "amenity": "toilets",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2399117374,
+  "lat": 35.1767700,
+  "lon": 136.9081060,
+  "tags": {
+    "amenity": "toilets",
+    "check_date": "2024-11-24",
+    "check_date:wheelchair": "2024-11-24",
+    "fee": "no",
+    "name": "公衆トイレ",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2604179316,
+  "lat": 35.1721610,
+  "lon": 136.8871130,
+  "tags": {
+    "name": "ロイヤルパークホテル THE 名古屋",
+    "toilets:wheelchair": "yes",
+    "tourism": "hotel",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2619339428,
+  "lat": 35.0499680,
+  "lon": 136.8508100,
+  "tags": {
+    "amenity": "toilets",
+    "source": "survey, 2014/1/12",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3585146258,
+  "lat": 35.1578468,
+  "lon": 136.9742399,
+  "tags": {
+    "amenity": "toilets",
+    "toilets:disposal": "flush",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3585278294,
+  "lat": 35.1554004,
+  "lon": 136.9795472,
+  "tags": {
+    "amenity": "toilets",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3599997851,
+  "lat": 35.2200284,
+  "lon": 137.0291352,
+  "tags": {
+    "access": "yes",
+    "amenity": "toilets",
+    "check_date": "2023-11-23",
+    "fee": "no",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3600039998,
+  "lat": 35.2218345,
+  "lon": 137.0263809,
+  "tags": {
+    "amenity": "toilets",
+    "check_date": "2023-11-23",
+    "fee": "no",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 4856569012,
+  "lat": 35.0460688,
+  "lon": 136.9853491,
+  "tags": {
+    "amenity": "toilets",
+    "changing_table": "yes",
+    "fee": "no",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5214024834,
+  "lat": 35.1439240,
+  "lon": 136.9019661,
+  "tags": {
+    "KSJ2:LIN": "4号線名城線",
+    "KSJ2:STN": "金山",
+    "name": "金山",
+    "name:en": "Kanayama",
+    "name:ja": "金山",
+    "note": "National-Land Numerical Information (Railway) 2007, MLIT Japan",
+    "note:ja": "国土数値情報（鉄道データ）平成19年　国土交通省",
+    "operator:website": "https://www.kotsu.city.nagoya.jp/",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "E01",
+    "source": "KSJ2",
+    "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-N02-v1_1.html",
+    "station": "subway",
+    "subway": "yes",
+    "toilets:wheelchair": "yes",
+    "website": "https://www.kotsu.city.nagoya.jp/jp/pc/subway/station_top.html?name=%E9%87%91%E5%B1%B1",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5214024835,
+  "lat": 35.1441388,
+  "lon": 136.9021014,
+  "tags": {
+    "KSJ2:STN": "金山",
+    "local_ref": "3",
+    "name": "金山",
+    "name:en": "Kanayama",
+    "name:ja": "金山",
+    "name:ko": "가나야마",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "ref": "E01",
+    "subway": "yes",
+    "toilets:wheelchair": "yes",
+    "wheelchair": "yes",
+    "wikidata": "Q1190105",
+    "wikipedia": "ja:金山駅 (愛知県)"
+  }
+},
+{
+  "type": "node",
+  "id": 5214024836,
+  "lat": 35.1441568,
+  "lon": 136.9020563,
+  "tags": {
+    "KSJ2:STN": "金山",
+    "local_ref": "4",
+    "name": "金山",
+    "name:en": "Kanayama",
+    "name:ja": "金山",
+    "name:ko": "가나야마 역",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "ref": "M01",
+    "subway": "yes",
+    "toilets:wheelchair": "yes",
+    "wheelchair": "yes",
+    "wikidata": "Q1190105",
+    "wikipedia": "ja:金山駅 (愛知県)"
+  }
+},
+{
+  "type": "node",
+  "id": 5242329230,
+  "lat": 35.2454536,
+  "lon": 136.9699685,
+  "tags": {
+    "amenity": "toilets",
+    "check_date": "2023-11-28",
+    "fee": "no",
+    "toilets:disposal": "flush",
+    "toilets:handwashing": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5553658313,
+  "lat": 35.1839673,
+  "lon": 136.9028992,
+  "tags": {
+    "amenity": "toilets",
+    "fee": "no",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5554205092,
+  "lat": 35.1839270,
+  "lon": 136.9004028,
+  "tags": {
+    "access": "yes",
+    "amenity": "toilets",
+    "changing_table": "yes",
+    "check_date": "2022-10-01",
+    "fee": "no",
+    "toilets:disposal": "flush",
+    "toilets:handwashing": "yes",
+    "toilets:position": "seated;urinal",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 5929413287,
+  "lat": 35.1276772,
+  "lon": 136.9013801,
+  "tags": {
+    "amenity": "toilets",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6515864586,
+  "lat": 35.1420208,
+  "lon": 136.8701744,
+  "tags": {
+    "amenity": "toilets",
+    "opening_hours": "24/7",
+    "toilets:disposal": "flush",
+    "toilets:position": "seated",
+    "unisex": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 6689865382,
+  "lat": 35.1687934,
+  "lon": 136.8823940,
+  "tags": {
+    "KSJ2:LIN": "西名古屋港線",
+    "name": "名古屋",
+    "name:en": "Nagoya",
+    "name:ko": "나고야",
+    "note": "National-Land Numerical Information (Railway) 2007, MLIT Japan",
+    "note:ja": "国土数値情報（鉄道データ）平成19年　国土交通省",
+    "operator": "東海旅客鉄道",
+    "operator:en": "Central Japan Railway Company",
+    "operator:ja": "東海旅客鉄道",
+    "public_transport": "station",
+    "railway": "station",
+    "source": "KSJ2",
+    "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-N02-v1_1.html",
+    "toilets:wheelchair": "yes",
+    "train": "yes",
+    "website": "https://www.aonamiline.co.jp/pc/stinfo_nagoya.html",
+    "wheelchair": "yes",
+    "wikidata": "Q49381",
+    "wikipedia": "ja:名古屋駅"
+  }
+},
+{
+  "type": "node",
+  "id": 7345757593,
+  "lat": 35.0053610,
+  "lon": 136.9499875,
+  "tags": {
+    "addr:city": "大府市",
+    "addr:postcode": "474-0038",
+    "addr:province": "愛知県",
+    "addr:quarter": "森岡町",
+    "amenity": "library",
+    "name": "森岡公民館",
+    "operator": "大府市",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 7785976128,
+  "lat": 35.1436062,
+  "lon": 136.9018137,
+  "tags": {
+    "KSJ2:STN": "金山",
+    "local_ref": "1",
+    "name": "金山",
+    "name:en": "Kanayama",
+    "name:ja": "金山",
+    "name:ko": "가나야마 역",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "ref": "M01",
+    "subway": "yes",
+    "toilets:wheelchair": "yes",
+    "wheelchair": "yes",
+    "wikidata": "Q1190105",
+    "wikipedia": "ja:金山駅 (愛知県)"
+  }
+},
+{
+  "type": "node",
+  "id": 7795652856,
+  "lat": 35.1436230,
+  "lon": 136.9017717,
+  "tags": {
+    "KSJ2:STN": "金山",
+    "local_ref": "2",
+    "name": "金山",
+    "name:en": "Kanayama",
+    "name:ja": "金山",
+    "name:ko": "가나야마",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "ref": "E01",
+    "subway": "yes",
+    "toilets:wheelchair": "yes",
+    "wheelchair": "yes",
+    "wikidata": "Q1190105",
+    "wikipedia": "ja:金山駅 (愛知県)"
+  }
+},
+{
+  "type": "node",
+  "id": 7838499616,
+  "lat": 35.0197172,
+  "lon": 137.0409995,
+  "tags": {
+    "amenity": "toilets",
+    "changing_table": "no",
+    "unisex": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 7838544077,
+  "lat": 35.0010199,
+  "lon": 137.0262205,
+  "tags": {
+    "access": "yes",
+    "amenity": "toilets",
+    "changing_table": "yes",
+    "unisex": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 7838555403,
+  "lat": 35.0003462,
+  "lon": 137.0469157,
+  "tags": {
+    "access": "yes",
+    "amenity": "toilets",
+    "changing_table": "no",
+    "unisex": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 7838565885,
+  "lat": 35.0037400,
+  "lon": 137.0489028,
+  "tags": {
+    "access": "yes",
+    "amenity": "toilets",
+    "changing_table": "no",
+    "unisex": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 7839051600,
+  "lat": 35.0021240,
+  "lon": 137.0377981,
+  "tags": {
+    "access": "yes",
+    "amenity": "toilets",
+    "changing_table": "yes",
+    "unisex": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 7846075237,
+  "lat": 35.0060158,
+  "lon": 137.0371090,
+  "tags": {
+    "access": "yes",
+    "amenity": "toilets",
+    "changing_table": "yes",
+    "unisex": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 7846130652,
+  "lat": 35.0060652,
+  "lon": 137.0304044,
+  "tags": {
+    "access": "yes",
+    "amenity": "toilets",
+    "changing_table": "yes",
+    "unisex": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 8227054014,
+  "lat": 35.0110661,
+  "lon": 136.9522393,
+  "tags": {
+    "amenity": "toilets",
+    "toilets:disposal": "flush",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 10870092499,
+  "lat": 35.1767880,
+  "lon": 136.9081567,
+  "tags": {
+    "access": "yes",
+    "amenity": "toilets",
+    "changing_table": "yes",
+    "check_date": "2023-05-05",
+    "fee": "no",
+    "source": "survey",
+    "toilets:disposal": "flush",
+    "toilets:handwashing": "yes",
+    "toilets:position": "sitting;urinal;seated;urinals",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 10931069029,
+  "lat": 35.1703224,
+  "lon": 136.9096232,
+  "tags": {
+    "amenity": "toilets",
+    "fee": "no",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11061267042,
+  "lat": 35.1165877,
+  "lon": 136.9632993,
+  "tags": {
+    "amenity": "toilets",
+    "check_date": "2023-07-22",
+    "toilets:disposal": "flush",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11119442690,
+  "lat": 35.2073630,
+  "lon": 136.9512286,
+  "tags": {
+    "access": "customers",
+    "amenity": "toilets",
+    "female": "yes",
+    "male": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11293048507,
+  "lat": 35.2140104,
+  "lon": 136.9748564,
+  "tags": {
+    "amenity": "toilets",
+    "fee": "no",
+    "unisex": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11299380671,
+  "lat": 35.2321860,
+  "lon": 136.9599248,
+  "tags": {
+    "amenity": "toilets",
+    "check_date": "2023-10-30",
+    "toilets:disposal": "flush",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11355880525,
+  "lat": 35.2278007,
+  "lon": 136.9572809,
+  "tags": {
+    "amenity": "toilets",
+    "check_date": "2023-11-16",
+    "toilets:disposal": "flush",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11442637194,
+  "lat": 35.1676640,
+  "lon": 137.0192185,
+  "tags": {
+    "access": "yes",
+    "amenity": "toilets",
+    "changing_table": "no",
+    "check_date": "2023-12-22",
+    "operator": "名古屋市名東区土木事務所",
+    "start_date": "2020-02",
+    "toilets:disposal": "flush",
+    "toilets:handwashing": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11601844813,
+  "lat": 35.2430746,
+  "lon": 136.9778613,
+  "tags": {
+    "amenity": "toilets",
+    "check_date": "2024-02-09",
+    "toilets:disposal": "flush",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11943889576,
+  "lat": 35.2310621,
+  "lon": 136.9691890,
+  "tags": {
+    "amenity": "toilets",
+    "check_date": "2024-05-29",
+    "toilets:disposal": "flush",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11943889578,
+  "lat": 35.2231826,
+  "lon": 136.9622301,
+  "tags": {
+    "amenity": "toilets",
+    "check_date": "2024-05-29",
+    "toilets:disposal": "flush",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11943889583,
+  "lat": 35.2263406,
+  "lon": 136.9571605,
+  "tags": {
+    "amenity": "toilets",
+    "check_date": "2024-05-29",
+    "toilets:disposal": "flush",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11971960710,
+  "lat": 35.2430643,
+  "lon": 136.9962802,
+  "tags": {
+    "amenity": "toilets",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12123247443,
+  "lat": 35.1724602,
+  "lon": 136.9086029,
+  "tags": {
+    "access": "permissive",
+    "amenity": "toilets",
+    "changing_table": "no",
+    "check_date": "2024-08-21",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 12849733019,
+  "lat": 35.1891935,
+  "lon": 136.9038346,
+  "tags": {
+    "access": "yes",
+    "amenity": "toilets",
+    "fee": "no",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 57359998,
+  "center": {
+    "lat": 35.1259416,
+    "lon": 136.9007979
+  },
+  "nodes": [
+    712891978,
+    721764754,
+    10773357051,
+    721764753,
+    721764746,
+    721764736,
+    721764729,
+    721764727,
+    712891981,
+    721764722,
+    721764721,
+    6398500018,
+    712891974,
+    712891975,
+    712891953,
+    712891954,
+    712891955,
+    712891956,
+    712891920,
+    712891921,
+    712891922,
+    712891924,
+    712891957,
+    712891785,
+    712891786,
+    712891788,
+    712891787,
+    4430186262,
+    4430186389,
+    712891793,
+    712891978
+  ],
+  "tags": {
+    "leisure": "garden",
+    "name": "白鳥庭園",
+    "note": "料金：大人300円、中学生以下無料、開園時間：9:00～16:30、定休日：月曜日、第3水曜日、年末年始",
+    "toilets:wheelchair": "yes",
+    "wheelchair": "limited",
+    "wikidata": "Q11580565",
+    "wikimedia_commons": "Category:Shirotori Garden",
+    "wikipedia": "ja:白鳥庭園"
+  }
+},
+{
+  "type": "way",
+  "id": 73419031,
+  "center": {
+    "lat": 35.1784907,
+    "lon": 136.8952233
+  },
+  "nodes": [
+    870411852,
+    5747275559,
+    5747275560,
+    870411845,
+    5747275561,
+    5747275562,
+    5747275563,
+    5747275564,
+    5747275565,
+    870411843,
+    870411841,
+    5747275566,
+    5747275567,
+    5747275568,
+    5747275569,
+    870411851,
+    5747275570,
+    5747275571,
+    5747275572,
+    5747275573,
+    870411850,
+    5747275574,
+    5747275575,
+    5747275576,
+    5747275577,
+    5747275578,
+    5747275579,
+    870411844,
+    5747275580,
+    5747275581,
+    870411842,
+    870411852
+  ],
+  "tags": {
+    "amenity": "library",
+    "building": "yes",
+    "name": "愛知芸術文化センター愛知県図書館",
+    "name:de": "Präfekturbibliothek Aichi",
+    "name:en": "Aichi Prefecture Library",
+    "name:ja": "愛知県図書館",
+    "name:ja-Hira": "あいちけんとしょかん",
+    "name:ja_rm": "Aichi-ken toshokan",
+    "note": "National-Land Numerical Information (Public Facility) 2006, MLIT Japan",
+    "note:ja": "国土数値情報（公共施設データ）平成19年 国土交通省",
+    "opening_hours": "Tu-Fr 10:00-20:00; Sa-Su 10:00-18:00",
+    "source": "KSJ2;GSI/KIBAN 2500;NARO",
+    "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-P02-v2_0.html",
+    "wheelchair": "yes",
+    "wikidata": "Q11256818",
+    "wikimedia_commons": "Category:Aichi Prefectural Library",
+    "wikipedia": "ja:愛知県図書館"
+  }
+},
+{
+  "type": "way",
+  "id": 150702453,
+  "center": {
+    "lat": 35.1610252,
+    "lon": 136.9257109
+  },
+  "nodes": [
+    12123322109,
+    12123322113,
+    12123322112,
+    12123322111,
+    12123322110,
+    12123322119,
+    12123322118,
+    12123322117,
+    12123322108,
+    12123322107,
+    12123322106,
+    12123322105,
+    12123322104,
+    12123322103,
+    12123322102,
+    12123322101,
+    12123322100,
+    12123322099,
+    12123322098,
+    12123322097,
+    12123322096,
+    12123322095,
+    12123322094,
+    12123322093,
+    12123322092,
+    12123322091,
+    12123322090,
+    12123322089,
+    12123322088,
+    12123322087,
+    12123322086,
+    12123322085,
+    12123322084,
+    12123322083,
+    12123322109
+  ],
+  "tags": {
+    "amenity": "biergarten",
+    "building": "retail",
+    "building:levels": "3",
+    "ele": "9.1",
+    "fax": "+81 52-733-9889",
+    "height": "18.9",
+    "name": "名古屋ビール園 浩養園",
+    "opening_hours": "11:30-22:00",
+    "outdoor_seating": "yes",
+    "phone": "+81 52-741-0211",
+    "smoking": "separated",
+    "source": "bing",
+    "toilets:wheelchair": "yes",
+    "website": "https://kouyouen.jp/",
+    "wheelchair": "limited",
+    "wikidata": "Q107264615",
+    "wikimedia_commons": "Category:Koyo-en (Nagoya)"
+  }
+},
+{
+  "type": "way",
+  "id": 150868528,
+  "center": {
+    "lat": 35.1758989,
+    "lon": 137.0104292
+  },
+  "nodes": [
+    1637357978,
+    1637357982,
+    1637357977,
+    1637357986,
+    1637357985,
+    1637357988,
+    1637357980,
+    1637357981,
+    1637357983,
+    1637357987,
+    1637356792,
+    1637356807,
+    1637357979,
+    1637357984,
+    1637357978
+  ],
+  "tags": {
+    "addr:full": "名古屋市名東区上社2-50",
+    "addr:postcode": "465-8508",
+    "amenity": "townhall",
+    "landuse": "commercial",
+    "name": "名東区役所",
+    "name:en": "Meito Ward Office",
+    "name:ja": "名東区役所",
+    "note": "National-Land Numerical Information (Public Facility) 2006, MLIT Japan",
+    "note:ja": "国土数値情報（公共施設データ）平成19年　国土交通省",
+    "opening_hours": "Mo-Fr 08:45-17:15; PH off",
+    "phone": "+81-52-7731111",
+    "source": "KSJ2;(URL)",
+    "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-P02-v2_0.html",
+    "website": "https://www.city.nagoya.jp/meito/",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 169788914,
+  "center": {
+    "lat": 35.1297055,
+    "lon": 136.7747912
+  },
+  "nodes": [
+    1809505964,
+    6656167595,
+    1809505963,
+    1809505961,
+    6656167594,
+    6656167593,
+    6656167592,
+    6656160961,
+    6656160962,
+    6656160963,
+    1809505965,
+    6656167596,
+    1809505964
+  ],
+  "tags": {
+    "amenity": "toilets",
+    "fee": "no",
+    "operator": "蟹江町",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 178288356,
+  "center": {
+    "lat": 35.1433775,
+    "lon": 136.9014982
+  },
+  "nodes": [
+    6354529415,
+    6354529417,
+    6354529418,
+    6354529414,
+    3750510518,
+    3750510508,
+    3750510510,
+    3750510509,
+    11880074485,
+    6354529413,
+    1886546683,
+    1886546685,
+    1886546682,
+    6354529416,
+    9555529520,
+    6354529415
+  ],
+  "tags": {
+    "building": "yes",
+    "building:levels": "3",
+    "name": "Loop金山",
+    "name:en": "Loop Kanayama",
+    "name:ja-Latn": "Lūpu Kanayama",
+    "shop": "mall",
+    "source": "bing",
+    "toilets:wheelchair": "yes",
+    "wheelchair": "limited",
+    "wikidata": "Q67814519",
+    "wikimedia_commons": "Category:Loop Kanayama"
+  }
+},
+{
+  "type": "way",
+  "id": 183128248,
+  "center": {
+    "lat": 35.1440763,
+    "lon": 136.9012757
+  },
+  "nodes": [
+    1934892107,
+    3750510519,
+    1934892004,
+    1934892023,
+    1934892040,
+    1934892050,
+    1934892068,
+    1934892082,
+    1934892089,
+    1934892119,
+    1934892107
+  ],
+  "tags": {
+    "building": "yes",
+    "building:levels": "4",
+    "name": "アスナル金山",
+    "name:en": "Asunal Kanayama",
+    "name:ja-Latn": "Asunaru Kanayama",
+    "shop": "mall",
+    "source": "bing",
+    "toilets:wheelchair": "yes",
+    "website": "https://www.asunal.jp/",
+    "wheelchair": "yes",
+    "wikidata": "Q11283552",
+    "wikimedia_commons": "Category:ASUNAL Kanayama",
+    "wikipedia": "ja:アスナル金山"
+  }
+},
+{
+  "type": "way",
+  "id": 183128250,
+  "center": {
+    "lat": 35.1439612,
+    "lon": 136.9006687
+  },
+  "nodes": [
+    1934892133,
+    3750510504,
+    3750510505,
+    3750510506,
+    9555456905,
+    3750510507,
+    1934891971,
+    1934891978,
+    1934891979,
+    1934891986,
+    1934891994,
+    1934891992,
+    1934891995,
+    1934891998,
+    1934892005,
+    1934892021,
+    1934892030,
+    1934892042,
+    1934892056,
+    12276903989,
+    1934892076,
+    1934892080,
+    1934892085,
+    1934892087,
+    1934892133
+  ],
+  "tags": {
+    "building": "yes",
+    "building:levels": "3",
+    "name": "アスナル金山",
+    "name:en": "Asunal Kanayama",
+    "name:ja-Latn": "Asunaru Kanayama",
+    "shop": "mall",
+    "source": "bing",
+    "toilets:wheelchair": "yes",
+    "website": "https://www.asunal.jp/",
+    "wheelchair": "yes",
+    "wikidata": "Q11283552",
+    "wikimedia_commons": "Category:ASUNAL Kanayama",
+    "wikipedia": "ja:アスナル金山"
+  }
+},
+{
+  "type": "way",
+  "id": 231365760,
+  "center": {
+    "lat": 35.1632060,
+    "lon": 136.9006706
+  },
+  "nodes": [
+    2397537052,
+    6398525665,
+    2397537044,
+    2397537046,
+    2397537048,
+    2397537050,
+    2397537053,
+    2397537052
+  ],
+  "tags": {
+    "amenity": "toilets",
+    "building": "yes",
+    "fee": "no",
+    "source": "GSI/KIBAN 2500",
+    "source_ref": "http://wiki.osm.org/wiki/GSI_KIBAN",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 307931335,
+  "center": {
+    "lat": 35.1664699,
+    "lon": 136.9463715
+  },
+  "nodes": [
+    3131827797,
+    3131827798,
+    3131827799,
+    6536870955,
+    3131827797
+  ],
+  "tags": {
+    "amenity": "townhall",
+    "building": "yes",
+    "building:levels": "13",
+    "ele": "24.6",
+    "height": "51.4",
+    "name": "千種区役所",
+    "name:en": "Chikusa Ward Office",
+    "name:ja": "千種区役所",
+    "source": "MLIT_PLATEAU bldg_9ce7d5ed-69dd-418c-9793-ed3b1ad73487",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 495970362,
+  "center": {
+    "lat": 35.0519409,
+    "lon": 137.0212052
+  },
+  "nodes": [
+    4876840590,
+    4876840591,
+    4876840592,
+    4876840593,
+    4876840590
+  ],
+  "tags": {
+    "amenity": "doctors",
+    "building": "yes",
+    "healthcare": "doctor",
+    "name": "大久伝内科",
+    "toilets:wheelchair": "yes",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "way",
+  "id": 500216386,
+  "center": {
+    "lat": 35.0190895,
+    "lon": 136.9474171
+  },
+  "nodes": [
+    4913235723,
+    4913235724,
+    4913235725,
+    4913235726,
+    4913235727,
+    4913235728,
+    4913235729,
+    4913235730,
+    4913235731,
+    4913235732,
+    4913235733,
+    4913235734,
+    4913235735,
+    4913235736,
+    4913235723
+  ],
+  "tags": {
+    "amenity": "library",
+    "building": "yes",
+    "name": "おおぶ文化交流の杜図書館",
+    "wheelchair": "yes",
+    "wikidata": "Q17223319",
+    "wikimedia_commons": "Category:Allobu",
+    "wikipedia": "ja:おおぶ文化交流の杜"
+  }
+},
+{
+  "type": "way",
+  "id": 529892233,
+  "center": {
+    "lat": 35.1320977,
+    "lon": 137.0394281
+  },
+  "nodes": [
+    5146794140,
+    5163376741,
+    5163376740,
+    5163376742,
+    5163376743,
+    5146794141,
+    5146794142,
+    5146794143,
+    5146794140
+  ],
+  "tags": {
+    "addr:city": "日進市",
+    "addr:housenumber": "268",
+    "addr:neighbourhood": "池下",
+    "addr:postcode": "4700192",
+    "addr:province": "愛知県",
+    "addr:quarter": "蟹甲町",
+    "amenity": "townhall",
+    "branch": "本庁舎",
+    "building": "yes",
+    "building:levels": "5",
+    "description": "市役所南側入口横の宿直室にて戸籍に関する届出の受付行います。手続きに必要な書類については市民課へお問い合わせください。土曜日・日曜日・祝日午前9時から午後5時までの間は住民票の写し・印鑑登録証明書の発行も行っております。",
+    "ele": "37",
+    "name": "日進市役所",
+    "website": "https://www.city.nisshin.lg.jp/",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 544581709,
+  "center": {
+    "lat": 35.1232100,
+    "lon": 137.0451399
+  },
+  "nodes": [
+    5264086027,
+    5273064548,
+    5273064549,
+    5264086028,
+    5264086038,
+    5264086029,
+    5273064547,
+    5273064741,
+    5273064740,
+    5273064739,
+    5273064546,
+    5273064738,
+    5264086027
+  ],
+  "tags": {
+    "addr:city": "日進市",
+    "addr:housenumber": "123-6",
+    "addr:neighbourhood": "寺脇",
+    "addr:postcode": "4700115",
+    "addr:province": "愛知県",
+    "addr:quarter": "折戸町",
+    "amenity": "community_centre",
+    "building": "yes",
+    "description": "高齢者のレクリエーション活動のための「老人福祉センター」と、児童の健全育成のための「児童館」との複合施設です。",
+    "fax": "+81 561 73 8155",
+    "level": "1",
+    "name": "日進市南部福祉会館",
+    "operator": "日進市",
+    "phone": "+81 561 73 8155",
+    "source": "local knowledge",
+    "website": "https://www.city.nisshin.lg.jp/shisetsu/kenkofukushi/nfukushikaikan.html",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 549350151,
+  "center": {
+    "lat": 35.1896551,
+    "lon": 136.8899715
+  },
+  "nodes": [
+    5306540679,
+    5306540678,
+    12281097750,
+    12281097751,
+    5306540677,
+    12281090664,
+    5306540676,
+    5306540675,
+    5306540674,
+    5306540679
+  ],
+  "tags": {
+    "amenity": "library",
+    "building": "yes",
+    "name": "名古屋市西図書館",
+    "operator": "名古屋市",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 580006863,
+  "center": {
+    "lat": 35.1840189,
+    "lon": 136.9044783
+  },
+  "nodes": [
+    5553658528,
+    5553658525,
+    5553658526,
+    5553658527,
+    5553658528
+  ],
+  "tags": {
+    "amenity": "toilets",
+    "building": "yes",
+    "fee": "no",
+    "source": "Bing",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 597961909,
+  "center": {
+    "lat": 35.1763584,
+    "lon": 136.9079215
+  },
+  "nodes": [
+    5692146241,
+    9701975741,
+    5721452844,
+    5721452850,
+    5692146242,
+    9701975737,
+    9701975761,
+    5692146243,
+    5721452851,
+    5721452848,
+    5723431572,
+    5692146244,
+    5723431575,
+    5723431569,
+    5692146245,
+    5721452849,
+    5721452846,
+    5692146246,
+    5692146247,
+    5721452845,
+    5721452847,
+    5692146248,
+    5723431570,
+    5723431576,
+    5692146241
+  ],
+  "tags": {
+    "name": "リバーパーク",
+    "name:en": "Hisaya Ōdōri Park",
+    "place": "square",
+    "toilets:wheelchair": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 600472509,
+  "center": {
+    "lat": 35.1877749,
+    "lon": 136.8993537
+  },
+  "nodes": [
+    5709812994,
+    5709812995,
+    5709812996,
+    5709812997,
+    5709812994
+  ],
+  "tags": {
+    "access": "yes",
+    "amenity": "toilets",
+    "building": "yes",
+    "fee": "no",
+    "female": "yes",
+    "male": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 600472510,
+  "center": {
+    "lat": 35.1876959,
+    "lon": 136.8993904
+  },
+  "nodes": [
+    5709812998,
+    5709812999,
+    5709813000,
+    5709813001,
+    5709812998
+  ],
+  "tags": {
+    "amenity": "toilets",
+    "building": "yes",
+    "unisex": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 672796554,
+  "center": {
+    "lat": 35.1559061,
+    "lon": 136.9209254
+  },
+  "nodes": [
+    6300447103,
+    6300447104,
+    6300447105,
+    6300447106,
+    6300447103
+  ],
+  "tags": {
+    "amenity": "toilets",
+    "building": "yes",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 776513144,
+  "center": {
+    "lat": 35.1941662,
+    "lon": 136.9115954
+  },
+  "nodes": [
+    12287301293,
+    12287301290,
+    12287301289,
+    12287301298,
+    7245090898,
+    12287301297,
+    12287301296,
+    7245090897,
+    7245090896,
+    7245090895,
+    7245090894,
+    12287301292,
+    12287301291,
+    7245090901,
+    7245090900,
+    12287301295,
+    12287301294,
+    7245090899,
+    12287301293
+  ],
+  "tags": {
+    "addr:city": "名古屋市",
+    "addr:full": "名古屋市北区清水4-17-1",
+    "addr:postcode": "462-8511",
+    "addr:province": "愛知県",
+    "addr:suburb": "北区",
+    "amenity": "townhall",
+    "building": "government",
+    "building:levels": "7",
+    "ele": "6.1",
+    "height": "36.9",
+    "name": "北区役所 (Kita Ward Hall)",
+    "name:en": "Kita Ward Hall",
+    "name:ja": "北区役所",
+    "opening_hours": "Mo-Fr 08:45-17:15; PH off",
+    "phone": "+81-52-9113131",
+    "website": "https://www.city.nagoya.jp/kita/",
+    "wheelchair": "yes",
+    "wikidata": "Q56752685",
+    "wikimedia_commons": "Category:Nagoya City Kita Ward Office",
+    "wikipedia": "ja:北区 (名古屋市)"
+  }
+},
+{
+  "type": "way",
+  "id": 1043619275,
+  "center": {
+    "lat": 35.1561953,
+    "lon": 136.9179264
+  },
+  "nodes": [
+    9604561882,
+    9604561883,
+    9604561884,
+    9604561885,
+    9604561882
+  ],
+  "tags": {
+    "access": "yes",
+    "amenity": "toilets",
+    "building": "yes",
+    "fee": "no",
+    "toilets:disposal": "flush",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1126853335,
+  "center": {
+    "lat": 35.1766667,
+    "lon": 136.8684382
+  },
+  "nodes": [
+    10303945253,
+    10303945252,
+    10303945251,
+    10303945250,
+    10303945249,
+    10303945248,
+    10303945247,
+    10303945246,
+    10303945245,
+    10303945244,
+    10303945243,
+    10303945253
+  ],
+  "tags": {
+    "addr:full": "名古屋市中村区松原町1丁目23番1",
+    "addr:postcode": "453-0021",
+    "amenity": "townhall",
+    "name": "中村区役所",
+    "name:en": "Nakamura ward office",
+    "name:ja": "中村区役所",
+    "opening_hours": "Mo-Fr 08:45-17:15; PH off",
+    "phone": "+81-52-483-8161",
+    "website": "https://www.city.nagoya.jp/nakamura/",
+    "wheelchair": "yes",
+    "wikidata": "Q780521",
+    "wikipedia": "ja:中村区"
+  }
+},
+{
+  "type": "way",
+  "id": 1218779628,
+  "center": {
+    "lat": 35.2166550,
+    "lon": 136.9849530
+  },
+  "nodes": [
+    11293208976,
+    11293208975,
+    11293208974,
+    11293208973,
+    11293208976
+  ],
+  "tags": {
+    "amenity": "toilets",
+    "building": "yes",
+    "fee": "no",
+    "female": "yes",
+    "male": "yes",
+    "toilets:disposal": "flush",
+    "toilets:position": "seated;urinal",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1263221391,
+  "center": {
+    "lat": 35.2136389,
+    "lon": 136.8721384
+  },
+  "nodes": [
+    11736790785,
+    11736790786,
+    11736790787,
+    11736790784,
+    11736790785
+  ],
+  "tags": {
+    "access": "yes",
+    "amenity": "toilets",
+    "building": "yes",
+    "ele": "3.4",
+    "height": "6.6",
+    "source": "MLIT_PLATEAU bldg_0f258af4-520f-46e9-8939-efd68982b67b",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1291199801,
+  "center": {
+    "lat": 35.0951257,
+    "lon": 136.9312101
+  },
+  "nodes": [
+    11971238924,
+    11971238933,
+    11971238932,
+    11971238931,
+    1423949270,
+    11971238929,
+    11971238928,
+    11971238927,
+    11971238926,
+    11971238925,
+    11971238924
+  ],
+  "tags": {
+    "addr:full": "名古屋市南区前浜通3-10",
+    "addr:postcode": "457-8508",
+    "amenity": "townhall",
+    "building": "government",
+    "building:levels": "3",
+    "ele": "0.3",
+    "height": "31.7",
+    "name": "南区役所",
+    "name:en": "Minami Ward Hall",
+    "name:ja": "南区役所",
+    "note": "National-Land Numerical Information (Public Facility) 2006, MLIT Japan",
+    "note:ja": "国土数値情報（公共施設データ）平成19年　国土交通省",
+    "opening_hours": "Mo-Fr 08:45-17:15; PH off",
+    "source": "MLIT_PLATEAU bldg_9d8fe003-cf7c-4378-85ba-ce30d8847f0f",
+    "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-P02-v2_0.html",
+    "website": "https://www.city.nagoya.jp/minami/",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1315664230,
+  "center": {
+    "lat": 35.1886186,
+    "lon": 136.9006341
+  },
+  "nodes": [
+    12178037158,
+    12178037161,
+    12178037160,
+    12178037159,
+    12178037158
+  ],
+  "tags": {
+    "access": "yes",
+    "amenity": "toilets",
+    "building": "yes",
+    "ele": "4.2",
+    "fee": "no",
+    "height": "3",
+    "source": "MLIT_PLATEAU bldg_3cfa5e50-94dd-458b-bc57-786178c5fe41",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1376925643,
+  "center": {
+    "lat": 35.1549872,
+    "lon": 136.9174336
+  },
+  "nodes": [
+    12749274883,
+    12749274880,
+    12749274881,
+    12749274882,
+    12749274883
+  ],
+  "tags": {
+    "access": "yes",
+    "amenity": "toilets",
+    "building": "toilets",
+    "fee": "no",
+    "toilets:disposal": "flush",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1385731135,
+  "center": {
+    "lat": 35.1869269,
+    "lon": 136.9019757
+  },
+  "nodes": [
+    12829819679,
+    12829819680,
+    12829819681,
+    12829819682,
+    12829819679
+  ],
+  "tags": {
+    "access": "yes",
+    "amenity": "toilets",
+    "building": "yes",
+    "fee": "no",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1388101615,
+  "center": {
+    "lat": 35.1887791,
+    "lon": 136.9030711
+  },
+  "nodes": [
+    5676643118,
+    12849733027,
+    12849733028,
+    12849733029,
+    5676643118
+  ],
+  "tags": {
+    "access": "yes",
+    "amenity": "toilets",
+    "building": "no",
+    "building:part": "toilets",
+    "fee": "no",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1442084132,
+  "center": {
+    "lat": 35.1973636,
+    "lon": 136.9183163
+  },
+  "nodes": [
+    13232313147,
+    13232313146,
+    13232313132,
+    13232313145,
+    13232313144,
+    13232313147
+  ],
+  "tags": {
+    "access": "customers",
+    "addr:city": "名古屋市北区",
+    "addr:country": "JP",
+    "addr:province": "愛知県",
+    "addr:street": "猿投町２番地１",
+    "amenity": "parking",
+    "building": "yes",
+    "fee": "no",
+    "name": "Feel 黒川東店",
+    "parking": "rooftop",
+    "shop": "supermarket",
+    "smoothness": "intermediate",
+    "surface": "paved",
+    "toilets": "yes",
+    "toilets:access": "customers",
+    "toilets:wheelchair": "yes",
+    "website": "https://feel-corp.jp/store/nagoya/kita/store-638.html",
+    "wikipedia": "ja:フィールコーポレーション"
+  }
+},
+{
+  "type": "way",
+  "id": 1476260649,
+  "center": {
+    "lat": 35.1895245,
+    "lon": 136.9022973
+  },
+  "nodes": [
+    13541486641,
+    13541486642,
+    13541486643,
+    13541486644,
+    13541486645,
+    13541486646,
+    13541486641
+  ],
+  "tags": {
+    "access": "yes",
+    "amenity": "toilets",
+    "fee": "no",
+    "female": "yes",
+    "indoor": "room",
+    "level": "1",
+    "male": "no",
+    "toilets:disposal": "flush",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1476260650,
+  "center": {
+    "lat": 35.1901147,
+    "lon": 136.9027881
+  },
+  "nodes": [
+    13541486647,
+    13541486648,
+    13541486649,
+    13541486650,
+    13541486651,
+    13541486652,
+    13541486647
+  ],
+  "tags": {
+    "access": "yes",
+    "amenity": "toilets",
+    "fee": "no",
+    "female": "yes",
+    "indoor": "room",
+    "level": "1",
+    "male": "no",
+    "toilets:disposal": "flush",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1476260653,
+  "center": {
+    "lat": 35.1895513,
+    "lon": 136.9021500
+  },
+  "nodes": [
+    13541486661,
+    13541486662,
+    13541486663,
+    13541486664,
+    13541486665,
+    13541486666,
+    13541486661
+  ],
+  "tags": {
+    "access": "yes",
+    "amenity": "toilets",
+    "fee": "no",
+    "female": "no",
+    "indoor": "room",
+    "level": "1",
+    "male": "yes",
+    "toilets:disposal": "flush",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1476260654,
+  "center": {
+    "lat": 35.1902163,
+    "lon": 136.9026983
+  },
+  "nodes": [
+    13541486667,
+    13541486668,
+    13541486669,
+    13541486670,
+    13541486671,
+    13541486672,
+    13541486667
+  ],
+  "tags": {
+    "access": "yes",
+    "amenity": "toilets",
+    "fee": "no",
+    "female": "no",
+    "indoor": "room",
+    "level": "1",
+    "male": "yes",
+    "toilets:disposal": "flush",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1476970736,
+  "center": {
+    "lat": 35.1910543,
+    "lon": 136.9013427
+  },
+  "nodes": [
+    13546980553,
+    13546980554,
+    13546980555,
+    13546980556,
+    13546980553
+  ],
+  "tags": {
+    "amenity": "toilets",
+    "building": "yes",
+    "capacity": "3",
+    "changing_table": "yes",
+    "female": "yes",
+    "male": "yes",
+    "toilets:disposal": "flush",
+    "unisex": "yes",
+    "wheelchair": "yes"
+  }
+}
+
+  ]
+}

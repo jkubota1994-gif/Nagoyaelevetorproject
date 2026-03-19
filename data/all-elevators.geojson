@@ -720,6 +720,2039 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          136.9060437,
+          35.1184991
+        ]
+      },
+      "properties": {
+        "id": "toilet_712605596",
+        "type": "toilet",
+        "station": "熱田神宮伝馬町",
+        "location": "熱田神宮伝馬町駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9079996,
+          35.1247205
+        ]
+      },
+      "properties": {
+        "id": "toilet_712905855",
+        "type": "toilet",
+        "station": "熱田神宮西",
+        "location": "熱田神宮西駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.901542,
+          35.143433
+        ]
+      },
+      "properties": {
+        "id": "toilet_1423947258",
+        "type": "toilet",
+        "station": "金山",
+        "location": "金山駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "ループ金山郵便局",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.855079,
+          35.141591
+        ]
+      },
+      "properties": {
+        "id": "toilet_1423948307",
+        "type": "toilet",
+        "station": "高畑",
+        "location": "高畑駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "中川区役所",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.865963,
+          35.245579
+        ]
+      },
+      "properties": {
+        "id": "toilet_1423949094",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "北名古屋市役所",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9212989,
+          35.1573568
+        ]
+      },
+      "properties": {
+        "id": "toilet_1423950183",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "名古屋大学医学部附属病院",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.92062,
+          35.157483
+        ]
+      },
+      "properties": {
+        "id": "toilet_1423950185",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "名古屋大学病院内郵便局",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9063875,
+          35.1813862
+        ]
+      },
+      "properties": {
+        "id": "toilet_1423950541",
+        "type": "toilet",
+        "station": "名古屋城",
+        "location": "名古屋城駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "名古屋市役所 (Nagoya City Hall)",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9412923,
+          35.1220722
+        ]
+      },
+      "properties": {
+        "id": "toilet_1423950683",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "名古屋市瑞穂図書館",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.976538,
+          35.203282
+        ]
+      },
+      "properties": {
+        "id": "toilet_1423952515",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "守山区役所",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9341432,
+          35.1501832
+        ]
+      },
+      "properties": {
+        "id": "toilet_1423987244",
+        "type": "toilet",
+        "station": "御器所",
+        "location": "御器所駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "昭和区役所",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9260145,
+          35.1793222
+        ]
+      },
+      "properties": {
+        "id": "toilet_1423987590",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "東区役所",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.885605,
+          35.107763
+        ]
+      },
+      "properties": {
+        "id": "toilet_1423991210",
+        "type": "toilet",
+        "station": "港区役所",
+        "location": "港区役所駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "港区役所",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.91023,
+          35.128537
+        ]
+      },
+      "properties": {
+        "id": "toilet_1423991859",
+        "type": "toilet",
+        "station": "熱田神宮西",
+        "location": "熱田神宮西駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "熱田区役所",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9349491,
+          35.1314667
+        ]
+      },
+      "properties": {
+        "id": "toilet_1423992605",
+        "type": "toilet",
+        "station": "瑞穂区役所",
+        "location": "瑞穂区役所駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "瑞穂区役所",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9523336,
+          35.0708253
+        ]
+      },
+      "properties": {
+        "id": "toilet_1423996086",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "緑区役所",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9648024,
+          35.1344933
+        ]
+      },
+      "properties": {
+        "id": "toilet_1766090940",
+        "type": "toilet",
+        "station": "八事",
+        "location": "八事駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "ヤマナカ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.8789505,
+          35.1719437
+        ]
+      },
+      "properties": {
+        "id": "toilet_1872259431",
+        "type": "toilet",
+        "station": "名古屋",
+        "location": "名古屋駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "ダイワロイネットホテル",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9216662,
+          35.1571355
+        ]
+      },
+      "properties": {
+        "id": "toilet_2076963569",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "ローソン",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9209802,
+          35.1577602
+        ]
+      },
+      "properties": {
+        "id": "toilet_2076963570",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "ローソン",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9222987,
+          35.1577803
+        ]
+      },
+      "properties": {
+        "id": "toilet_2076963571",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "ローソン",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9016567,
+          35.1715111
+        ]
+      },
+      "properties": {
+        "id": "toilet_2397340272",
+        "type": "toilet",
+        "station": "伏見",
+        "location": "伏見駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9010952,
+          35.1637875
+        ]
+      },
+      "properties": {
+        "id": "toilet_2397672342",
+        "type": "toilet",
+        "station": "大須観音",
+        "location": "大須観音駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.8974289,
+          35.1691911
+        ]
+      },
+      "properties": {
+        "id": "toilet_2397672345",
+        "type": "toilet",
+        "station": "伏見",
+        "location": "伏見駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.91162,
+          35.1706316
+        ]
+      },
+      "properties": {
+        "id": "toilet_2397672346",
+        "type": "toilet",
+        "station": "栄",
+        "location": "栄駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9081095,
+          35.1724418
+        ]
+      },
+      "properties": {
+        "id": "toilet_2397672348",
+        "type": "toilet",
+        "station": "久屋大通",
+        "location": "久屋大通駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.8970955,
+          35.1733508
+        ]
+      },
+      "properties": {
+        "id": "toilet_2397672349",
+        "type": "toilet",
+        "station": "丸の内",
+        "location": "丸の内駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9080544,
+          35.1737538
+        ]
+      },
+      "properties": {
+        "id": "toilet_2397672350",
+        "type": "toilet",
+        "station": "久屋大通",
+        "location": "久屋大通駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.908106,
+          35.17677
+        ]
+      },
+      "properties": {
+        "id": "toilet_2399117374",
+        "type": "toilet",
+        "station": "久屋大通",
+        "location": "久屋大通駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "公衆トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.887113,
+          35.172161
+        ]
+      },
+      "properties": {
+        "id": "toilet_2604179316",
+        "type": "toilet",
+        "station": "国際センター",
+        "location": "国際センター駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "ロイヤルパークホテル THE 名古屋",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.85081,
+          35.049968
+        ]
+      },
+      "properties": {
+        "id": "toilet_2619339428",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9742399,
+          35.1578468
+        ]
+      },
+      "properties": {
+        "id": "toilet_3585146258",
+        "type": "toilet",
+        "station": "東山公園",
+        "location": "東山公園駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9795472,
+          35.1554004
+        ]
+      },
+      "properties": {
+        "id": "toilet_3585278294",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.0291352,
+          35.2200284
+        ]
+      },
+      "properties": {
+        "id": "toilet_3599997851",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.0263809,
+          35.2218345
+        ]
+      },
+      "properties": {
+        "id": "toilet_3600039998",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9853491,
+          35.0460688
+        ]
+      },
+      "properties": {
+        "id": "toilet_4856569012",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9019661,
+          35.143924
+        ]
+      },
+      "properties": {
+        "id": "toilet_5214024834",
+        "type": "toilet",
+        "station": "金山",
+        "location": "金山駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "金山",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9021014,
+          35.1441388
+        ]
+      },
+      "properties": {
+        "id": "toilet_5214024835",
+        "type": "toilet",
+        "station": "金山",
+        "location": "金山駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "金山",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9020563,
+          35.1441568
+        ]
+      },
+      "properties": {
+        "id": "toilet_5214024836",
+        "type": "toilet",
+        "station": "金山",
+        "location": "金山駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "金山",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9699685,
+          35.2454536
+        ]
+      },
+      "properties": {
+        "id": "toilet_5242329230",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9028992,
+          35.1839673
+        ]
+      },
+      "properties": {
+        "id": "toilet_5553658313",
+        "type": "toilet",
+        "station": "名古屋城",
+        "location": "名古屋城駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9004028,
+          35.183927
+        ]
+      },
+      "properties": {
+        "id": "toilet_5554205092",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9013801,
+          35.1276772
+        ]
+      },
+      "properties": {
+        "id": "toilet_5929413287",
+        "type": "toilet",
+        "station": "熱田神宮西",
+        "location": "熱田神宮西駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.8701744,
+          35.1420208
+        ]
+      },
+      "properties": {
+        "id": "toilet_6515864586",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.882394,
+          35.1687934
+        ]
+      },
+      "properties": {
+        "id": "toilet_6689865382",
+        "type": "toilet",
+        "station": "名古屋",
+        "location": "名古屋駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "名古屋",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9499875,
+          35.005361
+        ]
+      },
+      "properties": {
+        "id": "toilet_7345757593",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "森岡公民館",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9018137,
+          35.1436062
+        ]
+      },
+      "properties": {
+        "id": "toilet_7785976128",
+        "type": "toilet",
+        "station": "金山",
+        "location": "金山駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "金山",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9017717,
+          35.143623
+        ]
+      },
+      "properties": {
+        "id": "toilet_7795652856",
+        "type": "toilet",
+        "station": "金山",
+        "location": "金山駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "金山",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.0409995,
+          35.0197172
+        ]
+      },
+      "properties": {
+        "id": "toilet_7838499616",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.0262205,
+          35.0010199
+        ]
+      },
+      "properties": {
+        "id": "toilet_7838544077",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.0469157,
+          35.0003462
+        ]
+      },
+      "properties": {
+        "id": "toilet_7838555403",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.0489028,
+          35.00374
+        ]
+      },
+      "properties": {
+        "id": "toilet_7838565885",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.0377981,
+          35.002124
+        ]
+      },
+      "properties": {
+        "id": "toilet_7839051600",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.037109,
+          35.0060158
+        ]
+      },
+      "properties": {
+        "id": "toilet_7846075237",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.0304044,
+          35.0060652
+        ]
+      },
+      "properties": {
+        "id": "toilet_7846130652",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9522393,
+          35.0110661
+        ]
+      },
+      "properties": {
+        "id": "toilet_8227054014",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9081567,
+          35.176788
+        ]
+      },
+      "properties": {
+        "id": "toilet_10870092499",
+        "type": "toilet",
+        "station": "久屋大通",
+        "location": "久屋大通駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9096232,
+          35.1703224
+        ]
+      },
+      "properties": {
+        "id": "toilet_10931069029",
+        "type": "toilet",
+        "station": "栄",
+        "location": "栄駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9632993,
+          35.1165877
+        ]
+      },
+      "properties": {
+        "id": "toilet_11061267042",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9512286,
+          35.207363
+        ]
+      },
+      "properties": {
+        "id": "toilet_11119442690",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9748564,
+          35.2140104
+        ]
+      },
+      "properties": {
+        "id": "toilet_11293048507",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9599248,
+          35.232186
+        ]
+      },
+      "properties": {
+        "id": "toilet_11299380671",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9572809,
+          35.2278007
+        ]
+      },
+      "properties": {
+        "id": "toilet_11355880525",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.0192185,
+          35.167664
+        ]
+      },
+      "properties": {
+        "id": "toilet_11442637194",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9778613,
+          35.2430746
+        ]
+      },
+      "properties": {
+        "id": "toilet_11601844813",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.969189,
+          35.2310621
+        ]
+      },
+      "properties": {
+        "id": "toilet_11943889576",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9622301,
+          35.2231826
+        ]
+      },
+      "properties": {
+        "id": "toilet_11943889578",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9571605,
+          35.2263406
+        ]
+      },
+      "properties": {
+        "id": "toilet_11943889583",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9962802,
+          35.2430643
+        ]
+      },
+      "properties": {
+        "id": "toilet_11971960710",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9086029,
+          35.1724602
+        ]
+      },
+      "properties": {
+        "id": "toilet_12123247443",
+        "type": "toilet",
+        "station": "久屋大通",
+        "location": "久屋大通駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9038346,
+          35.1891935
+        ]
+      },
+      "properties": {
+        "id": "toilet_12849733019",
+        "type": "toilet",
+        "station": "名城公園",
+        "location": "名城公園駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9007979,
+          35.1259416
+        ]
+      },
+      "properties": {
+        "id": "toilet_57359998",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "白鳥庭園",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.8952233,
+          35.1784907
+        ]
+      },
+      "properties": {
+        "id": "toilet_73419031",
+        "type": "toilet",
+        "station": "丸の内",
+        "location": "丸の内駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "愛知芸術文化センター愛知県図書館",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9257109,
+          35.1610252
+        ]
+      },
+      "properties": {
+        "id": "toilet_150702453",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "名古屋ビール園 浩養園",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.0104292,
+          35.1758989
+        ]
+      },
+      "properties": {
+        "id": "toilet_150868528",
+        "type": "toilet",
+        "station": "本郷",
+        "location": "本郷駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "名東区役所",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.7747912,
+          35.1297055
+        ]
+      },
+      "properties": {
+        "id": "toilet_169788914",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9014982,
+          35.1433775
+        ]
+      },
+      "properties": {
+        "id": "toilet_178288356",
+        "type": "toilet",
+        "station": "金山",
+        "location": "金山駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "Loop金山",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9012757,
+          35.1440763
+        ]
+      },
+      "properties": {
+        "id": "toilet_183128248",
+        "type": "toilet",
+        "station": "金山",
+        "location": "金山駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "アスナル金山",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9006687,
+          35.1439612
+        ]
+      },
+      "properties": {
+        "id": "toilet_183128250",
+        "type": "toilet",
+        "station": "金山",
+        "location": "金山駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "アスナル金山",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9006706,
+          35.163206
+        ]
+      },
+      "properties": {
+        "id": "toilet_231365760",
+        "type": "toilet",
+        "station": "大須観音",
+        "location": "大須観音駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9463715,
+          35.1664699
+        ]
+      },
+      "properties": {
+        "id": "toilet_307931335",
+        "type": "toilet",
+        "station": "池下",
+        "location": "池下駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "千種区役所",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.0212052,
+          35.0519409
+        ]
+      },
+      "properties": {
+        "id": "toilet_495970362",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "大久伝内科",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9474171,
+          35.0190895
+        ]
+      },
+      "properties": {
+        "id": "toilet_500216386",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "おおぶ文化交流の杜図書館",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.0394281,
+          35.1320977
+        ]
+      },
+      "properties": {
+        "id": "toilet_529892233",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "市役所南側入口横の宿直室にて戸籍に関する届出の受付行います。手続きに必要な書類については市民課へお問い合わせください。土曜日・日曜日・祝日午前9時から午後5時までの間は住民票の写し・印鑑登録証明書の発行も行っております。",
+        "name": "日進市役所",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.0451399,
+          35.12321
+        ]
+      },
+      "properties": {
+        "id": "toilet_544581709",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "高齢者のレクリエーション活動のための「老人福祉センター」と、児童の健全育成のための「児童館」との複合施設です。",
+        "name": "日進市南部福祉会館",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.8899715,
+          35.1896551
+        ]
+      },
+      "properties": {
+        "id": "toilet_549350151",
+        "type": "toilet",
+        "station": "浄心",
+        "location": "浄心駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "名古屋市西図書館",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9044783,
+          35.1840189
+        ]
+      },
+      "properties": {
+        "id": "toilet_580006863",
+        "type": "toilet",
+        "station": "名古屋城",
+        "location": "名古屋城駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9079215,
+          35.1763584
+        ]
+      },
+      "properties": {
+        "id": "toilet_597961909",
+        "type": "toilet",
+        "station": "久屋大通",
+        "location": "久屋大通駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "リバーパーク",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.8993537,
+          35.1877749
+        ]
+      },
+      "properties": {
+        "id": "toilet_600472509",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.8993904,
+          35.1876959
+        ]
+      },
+      "properties": {
+        "id": "toilet_600472510",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9209254,
+          35.1559061
+        ]
+      },
+      "properties": {
+        "id": "toilet_672796554",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9115954,
+          35.1941662
+        ]
+      },
+      "properties": {
+        "id": "toilet_776513144",
+        "type": "toilet",
+        "station": "黒川",
+        "location": "黒川駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "北区役所 (Kita Ward Hall)",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9179264,
+          35.1561953
+        ]
+      },
+      "properties": {
+        "id": "toilet_1043619275",
+        "type": "toilet",
+        "station": "鶴舞",
+        "location": "鶴舞駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.8684382,
+          35.1766667
+        ]
+      },
+      "properties": {
+        "id": "toilet_1126853335",
+        "type": "toilet",
+        "station": "本陣",
+        "location": "本陣駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "中村区役所",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.984953,
+          35.216655
+        ]
+      },
+      "properties": {
+        "id": "toilet_1218779628",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.8721384,
+          35.2136389
+        ]
+      },
+      "properties": {
+        "id": "toilet_1263221391",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9312101,
+          35.0951257
+        ]
+      },
+      "properties": {
+        "id": "toilet_1291199801",
+        "type": "toilet",
+        "station": "不明",
+        "location": "市内施設",
+        "description": "車椅子対応トイレ",
+        "name": "南区役所",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9006341,
+          35.1886186
+        ]
+      },
+      "properties": {
+        "id": "toilet_1315664230",
+        "type": "toilet",
+        "station": "名城公園",
+        "location": "名城公園駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9174336,
+          35.1549872
+        ]
+      },
+      "properties": {
+        "id": "toilet_1376925643",
+        "type": "toilet",
+        "station": "鶴舞",
+        "location": "鶴舞駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9019757,
+          35.1869269
+        ]
+      },
+      "properties": {
+        "id": "toilet_1385731135",
+        "type": "toilet",
+        "station": "名城公園",
+        "location": "名城公園駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9030711,
+          35.1887791
+        ]
+      },
+      "properties": {
+        "id": "toilet_1388101615",
+        "type": "toilet",
+        "station": "名城公園",
+        "location": "名城公園駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9183163,
+          35.1973636
+        ]
+      },
+      "properties": {
+        "id": "toilet_1442084132",
+        "type": "toilet",
+        "station": "志賀本通",
+        "location": "志賀本通駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "Feel 黒川東店",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9022973,
+          35.1895245
+        ]
+      },
+      "properties": {
+        "id": "toilet_1476260649",
+        "type": "toilet",
+        "station": "名城公園",
+        "location": "名城公園駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9027881,
+          35.1901147
+        ]
+      },
+      "properties": {
+        "id": "toilet_1476260650",
+        "type": "toilet",
+        "station": "名城公園",
+        "location": "名城公園駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.90215,
+          35.1895513
+        ]
+      },
+      "properties": {
+        "id": "toilet_1476260653",
+        "type": "toilet",
+        "station": "名城公園",
+        "location": "名城公園駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9026983,
+          35.1902163
+        ]
+      },
+      "properties": {
+        "id": "toilet_1476260654",
+        "type": "toilet",
+        "station": "名城公園",
+        "location": "名城公園駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9013427,
+          35.1910543
+        ]
+      },
+      "properties": {
+        "id": "toilet_1476970736",
+        "type": "toilet",
+        "station": "名城公園",
+        "location": "名城公園駅周辺",
+        "description": "車椅子対応トイレ",
+        "name": "多目的トイレ",
+        "status": "利用可能"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           136.8768918,
           35.2235423
         ]
@@ -728,7 +2761,7 @@
         "id": "station_上小田井",
         "type": "station",
         "station": "上小田井",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -744,7 +2777,7 @@
         "id": "station_金山",
         "type": "station",
         "station": "金山",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -792,7 +2825,7 @@
         "id": "station_藤が丘",
         "type": "station",
         "station": "藤が丘",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -856,7 +2889,7 @@
         "id": "station_八事",
         "type": "station",
         "station": "八事",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -888,7 +2921,7 @@
         "id": "station_御器所",
         "type": "station",
         "station": "御器所",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -904,7 +2937,7 @@
         "id": "station_川名",
         "type": "station",
         "station": "川名",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -920,7 +2953,7 @@
         "id": "station_塩釜口",
         "type": "station",
         "station": "塩釜口",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -936,7 +2969,7 @@
         "id": "station_植田",
         "type": "station",
         "station": "植田",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -952,7 +2985,7 @@
         "id": "station_原",
         "type": "station",
         "station": "原",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -984,7 +3017,7 @@
         "id": "station_庄内緑地公園",
         "type": "station",
         "station": "庄内緑地公園",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -1000,7 +3033,7 @@
         "id": "station_庄内通",
         "type": "station",
         "station": "庄内通",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -1064,7 +3097,7 @@
         "id": "station_伏見",
         "type": "station",
         "station": "伏見",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -1112,7 +3145,7 @@
         "id": "station_矢場町",
         "type": "station",
         "station": "矢場町",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -1208,7 +3241,7 @@
         "id": "station_自由ヶ丘",
         "type": "station",
         "station": "自由ヶ丘",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -1240,7 +3273,7 @@
         "id": "station_本郷",
         "type": "station",
         "station": "本郷",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -1256,7 +3289,7 @@
         "id": "station_上社",
         "type": "station",
         "station": "上社",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -1272,7 +3305,7 @@
         "id": "station_瑞穂区役所",
         "type": "station",
         "station": "瑞穂区役所",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -1288,7 +3321,7 @@
         "id": "station_徳重",
         "type": "station",
         "station": "徳重",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -1304,7 +3337,7 @@
         "id": "station_神沢",
         "type": "station",
         "station": "神沢",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -1320,7 +3353,7 @@
         "id": "station_相生山",
         "type": "station",
         "station": "相生山",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -1336,7 +3369,7 @@
         "id": "station_鳴子北",
         "type": "station",
         "station": "鳴子北",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -1352,7 +3385,7 @@
         "id": "station_野並",
         "type": "station",
         "station": "野並",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -1368,7 +3401,7 @@
         "id": "station_鶴里",
         "type": "station",
         "station": "鶴里",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -1384,7 +3417,7 @@
         "id": "station_桜本町",
         "type": "station",
         "station": "桜本町",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -1416,7 +3449,7 @@
         "id": "station_桜山",
         "type": "station",
         "station": "桜山",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -1432,7 +3465,7 @@
         "id": "station_吹上",
         "type": "station",
         "station": "吹上",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -1480,7 +3513,7 @@
         "id": "station_高岳",
         "type": "station",
         "station": "高岳",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -1496,7 +3529,7 @@
         "id": "station_国際センター",
         "type": "station",
         "station": "国際センター",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -1528,7 +3561,7 @@
         "id": "station_西高蔵",
         "type": "station",
         "station": "西高蔵",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -1560,7 +3593,7 @@
         "id": "station_熱田神宮伝馬町",
         "type": "station",
         "station": "熱田神宮伝馬町",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -1576,7 +3609,7 @@
         "id": "station_堀田",
         "type": "station",
         "station": "堀田",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -1592,7 +3625,7 @@
         "id": "station_妙音通",
         "type": "station",
         "station": "妙音通",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -1624,7 +3657,7 @@
         "id": "station_総合リハビリセンター",
         "type": "station",
         "station": "総合リハビリセンター",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -1640,7 +3673,7 @@
         "id": "station_八事日赤",
         "type": "station",
         "station": "八事日赤",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -1656,7 +3689,7 @@
         "id": "station_名古屋大学",
         "type": "station",
         "station": "名古屋大学",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -1672,7 +3705,7 @@
         "id": "station_本山",
         "type": "station",
         "station": "本山",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -1688,7 +3721,7 @@
         "id": "station_茶屋ヶ坂",
         "type": "station",
         "station": "茶屋ヶ坂",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -1704,7 +3737,7 @@
         "id": "station_砂田橋",
         "type": "station",
         "station": "砂田橋",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -1720,7 +3753,7 @@
         "id": "station_ナゴヤドーム前矢田",
         "type": "station",
         "station": "ナゴヤドーム前矢田",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -1752,7 +3785,7 @@
         "id": "station_一社",
         "type": "station",
         "station": "一社",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -1768,7 +3801,7 @@
         "id": "station_覚王山",
         "type": "station",
         "station": "覚王山",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -1816,7 +3849,7 @@
         "id": "station_名古屋",
         "type": "station",
         "station": "名古屋",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -1832,7 +3865,7 @@
         "id": "station_亀島",
         "type": "station",
         "station": "亀島",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -1848,7 +3881,7 @@
         "id": "station_本陣",
         "type": "station",
         "station": "本陣",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -1864,7 +3897,7 @@
         "id": "station_中村日赤",
         "type": "station",
         "station": "中村日赤",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -1928,7 +3961,7 @@
         "id": "station_高畑",
         "type": "station",
         "station": "高畑",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -1960,7 +3993,7 @@
         "id": "station_名古屋港",
         "type": "station",
         "station": "名古屋港",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -2024,7 +4057,7 @@
         "id": "station_六番町",
         "type": "station",
         "station": "六番町",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -2056,7 +4089,7 @@
         "id": "station_東山公園",
         "type": "station",
         "station": "東山公園",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -2072,7 +4105,7 @@
         "id": "station_星ヶ丘",
         "type": "station",
         "station": "星ヶ丘",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -2088,7 +4121,7 @@
         "id": "station_新瑞橋",
         "type": "station",
         "station": "新瑞橋",
-        "has_elevator": false
+        "has_elevator": true
       }
     },
     {
@@ -2119,6 +4152,7 @@
       "properties": {
         "id": "M01",
         "station": "金山",
+        "location": "金山駅周辺",
         "description": "地上～地下鉄改札口",
         "status": "稼働中",
         "source": "manual_excel",
@@ -2138,6 +4172,7 @@
       "properties": {
         "id": "M28",
         "station": "西高蔵",
+        "location": "西高蔵駅周辺",
         "description": "地上～地下鉄改札口",
         "status": "稼働中",
         "source": "manual_excel",
@@ -2157,6 +4192,7 @@
       "properties": {
         "id": "M27",
         "station": "熱田神宮西",
+        "location": "熱田神宮西駅周辺",
         "description": "地上～地下鉄改札口",
         "status": "稼働中",
         "source": "manual_excel",
@@ -2176,6 +4212,7 @@
       "properties": {
         "id": "M26",
         "station": "熱田神宮伝馬町",
+        "location": "熱田神宮伝馬町駅周辺",
         "description": "地上～地下鉄改札口",
         "status": "稼働中",
         "source": "manual_excel",
@@ -2195,6 +4232,7 @@
       "properties": {
         "id": "M25",
         "station": "堀田",
+        "location": "堀田駅周辺",
         "description": "地上～地下鉄改札口",
         "status": "稼働中",
         "source": "manual_excel",
@@ -2214,6 +4252,7 @@
       "properties": {
         "id": "M24",
         "station": "妙音通",
+        "location": "妙音通駅周辺",
         "description": "地上～地下鉄改札口",
         "status": "稼働中",
         "source": "manual_excel",
@@ -2233,6 +4272,7 @@
       "properties": {
         "id": "M23",
         "station": "新瑞橋",
+        "location": "新瑞橋駅周辺",
         "description": "地上～地下鉄改札口",
         "status": "稼働中",
         "source": "manual_excel",
@@ -2252,6 +4292,7 @@
       "properties": {
         "id": "M22",
         "station": "瑞穂運動場東",
+        "location": "瑞穂運動場東駅周辺",
         "description": "地上～地下鉄改札口",
         "status": "稼働中",
         "source": "manual_excel",
@@ -2271,6 +4312,7 @@
       "properties": {
         "id": "M21",
         "station": "総合リハビリセンター",
+        "location": "総合リハビリセンター駅周辺",
         "description": "地上～地下鉄改札口",
         "status": "稼働中",
         "source": "manual_excel",
@@ -2290,348 +4332,7 @@
       "properties": {
         "id": "M20",
         "station": "八事",
-        "description": "地上～地下鉄改札口",
-        "status": "稼働中",
-        "source": "manual_excel",
-        "wheelchair": "yes",
-        "highway": "elevator"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          136.96532366809058,
-          35.13736862377779
-        ]
-      },
-      "properties": {
-        "id": "M19",
-        "station": "八事",
-        "description": "中京大学アネックス～地下鉄改札口",
-        "status": "稼働中",
-        "source": "manual_excel",
-        "wheelchair": "yes",
-        "highway": "elevator"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          136.9649141207083,
-          35.14500548033085
-        ]
-      },
-      "properties": {
-        "id": "M18",
-        "station": "八事日赤",
-        "description": "地上～地下鉄改札口",
-        "status": "稼働中",
-        "source": "manual_excel",
-        "wheelchair": "yes",
-        "highway": "elevator"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          136.96649561461183,
-          35.1546953090824
-        ]
-      },
-      "properties": {
-        "id": "M17",
-        "station": "名古屋大学",
-        "description": "地上～地下鉄改札口",
-        "status": "稼働中",
-        "source": "manual_excel",
-        "wheelchair": "yes",
-        "highway": "elevator"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          136.96380452607983,
-          35.16351047603824
-        ]
-      },
-      "properties": {
-        "id": "M16",
-        "station": "本山",
-        "description": "地上～地下鉄改札口",
-        "status": "稼働中",
-        "source": "manual_excel",
-        "wheelchair": "yes",
-        "highway": "elevator"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          136.96692599196865,
-          35.17576494774919
-        ]
-      },
-      "properties": {
-        "id": "M15",
-        "station": "自由ヶ丘",
-        "description": "地上～地下鉄改札口",
-        "status": "稼働中",
-        "source": "manual_excel",
-        "wheelchair": "yes",
-        "highway": "elevator"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          136.9627630281031,
-          35.18428042661961
-        ]
-      },
-      "properties": {
-        "id": "M14",
-        "station": "茶屋ヶ坂",
-        "description": "地上～地下鉄改札口",
-        "status": "稼働中",
-        "source": "manual_excel",
-        "wheelchair": "yes",
-        "highway": "elevator"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          136.95554172003628,
-          35.1886879662537
-        ]
-      },
-      "properties": {
-        "id": "M13",
-        "station": "砂田橋",
-        "description": "地上～地下鉄改札口",
-        "status": "稼働中",
-        "source": "manual_excel",
-        "wheelchair": "yes",
-        "highway": "elevator"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          136.94721884706038,
-          35.1899082121667
-        ]
-      },
-      "properties": {
-        "id": "M12",
-        "station": "ナゴヤドーム前矢田",
-        "description": "地上～地下鉄改札口",
-        "status": "稼働中",
-        "source": "manual_excel",
-        "wheelchair": "yes",
-        "highway": "elevator"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          136.90126333568702,
-          35.14352575088913
-        ]
-      },
-      "properties": {
-        "id": "M01",
-        "station": "金山",
-        "description": "地上～地下鉄改札口",
-        "status": "稼働中",
-        "source": "manual_excel",
-        "wheelchair": "yes",
-        "highway": "elevator"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          136.90184827999252,
-          35.13492352434503
-        ]
-      },
-      "properties": {
-        "id": "M28",
-        "station": "西高蔵",
-        "description": "地上～地下鉄改札口",
-        "status": "稼働中",
-        "source": "manual_excel",
-        "wheelchair": "yes",
-        "highway": "elevator"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          136.90687228540892,
-          35.127921811143935
-        ]
-      },
-      "properties": {
-        "id": "M27",
-        "station": "熱田神宮西",
-        "description": "地上～地下鉄改札口",
-        "status": "稼働中",
-        "source": "manual_excel",
-        "wheelchair": "yes",
-        "highway": "elevator"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          136.91006822561445,
-          35.120641660354416
-        ]
-      },
-      "properties": {
-        "id": "M26",
-        "station": "熱田神宮伝馬町",
-        "description": "地上～地下鉄改札口",
-        "status": "稼働中",
-        "source": "manual_excel",
-        "wheelchair": "yes",
-        "highway": "elevator"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          136.92204080138805,
-          35.11645674004519
-        ]
-      },
-      "properties": {
-        "id": "M25",
-        "station": "堀田",
-        "description": "地上～地下鉄改札口",
-        "status": "稼働中",
-        "source": "manual_excel",
-        "wheelchair": "yes",
-        "highway": "elevator"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          136.92924050291654,
-          35.11737065857523
-        ]
-      },
-      "properties": {
-        "id": "M24",
-        "station": "妙音通",
-        "description": "地上～地下鉄改札口",
-        "status": "稼働中",
-        "source": "manual_excel",
-        "wheelchair": "yes",
-        "highway": "elevator"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          136.93803621467265,
-          35.11760672561257
-        ]
-      },
-      "properties": {
-        "id": "M23",
-        "station": "新瑞橋",
-        "description": "地上～地下鉄改札口",
-        "status": "稼働中",
-        "source": "manual_excel",
-        "wheelchair": "yes",
-        "highway": "elevator"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          136.94796564757414,
-          35.12195594045511
-        ]
-      },
-      "properties": {
-        "id": "M22",
-        "station": "瑞穂運動場東",
-        "description": "地上～地下鉄改札口",
-        "status": "稼働中",
-        "source": "manual_excel",
-        "wheelchair": "yes",
-        "highway": "elevator"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          136.95387584140585,
-          35.12987151584732
-        ]
-      },
-      "properties": {
-        "id": "M21",
-        "station": "総合リハビリセンター",
-        "description": "地上～地下鉄改札口",
-        "status": "稼働中",
-        "source": "manual_excel",
-        "wheelchair": "yes",
-        "highway": "elevator"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          136.96462532996372,
-          35.13681620650574
-        ]
-      },
-      "properties": {
-        "id": "M20",
-        "station": "八事",
+        "location": "八事駅周辺",
         "description": "地上～地下鉄改札口",
         "status": "稼働中",
         "source": "manual_excel",
@@ -2651,6 +4352,7 @@
       "properties": {
         "id": "M20",
         "station": "八事",
+        "location": "八事駅周辺",
         "description": "中京大学アネックス～地下鉄改札口",
         "status": "稼働中",
         "source": "manual_excel",
@@ -2670,6 +4372,7 @@
       "properties": {
         "id": "M19",
         "station": "八事日赤",
+        "location": "八事日赤駅周辺",
         "description": "地上～地下鉄改札口",
         "status": "稼働中",
         "source": "manual_excel",
@@ -2689,6 +4392,7 @@
       "properties": {
         "id": "M18",
         "station": "名古屋大学",
+        "location": "名古屋大学駅周辺",
         "description": "地上～地下鉄改札口",
         "status": "稼働中",
         "source": "manual_excel",
@@ -2708,6 +4412,7 @@
       "properties": {
         "id": "M17",
         "station": "本山",
+        "location": "本山駅周辺",
         "description": "地上～地下鉄改札口",
         "status": "稼働中",
         "source": "manual_excel",
@@ -2727,6 +4432,7 @@
       "properties": {
         "id": "M16",
         "station": "自由ヶ丘",
+        "location": "自由ヶ丘駅周辺",
         "description": "地上～地下鉄改札口",
         "status": "稼働中",
         "source": "manual_excel",
@@ -2746,6 +4452,7 @@
       "properties": {
         "id": "M15",
         "station": "茶屋ヶ坂",
+        "location": "茶屋ヶ坂駅周辺",
         "description": "地上～地下鉄改札口",
         "status": "稼働中",
         "source": "manual_excel",
@@ -2765,6 +4472,7 @@
       "properties": {
         "id": "M14",
         "station": "砂田橋",
+        "location": "砂田橋駅周辺",
         "description": "地上～地下鉄改札口",
         "status": "稼働中",
         "source": "manual_excel",
@@ -2784,6 +4492,7 @@
       "properties": {
         "id": "M13",
         "station": "ナゴヤドーム前矢田",
+        "location": "ナゴヤドーム前矢田駅周辺",
         "description": "地上～地下鉄改札口",
         "status": "稼働中",
         "source": "manual_excel",
@@ -2803,6 +4512,7 @@
       "properties": {
         "id": "M12",
         "station": "大曽根",
+        "location": "大曽根駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -2822,6 +4532,7 @@
       "properties": {
         "id": "M11",
         "station": "平安通",
+        "location": "平安通駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -2841,6 +4552,7 @@
       "properties": {
         "id": "M10",
         "station": "志賀本通",
+        "location": "志賀本通駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -2860,6 +4572,7 @@
       "properties": {
         "id": "M9",
         "station": "黒川",
+        "location": "黒川駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -2879,6 +4592,7 @@
       "properties": {
         "id": "M8",
         "station": "名城公園",
+        "location": "名城公園駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -2898,6 +4612,7 @@
       "properties": {
         "id": "M7",
         "station": "名古屋城",
+        "location": "名古屋城駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -2917,6 +4632,7 @@
       "properties": {
         "id": "M6",
         "station": "久屋大通",
+        "location": "久屋大通駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -2936,6 +4652,7 @@
       "properties": {
         "id": "M6",
         "station": "久屋大通",
+        "location": "久屋大通駅周辺",
         "description": "地上～ブロッサ～地下鉄改札口",
         "status": "稼働中（7:00-22:30）",
         "source": "manual_excel",
@@ -2955,6 +4672,7 @@
       "properties": {
         "id": "M5",
         "station": "栄",
+        "location": "栄駅周辺",
         "description": "地上～オアシス21~地下鉄改札口フロア",
         "status": "稼働中（7:00-22:30）",
         "source": "manual_excel",
@@ -2974,6 +4692,7 @@
       "properties": {
         "id": "M5",
         "station": "栄",
+        "location": "栄駅周辺",
         "description": "地上～サンシャイン栄~地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -2993,6 +4712,7 @@
       "properties": {
         "id": "M4",
         "station": "矢場町",
+        "location": "矢場町駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中（5:40-24:30）",
         "source": "manual_excel",
@@ -3012,6 +4732,7 @@
       "properties": {
         "id": "M4",
         "station": "矢場町",
+        "location": "矢場町駅周辺",
         "description": "地上～松坂屋~地下鉄改札口フロア",
         "status": "稼働中（松坂屋営業時間外は呼び出し必要）",
         "source": "manual_excel",
@@ -3031,6 +4752,7 @@
       "properties": {
         "id": "M3",
         "station": "上前津",
+        "location": "上前津駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3050,6 +4772,7 @@
       "properties": {
         "id": "M2",
         "station": "東別院",
+        "location": "東別院駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3069,6 +4792,7 @@
       "properties": {
         "id": "E2",
         "station": "日比野",
+        "location": "日比野駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3088,6 +4812,7 @@
       "properties": {
         "id": "E3",
         "station": "六番町",
+        "location": "六番町駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3107,6 +4832,7 @@
       "properties": {
         "id": "E4",
         "station": "東海通",
+        "location": "東海通駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3126,6 +4852,7 @@
       "properties": {
         "id": "E6",
         "station": "築地口",
+        "location": "築地口駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3145,6 +4872,7 @@
       "properties": {
         "id": "E7",
         "station": "名古屋港",
+        "location": "名古屋港駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3164,6 +4892,7 @@
       "properties": {
         "id": "E5",
         "station": "港区役所",
+        "location": "港区役所駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3183,6 +4912,7 @@
       "properties": {
         "id": "H1",
         "station": "高畑",
+        "location": "高畑駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3202,6 +4932,7 @@
       "properties": {
         "id": "H2",
         "station": "八田",
+        "location": "八田駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3221,6 +4952,7 @@
       "properties": {
         "id": "H3",
         "station": "岩塚",
+        "location": "岩塚駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3240,6 +4972,7 @@
       "properties": {
         "id": "H4",
         "station": "中村公園",
+        "location": "中村公園駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3259,6 +4992,7 @@
       "properties": {
         "id": "H5",
         "station": "中村日赤",
+        "location": "中村日赤駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3278,6 +5012,7 @@
       "properties": {
         "id": "H5",
         "station": "中村日赤",
+        "location": "中村日赤駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3297,6 +5032,7 @@
       "properties": {
         "id": "H6",
         "station": "本陣",
+        "location": "本陣駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3316,6 +5052,7 @@
       "properties": {
         "id": "H7",
         "station": "亀島",
+        "location": "亀島駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3335,6 +5072,7 @@
       "properties": {
         "id": "H8",
         "station": "名古屋",
+        "location": "名古屋駅周辺",
         "description": "地上～地下鉄桜通線改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3354,6 +5092,7 @@
       "properties": {
         "id": "H8",
         "station": "名古屋",
+        "location": "名古屋駅周辺",
         "description": "地上～大名古屋ビルヂング～地下鉄改札口",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3373,6 +5112,7 @@
       "properties": {
         "id": "H8",
         "station": "名古屋",
+        "location": "名古屋駅周辺",
         "description": "地上～ミッドランドスクエア～地下鉄改札口",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3390,8 +5130,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_49",
         "station": "伏見",
+        "location": "伏見駅周辺",
         "description": "地上～名古屋インターシティ～地下鉄改札口",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3409,8 +5150,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_50",
         "station": "伏見",
+        "location": "伏見駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3428,8 +5170,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_51",
         "station": "栄",
+        "location": "栄駅周辺",
         "description": "地上～中日ビル～地下鉄改札口",
         "status": "稼働中（5:15-24:00）",
         "source": "manual_excel",
@@ -3447,8 +5190,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_52",
         "station": "新栄",
+        "location": "新栄駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3466,8 +5210,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_53",
         "station": "新栄",
+        "location": "新栄駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3485,8 +5230,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_54",
         "station": "千種",
+        "location": "千種駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3504,8 +5250,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_55",
         "station": "今池",
+        "location": "今池駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3523,8 +5270,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_56",
         "station": "今池",
+        "location": "今池駅周辺",
         "description": "地上～今池ガスビル～地下鉄改札口",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3542,8 +5290,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_57",
         "station": "池下",
+        "location": "池下駅周辺",
         "description": "地上～サンクレア池下～地下鉄改札口",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3561,8 +5310,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_58",
         "station": "覚王山",
+        "location": "覚王山駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3580,8 +5330,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_59",
         "station": "東山公園",
+        "location": "東山公園駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3599,8 +5350,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_60",
         "station": "星ヶ丘",
+        "location": "星ヶ丘駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3618,8 +5370,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_61",
         "station": "一社",
+        "location": "一社駅周辺",
         "description": "地上からエレベーターあり改札口",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3637,8 +5390,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_62",
         "station": "上社",
+        "location": "上社駅周辺",
         "description": "地上からエレベーターあり改札口",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3656,8 +5410,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_63",
         "station": "本郷",
+        "location": "本郷駅周辺",
         "description": "地上からエレベーターあり改札口",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3675,8 +5430,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_64",
         "station": "藤が丘",
+        "location": "藤が丘駅周辺",
         "description": "地上からエレベーターあり改札口",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3694,8 +5450,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_65",
         "station": "太閤通",
+        "location": "太閤通駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3713,8 +5470,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_66",
         "station": "国際センター",
+        "location": "国際センター駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3732,10 +5490,11 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_67",
         "station": "国際センター",
+        "location": "国際センター駅周辺",
         "description": "地上～三交ビル～地下鉄改札口",
-        "status": NaN,
+        "status": "稼働中",
         "source": "manual_excel",
         "wheelchair": "yes",
         "highway": "elevator"
@@ -3751,8 +5510,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_68",
         "station": "伏見",
+        "location": "伏見駅周辺",
         "description": "地上～地下鉄改札口フロア（桜通線が近い）",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3770,8 +5530,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_69",
         "station": "伏見",
+        "location": "伏見駅周辺",
         "description": "地上～地下鉄改札口フロア（鶴舞線が近い）",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3789,8 +5550,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_70",
         "station": "高岳",
+        "location": "高岳駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3808,8 +5570,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_71",
         "station": "車道",
+        "location": "車道駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3827,8 +5590,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_72",
         "station": "吹上",
+        "location": "吹上駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3846,8 +5610,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_73",
         "station": "御器所",
+        "location": "御器所駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3865,8 +5630,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_74",
         "station": "桜山",
+        "location": "桜山駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3884,8 +5650,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_75",
         "station": "瑞穂区役所",
+        "location": "瑞穂区役所駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3903,8 +5670,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_76",
         "station": "桜本町",
+        "location": "桜本町駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3922,8 +5690,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_77",
         "station": "鶴里",
+        "location": "鶴里駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3941,8 +5710,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_78",
         "station": "野並",
+        "location": "野並駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3960,8 +5730,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_79",
         "station": "鳴子北",
+        "location": "鳴子北駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3979,8 +5750,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_80",
         "station": "相生山",
+        "location": "相生山駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -3998,8 +5770,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_81",
         "station": "相生山",
+        "location": "相生山駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -4017,8 +5790,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_82",
         "station": "神沢",
+        "location": "神沢駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -4036,8 +5810,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_83",
         "station": "神沢",
+        "location": "神沢駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -4055,8 +5830,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_84",
         "station": "徳重",
+        "location": "徳重駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -4074,8 +5850,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_85",
         "station": "徳重",
+        "location": "徳重駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -4093,8 +5870,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_86",
         "station": "上小田井",
+        "location": "上小田井駅周辺",
         "description": "地上～EVあり改札",
         "status": "稼働中",
         "source": "manual_excel",
@@ -4112,8 +5890,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_87",
         "station": "庄内緑地公園",
+        "location": "庄内緑地公園駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -4131,8 +5910,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_88",
         "station": "庄内通",
+        "location": "庄内通駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -4150,8 +5930,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_89",
         "station": "浄心",
+        "location": "浄心駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -4169,8 +5950,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_90",
         "station": "浅間町",
+        "location": "浅間町駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -4188,8 +5970,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_91",
         "station": "大須観音",
+        "location": "大須観音駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -4207,8 +5990,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_92",
         "station": "鶴舞",
+        "location": "鶴舞駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -4226,8 +6010,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_93",
         "station": "荒畑",
+        "location": "荒畑駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -4245,8 +6030,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_94",
         "station": "川名",
+        "location": "川名駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -4264,8 +6050,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_95",
         "station": "いりなか",
+        "location": "いりなか駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -4283,8 +6070,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_96",
         "station": "塩釜口",
+        "location": "塩釜口駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -4302,8 +6090,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_97",
         "station": "植田",
+        "location": "植田駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -4321,8 +6110,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_98",
         "station": "原",
+        "location": "原駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -4340,8 +6130,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_99",
         "station": "平針",
+        "location": "平針駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -4359,8 +6150,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_100",
         "station": "赤池",
+        "location": "赤池駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
@@ -4378,8 +6170,9 @@
         ]
       },
       "properties": {
-        "id": NaN,
+        "id": "excel_101",
         "station": "上飯田",
+        "location": "上飯田駅周辺",
         "description": "地上～地下鉄改札口フロア",
         "status": "稼働中",
         "source": "manual_excel",
