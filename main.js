@@ -69,6 +69,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const destSearchInput = document.getElementById('dest-search-input');
     const destSearchBtn = document.getElementById('dest-search-btn');
     
+    // 履歴・お気に入り関連の要素
+    const historyBtn = document.getElementById('history-btn');
+    const historyPanel = document.getElementById('history-panel');
+    const closeHistoryBtn = document.getElementById('close-history');
+    const historyList = document.getElementById('history-list');
+    const tabRecent = document.getElementById('tab-recent');
+    const tabFavorites = document.getElementById('tab-favorites');
+    const historyEmptyMsg = document.getElementById('history-empty-msg');
+    const startAddressDisplay = document.getElementById('start-address-display');
+    const destAddressDisplay = document.getElementById('dest-address-display');
+    const twoPointRouteBtn = document.getElementById('two-point-route-btn');
+    const bulkResetBtnMap = document.getElementById('bulk-reset-btn-map');
+    const mapHint = document.getElementById('map-hint');
+
+    // 住所の保持用
+    let currentStartAddress = "未設定";
+    let currentDestAddress = "未設定";
+    let currentHistoryTab = 'recent'; // 'recent' or 'favorites'
+    
     // 使い方モーダルの要素
     const howToUseModal = document.getElementById('how-to-use-modal');
     const howToUseBtn = document.getElementById('how-to-use-btn');
@@ -146,9 +165,15 @@ document.addEventListener('DOMContentLoaded', () => {
             if (data && data.length > 0) {
                 const result = data[0];
                 const latlng = [parseFloat(result.lat), parseFloat(result.lon)];
+                const address = formatAddress(result.address, result.display_name);
+                
                 if (type === 'start') {
+                    currentStartAddress = address;
+                    updateAddressUI('start', address);
                     updateStartLocationMarker(latlng, 16);
                 } else if (type === 'dest') {
+                    currentDestAddress = address;
+                    updateAddressUI('dest', address);
                     updateDestLocationMarker(latlng, 16);
                 }
             } else {
@@ -159,6 +184,78 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('検索中にエラーが発生しました。');
         }
     }
+
+    // 座標から住所を取得 (逆ジオコーディング)
+    async function reverseGeocode(lat, lon, type) {
+        const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`;
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+            const address = formatAddress(data.address, data.display_name);
+            if (type === 'start') {
+                currentStartAddress = address;
+                updateAddressUI('start', address);
+            } else if (type === 'dest') {
+                currentDestAddress = address;
+                updateAddressUI('dest', address);
+            }
+        } catch (error) {
+            console.error('Reverse geocoding error:', error);
+        }
+    }
+
+    // 住所を日本向けにフォーマットする
+    function formatAddress(addr, displayName) {
+        if (!addr) return displayName.split(',')[0];
+        
+        // 日本の住所順に構成（Nominatimのタグから動的に抽出）
+        const parts = [];
+        if (addr.province || addr.state) parts.push(addr.province || addr.state);
+        if (addr.city) parts.push(addr.city);
+        if (addr.city_district) parts.push(addr.city_district);
+        if (addr.ward) parts.push(addr.ward);
+        if (addr.suburb) parts.push(addr.suburb);
+        if (addr.town) parts.push(addr.town);
+        if (addr.village) parts.push(addr.village);
+        if (addr.neighbourhood) parts.push(addr.neighbourhood);
+        if (addr.road) parts.push(addr.road);
+        
+        // 番地・号を追加
+        let houseInfo = "";
+        if (addr.house_number) houseInfo = addr.house_number;
+        if (addr.block_number) houseInfo += (houseInfo ? "-" : "") + addr.block_number;
+        if (houseInfo) parts.push(houseInfo);
+        
+        if (parts.length > 0) {
+            // 重複を除去して結合
+            return parts.reduce((acc, curr, idx) => {
+                if (acc.includes(curr)) return acc;
+                // 最初以外で、前が数字で次も数字ならハイフンで繋ぐ等の処理はhouseInfoで済み
+                return acc + curr;
+            }, "");
+        }
+        
+        return displayName.split(',')[0];
+    }
+
+    function updateAddressUI(type, address) {
+        if (type === 'start') {
+            startAddressDisplay.textContent = address;
+            startSearchInput.value = address === '未設定' ? '' : address;
+        } else {
+            destAddressDisplay.textContent = address;
+            destSearchInput.value = address === '未設定' ? '' : address;
+        }
+    }
+
+    // コピー機能 (window関数として公開)
+    window.copyDisplayAddress = function(elementId) {
+        const text = document.getElementById(elementId).textContent;
+        if (text === '未設定') return;
+        navigator.clipboard.writeText(text).then(() => {
+            alert('住所をコピーしました: ' + text);
+        });
+    };
 
     startSearchBtn.addEventListener('click', () => searchLocation(startSearchInput.value, 'start'));
     startSearchInput.addEventListener('keypress', (e) => {
@@ -210,21 +307,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- 位置指定・ルート検索モード管理 ---
+    let isCustomStartMode = false;
+    let isCustomDestMode = false;
+    let isTwoPointMode = false;
+    let twoPointStep = 0; // 0: inactive, 1: waiting for start, 2: waiting for dest
+
     // 現在地取得
     locateBtn.addEventListener('click', () => {
+        locateBtn.style.color = '#0b57d0';
         if (!navigator.geolocation) {
             alert('お使いのブラウザは現在地取得に対応していません。');
+            locateBtn.style.color = '';
             return;
         }
-
-        locateBtn.style.color = '#0b57d0';
-
         navigator.geolocation.getCurrentPosition((position) => {
             const lat = position.coords.latitude;
             const lon = position.coords.longitude;
-            const latlng = [lat, lon];
-            
-            updateStartLocationMarker(latlng, 16);
+            updateStartLocationMarker([lat, lon], 16);
             locateBtn.style.color = '';
         }, (error) => {
             console.error('現在地取得に失敗しました:', error);
@@ -233,40 +333,153 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 出発地点・到着地点を手動指定モード
-    let isCustomStartMode = false;
-    let isCustomDestMode = false;
-
     customStartBtn.addEventListener('click', () => {
-        isCustomStartMode = !isCustomStartMode;
-        isCustomDestMode = false;
-        if (customDestBtn) customDestBtn.classList.remove('active');
-        
-        if (isCustomStartMode) {
-            customStartBtn.classList.add('active');
-            map.getContainer().style.cursor = 'crosshair';
-            alert('地図上をタップ（クリック）して出発地点を設定してください。');
-        } else {
-            customStartBtn.classList.remove('active');
-            map.getContainer().style.cursor = '';
-        }
+        toggleMode('start');
     });
 
-    if (customDestBtn) {
-        customDestBtn.addEventListener('click', () => {
-            isCustomDestMode = !isCustomDestMode;
-            isCustomStartMode = false;
-            customStartBtn.classList.remove('active');
-            
-            if (isCustomDestMode) {
-                customDestBtn.classList.add('active');
-                map.getContainer().style.cursor = 'crosshair';
-                alert('地図上をタップ（クリック）して到着地点(目的地)を設定してください。');
-            } else {
-                customDestBtn.classList.remove('active');
-                map.getContainer().style.cursor = '';
-            }
+    customDestBtn.addEventListener('click', () => {
+        toggleMode('dest');
+    });
+
+    twoPointRouteBtn.addEventListener('click', () => {
+        toggleMode('two-point');
+    });
+
+    if (bulkResetBtnMap) {
+        bulkResetBtnMap.addEventListener('click', () => {
+            resetAll();
         });
+    }
+
+    function toggleMode(mode) {
+        const prevStart = isCustomStartMode;
+        const prevDest = isCustomDestMode;
+        const prevTwo = isTwoPointMode;
+
+        isCustomStartMode = false;
+        isCustomDestMode = false;
+        isTwoPointMode = false;
+        twoPointStep = 0;
+        customStartBtn.classList.remove('active');
+        customDestBtn.classList.remove('active');
+        twoPointRouteBtn.classList.remove('active');
+        hideMapHint();
+
+        if (mode === 'start' && !prevStart) {
+            isCustomStartMode = true;
+            customStartBtn.classList.add('active');
+            map.getContainer().style.cursor = 'crosshair';
+            showMapHint("地図をタップして出発地を選択してください");
+        } else if (mode === 'dest' && !prevDest) {
+            isCustomDestMode = true;
+            customDestBtn.classList.add('active');
+            map.getContainer().style.cursor = 'crosshair';
+            showMapHint("地図をタップして目的地を選択してください");
+        } else if (mode === 'two-point' && !prevTwo) {
+            isTwoPointMode = true;
+            twoPointStep = 1;
+            twoPointRouteBtn.classList.add('active');
+            map.getContainer().style.cursor = 'crosshair';
+            showMapHint("【1点目】地図をタップして出発地を選択してください");
+        } else {
+            map.getContainer().style.cursor = '';
+        }
+    }
+
+    function resetTwoPointMode() {
+        isTwoPointMode = false;
+        twoPointStep = 0;
+        twoPointRouteBtn.classList.remove('active');
+        map.getContainer().style.cursor = '';
+        hideMapHint();
+    }
+
+    function showMapHint(text) {
+        mapHint.textContent = text;
+        mapHint.style.display = 'block';
+    }
+
+    function hideMapHint() {
+        mapHint.style.display = 'none';
+        map.getContainer().style.cursor = '';
+    }
+
+    // ナビゲーション誘導表示
+    function showNavGuidance(missingType) {
+        const label = missingType === 'start' ? '出発地' : '目的地';
+        const buttonText = `地図から${label}を選択`;
+        
+        elevatorDetails.innerHTML = `
+            <div class="nav-guide-container">
+                <span class="nav-guide-msg">${label}が未設定です。</span>
+                <div class="nav-guide-actions" style="display: flex; flex-direction: column; gap: 8px; margin-top: 12px; width: 100%;">
+                    <button class="guide-action-btn" id="guide-set-${missingType}-btn">${buttonText}</button>
+                    <button class="guide-action-btn manual-search-btn" id="guide-manual-search-btn">ルートを検索</button>
+                </div>
+            </div>
+        `;
+        
+        document.getElementById(`guide-set-${missingType}-btn`).onclick = () => {
+            toggleMode(missingType);
+        };
+
+        document.getElementById('guide-manual-search-btn').onclick = () => {
+            if (userLocationMarker && destLocationMarker) {
+                const startPos = userLocationMarker.getLatLng();
+                const destPos = destLocationMarker.getLatLng();
+                findRouteBetween(startPos.lat, startPos.lng, destPos.lat, destPos.lng);
+            } else {
+                alert('出発地と目的地の両方を設定してください。');
+            }
+        };
+        
+        infoPanel.classList.add('active');
+        routeInfoPanel.style.display = 'none';
+        if (nearbyElevatorsPanel) nearbyElevatorsPanel.style.display = 'none';
+    }
+
+    // マーカーと住所のリセット機能
+    window.resetLocation = function(type) {
+        if (type === 'start') {
+            if (userLocationMarker) {
+                map.removeLayer(userLocationMarker);
+                userLocationMarker = null;
+            }
+            currentStartAddress = "未設定";
+            updateAddressUI('start', "未設定");
+        } else if (type === 'dest') {
+            if (destLocationMarker) {
+                map.removeLayer(destLocationMarker);
+                destLocationMarker = null;
+            }
+            currentDestAddress = "未設定";
+            updateAddressUI('dest', "未設定");
+        }
+        
+        clearCurrentRoute();
+    };
+
+    // すべてリセット
+    window.resetAll = function() {
+        if (userLocationMarker) { map.removeLayer(userLocationMarker); userLocationMarker = null; }
+        if (destLocationMarker) { map.removeLayer(destLocationMarker); destLocationMarker = null; }
+        currentStartAddress = "未設定";
+        currentDestAddress = "未設定";
+        updateAddressUI('start', "未設定");
+        updateAddressUI('dest', "未設定");
+        clearCurrentRoute();
+    };
+
+    function clearCurrentRoute() {
+        if (routeLine) {
+            map.removeLayer(routeLine);
+            routeLine = null;
+        }
+        if (routeStepMarkers) routeStepMarkers.clearLayers();
+        routeInfoPanel.style.display = 'none';
+        summaryPanel.style.display = 'none';
+        if (nearbyElevatorsPanel) nearbyElevatorsPanel.style.display = 'none';
+        hideMapHint();
     }
 
     map.on('click', (e) => {
@@ -274,12 +487,38 @@ document.addEventListener('DOMContentLoaded', () => {
             updateStartLocationMarker([e.latlng.lat, e.latlng.lng], null);
             isCustomStartMode = false;
             customStartBtn.classList.remove('active');
-            map.getContainer().style.cursor = '';
+            hideMapHint();
+            
+            // 両方の地点が揃っていれば自動検索
+            if (destLocationMarker) {
+                const startPos = userLocationMarker.getLatLng();
+                const destPos = destLocationMarker.getLatLng();
+                findRouteBetween(startPos.lat, startPos.lng, destPos.lat, destPos.lng);
+            }
         } else if (isCustomDestMode) {
             updateDestLocationMarker([e.latlng.lat, e.latlng.lng], null);
             isCustomDestMode = false;
-            if (customDestBtn) customDestBtn.classList.remove('active');
-            map.getContainer().style.cursor = '';
+            customDestBtn.classList.remove('active');
+            hideMapHint();
+
+            // 両方の地点が揃っていれば自動検索
+            if (userLocationMarker) {
+                const startPos = userLocationMarker.getLatLng();
+                const destPos = destLocationMarker.getLatLng();
+                findRouteBetween(startPos.lat, startPos.lng, destPos.lat, destPos.lng);
+            }
+        } else if (isTwoPointMode) {
+            if (twoPointStep === 1) {
+                updateStartLocationMarker([e.latlng.lat, e.latlng.lng], null);
+                twoPointStep = 2;
+                showMapHint("【2点目】地図をタップして目的地を選択してください");
+            } else if (twoPointStep === 2) {
+                updateDestLocationMarker([e.latlng.lat, e.latlng.lng], null);
+                const startPos = userLocationMarker.getLatLng();
+                const destPos = [e.latlng.lat, e.latlng.lng];
+                findRouteBetween(startPos.lat, startPos.lng, destPos[0], destPos[1]);
+                resetTwoPointMode();
+            }
         }
     });
 
@@ -299,6 +538,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (zoomLvl) {
             map.setView(latlng, zoomLvl);
         }
+        // 位置が更新されたら住所も更新
+        reverseGeocode(latlng[0], latlng[1], 'start');
     }
 
     const destIcon = L.divIcon({
@@ -317,6 +558,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (zoomLvl) {
             map.setView(latlng, zoomLvl);
         }
+        // 位置が更新されたら住所も更新
+        reverseGeocode(latlng[0], latlng[1], 'dest');
         findNearbyElevators(latlng[0], latlng[1]);
     }
 
@@ -334,19 +577,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // タクシー料金の概算計算（95%信頼区間の目安範囲）
     function calculateTaxiFare(distanceKm) {
-        if (distanceKm <= 0.91) {
-            return { base: 500, min: 500, max: 500 };
+        // 普通車: 初乗り0.91kmまで500円、以降約232mごとに100円
+        let baseFare = 500;
+        if (distanceKm > 0.91) {
+            const extraDist = distanceKm - 0.91;
+            const extraTicks = Math.ceil(extraDist / 0.232);
+            baseFare += extraTicks * 100;
         }
-        // 初乗り0.91km以降、約232m (0.232km) ごとに100円
-        const extraDist = distanceKm - 0.91;
-        const extraTicks = Math.ceil(extraDist / 0.232);
-        const baseFare = 500 + extraTicks * 100;
 
-        // ±約10%で変動幅（信頼区間目安）を作成する
-        const minFare = Math.max(500, Math.floor((baseFare * 0.9) / 100) * 100);
-        const maxFare = Math.ceil((baseFare * 1.15) / 100) * 100;
+        // 深夜料金 (2割増)
+        const nightFare = Math.floor((baseFare * 1.2) / 10) * 10;
+        
+        // 大型車 (目安として1.3倍程度とする)
+        const largeFare = Math.floor((baseFare * 1.3) / 10) * 10;
 
-        return { base: baseFare, min: minFare, max: maxFare };
+        return { 
+            standard: baseFare, 
+            night: nightFare, 
+            large: largeFare 
+        };
     }
 
     function translateManeuver(step, index) {
@@ -428,7 +677,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 既存の「現在地／出発地 → エレベーター(目的)」 ルート検索
     async function findRoute(destLat, destLon) {
         if (!userLocationMarker) {
-            alert('まず出発地点を設定してください（現在地ボタン、または出発地点を手動指定ボタンを使用）。');
+            showNavGuidance('start');
             return;
         }
         const startLat = userLocationMarker.getLatLng().lat;
@@ -502,10 +751,22 @@ document.addEventListener('DOMContentLoaded', () => {
             routeDistanceText.textContent = `${distanceStr} km`;
             routeTimeAdultText.textContent = `${adultTime} 分`;
             routeTimeSeniorText.textContent = `${seniorTime} 分`;
+            // パネルを表示して結果へ。2点指定の場合も詳細情報を表示
+            routeInfoPanel.style.display = 'block';
+            infoPanel.classList.add('active'); // パネルを前面に
             
-            // 表示方法: 例 "約800円 〜 1000円" 
-            const fareDisplay = taxiFare.min === taxiFare.max ? `約${taxiFare.base}円` : `約${taxiFare.min}円 ～ ${taxiFare.max}円`;
-            routeTaxiFareText.textContent = fareDisplay;
+            // 下部（結果）へスムーズにスクロール
+            setTimeout(() => {
+                routeInfoPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+
+            // ルートが正常に見つかったタイミングで履歴に保存
+            saveToHistory(currentStartAddress, currentDestAddress);
+            
+            // 表示方法: 比較表を更新
+            document.getElementById('fare-standard-day').textContent = `約${taxiFare.standard}円`;
+            document.getElementById('fare-standard-night').textContent = `約${taxiFare.night}円`;
+            document.getElementById('fare-large-day').textContent = `約${taxiFare.large}円`;
             
             if (nearbyElevatorsPanel) nearbyElevatorsPanel.style.display = 'none';
             routeInfoPanel.style.display = 'block';
@@ -525,8 +786,13 @@ document.addEventListener('DOMContentLoaded', () => {
             routeTimeAdultText.textContent = `${adultTime} 分 (目安)`;
             routeTimeSeniorText.textContent = `${seniorTime} 分 (目安)`;
             
-            const fareDisplay = taxiFare.min === taxiFare.max ? `約${taxiFare.base}円` : `約${taxiFare.min}円 ～ ${taxiFare.max}円`;
-            routeTaxiFareText.textContent = `${fareDisplay} (目安)`;
+            // 正常なルートが見つからなくても、検索自体は行われたため履歴に保存
+            saveToHistory(currentStartAddress, currentDestAddress);
+
+            // 表示方法: 比較表を更新
+            document.getElementById('fare-standard-day').textContent = `約${taxiFare.standard}円`;
+            document.getElementById('fare-standard-night').textContent = `約${taxiFare.night}円`;
+            document.getElementById('fare-large-day').textContent = `約${taxiFare.large}円`;
             
             routeInstructionsList.innerHTML = '<li>直線距離で計算したため、詳細な案内は表示できません。</li>';
             
@@ -607,6 +873,107 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         return { info: "運行データがありません" };
     }
+
+    // --- 履歴・お気に入り管理ロジック ---
+    let searchHistory = JSON.parse(localStorage.getItem('nagoya_elevator_history') || '[]');
+    let searchFavorites = JSON.parse(localStorage.getItem('nagoya_elevator_favorites') || '[]');
+
+    function saveToHistory(start, dest) {
+        if (start === '未設定' || dest === '未設定') return;
+        
+        // 重複チェック
+        const exists = searchHistory.find(h => h.start === start && h.dest === dest);
+        if (exists) return;
+
+        searchHistory.unshift({ start, dest, id: Date.now() });
+        if (searchHistory.length > 20) searchHistory.pop();
+        
+        localStorage.setItem('nagoya_elevator_history', JSON.stringify(searchHistory));
+        if (currentHistoryTab === 'recent') renderHistory();
+    }
+
+
+
+    function renderHistory() {
+        historyList.innerHTML = '';
+        const items = currentHistoryTab === 'recent' ? searchHistory : searchFavorites;
+        
+        if (items.length === 0) {
+            historyEmptyMsg.style.display = 'block';
+            return;
+        }
+        historyEmptyMsg.style.display = 'none';
+
+        items.forEach((item, index) => {
+            const li = document.createElement('li');
+            li.className = 'history-item';
+            
+            const isFav = searchFavorites.some(f => f.start === item.start && f.dest === item.dest);
+            
+            li.innerHTML = `
+                <div class="history-item-content">
+                    <div class="history-item-title">${item.start} → ${item.dest}</div>
+                </div>
+                <button class="fav-toggle-btn ${isFav ? 'is-fav' : ''}" data-index="${index}">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"/>
+                    </svg>
+                </button>
+            `;
+            
+            // 履歴クリックで検索実行
+            li.querySelector('.history-item-content').addEventListener('click', () => {
+                startSearchInput.value = item.start;
+                destSearchInput.value = item.dest;
+                searchLocation(item.start, 'start');
+                searchLocation(item.dest, 'dest');
+                historyPanel.style.display = 'none';
+            });
+
+            // お気に入りトグル
+            li.querySelector('.fav-toggle-btn').addEventListener('click', (e) => {
+                e.stopPropagation();
+                toggleFavorite(item);
+            });
+
+            historyList.appendChild(li);
+        });
+    }
+
+    function toggleFavorite(item) {
+        const favIndex = searchFavorites.findIndex(f => f.start === item.start && f.dest === item.dest);
+        if (favIndex > -1) {
+            searchFavorites.splice(favIndex, 1);
+        } else {
+            searchFavorites.unshift({ ...item, id: Date.now() });
+        }
+        localStorage.setItem('nagoya_elevator_favorites', JSON.stringify(searchFavorites));
+        renderHistory();
+    }
+
+    // イベントリスナー
+    historyBtn.addEventListener('click', () => {
+        historyPanel.style.display = 'flex';
+        renderHistory();
+    });
+
+    closeHistoryBtn.addEventListener('click', () => {
+        historyPanel.style.display = 'none';
+    });
+
+    tabRecent.addEventListener('click', () => {
+        currentHistoryTab = 'recent';
+        tabRecent.classList.add('active');
+        tabFavorites.classList.remove('active');
+        renderHistory();
+    });
+
+    tabFavorites.addEventListener('click', () => {
+        currentHistoryTab = 'favorites';
+        tabFavorites.classList.add('active');
+        tabRecent.classList.remove('active');
+        renderHistory();
+    });
 
     // GeoJSONデータの読み込みと描画
     // ローカルファイルでのCORSエラーを回避するため、all-elevators.jsから直接読み込む
@@ -803,7 +1170,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         document.getElementById('find-dest-route-btn').onclick = () => {
                             const latlng = layer.getLatLng();
                             if (!destLocationMarker) {
-                                alert('まず到着地点(目的地)を設定してください（到着地点を手動指定ボタンを使用）。');
+                                showNavGuidance('dest');
                                 return;
                             }
                             const destLat = destLocationMarker.getLatLng().lat;

@@ -59,12 +59,19 @@
                         </svg>
                     </button>
                 </div>
+                <button id="history-btn" class="history-btn" title="検索履歴・お気に入り">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13 3C8.03 3 4 7.03 4 12H1L4.89 15.89L4.96 16.03L9 12H6C6 8.13 9.13 5 13 5C16.87 5 20 8.13 20 12C20 15.87 16.87 19 13 19C11.07 19 9.32 18.21 8.06 16.94L6.64 18.36C8.27 19.99 10.51 21 13 21C17.97 21 22 16.97 22 12C22 7.03 17.97 3 13 3ZM12 8V13L16.28 15.54L17 14.33L13.5 12.25V8H12Z" fill="currentColor"/>
+                    </svg>
+                    <span>履歴</span>
+                </button>
             </div>
         </div>
     </header>
 
     <main>
         <div id="map"></div>
+    <div id="map-hint" class="map-hint-overlay">地図をタップして出発地を選択してください</div>
 
         <!-- 現在地ボタン -->
         <div class="map-controls">
@@ -105,6 +112,23 @@
                     </svg>
                 </button>
             </div>
+            <div class="map-control-group">
+                <span class="map-btn-label">2点指定</span>
+                <button id="two-point-route-btn" class="map-btn two-point-route-btn" title="出発地と目的地を連続で指定">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 16.5C21 16.88 20.79 17.21 20.47 17.38L12.57 21.82C12.41 21.94 12.21 22 12 22C11.79 22 11.59 21.94 11.43 21.82L3.53 17.38C3.21 17.21 3 16.88 3 16.5V7.5C3 7.12 3.21 6.79 3.53 6.62L11.43 2.18C11.59 2.06 11.79 2 12 2C12.21 2 12.41 2.06 12.57 2.18L20.47 6.62C20.79 6.79 21 7.12 21 7.5V16.5Z" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <circle cx="12" cy="12" r="3" fill="currentColor"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="map-control-group">
+                <span class="map-btn-label">リセット</span>
+                <button id="bulk-reset-btn-map" class="map-btn bulk-reset-btn" title="出発地・到着地を同時にリセット">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4C7.58 4 4.01 7.58 4.01 12C4.01 16.42 7.58 20 12 20C15.73 20 18.84 17.45 19.73 14H17.65C16.83 16.33 14.61 18 12 18C8.69 18 6 15.31 6 12C6 8.69 8.69 6 12 6C13.66 6 15.14 6.69 16.22 7.78L13 11H20V4L17.65 6.35Z" fill="currentColor"/>
+                    </svg>
+                </button>
+            </div>
         </div>
 
         <div class="map-overlay" id="info-panel">
@@ -133,8 +157,21 @@
                         <span id="route-time-senior" class="stat-value">-- 分</span>
                     </div>
                     <div class="stat-item taxi-stat">
-                        <span class="stat-label">タクシー目安</span>
-                        <span id="route-taxi-fare" class="stat-value taxi-val">-- 円</span>
+                        <span class="stat-label">タクシー料金比較 (目安)</span>
+                        <div class="taxi-comparison-table">
+                            <div class="taxi-comp-row">
+                                <span class="comp-label">普通車 (昼間)</span>
+                                <span id="fare-standard-day" class="comp-value">-- 円</span>
+                            </div>
+                            <div class="taxi-comp-row">
+                                <span class="comp-label">普通車 (深夜2割増)</span>
+                                <span id="fare-standard-night" class="comp-value highlight">-- 円</span>
+                            </div>
+                            <div class="taxi-comp-row">
+                                <span class="comp-label">大型車 (目安)</span>
+                                <span id="fare-large-day" class="comp-value">-- 円</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- ルート案内表示エリア -->
@@ -148,6 +185,32 @@
                 <!-- タクシー配車エリア -->
                 <div class="taxi-contact-container">
                     <h5 class="instructions-title">タクシーを呼ぶ</h5>
+                    
+                    <!-- 住所表示・コピーセクション -->
+                    <div class="current-addresses">
+                        <div class="address-item">
+                            <div class="address-row">
+                                <span class="address-label start">出発地:</span>
+                                <span id="start-address-display" class="address-value">未設定</span>
+                                <div class="address-actions">
+                                    <button class="copy-btn" onclick="copyDisplayAddress('start-address-display')" title="住所をコピー">コピー</button>
+                                    <button class="reset-location-btn" onclick="resetLocation('start')" title="出発地をリセット">リセット</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="address-item">
+                            <div class="address-row">
+                                <span class="address-label dest">到着地:</span>
+                                <span id="dest-address-display" class="address-value">未設定</span>
+                                <div class="address-actions">
+                                    <button class="copy-btn" onclick="copyDisplayAddress('dest-address-display')" title="住所をコピー">コピー</button>
+                                    <button class="reset-location-btn" onclick="resetLocation('dest')" title="目的地をリセット">リセット</button>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="address-note">※タクシー呼出時に上の住所を伝えてください</p>
+                    </div>
+
                     <div class="taxi-grid">
                         <a href="tel:0522031212" class="taxi-card">
                             <span class="taxi-name">つばめグループ</span>
@@ -239,20 +302,53 @@
                     </section>
                     <section class="how-to-step">
                         <h3>3. 道程をつくる</h3>
-                        <p>出発地と目的地を両方設定すると、おすすめの道順が表示されます。</p>
+                        <p style="font-size: 1.15rem; font-weight: bold; color: #3c4043; margin-top: 10px; margin-bottom: 8px;">【2点指定モードでつくる】</p>
+                        <p>地図上の好きな2地点を直接結ぶルートを作成します。</p>
                         <ul class="step-bullets">
-                            <li>地図を長押し（または右側のボタン）して地点を指定することもできます。</li>
-                            <li>道順が表示されている間は、目的地に近いエレベーターも一緒に案内します。</li>
+                            <li><strong>操作方法</strong>: 右側の<span style="color: #6200ee;">2点指定ボタン</span>を押した後、地図上の「出発地」→「目的地」の順に2回タップするだけで即座にルートが表示されます。</li>
+                            <li><strong>用途</strong>: 駅以外の場所間のルートやタクシー料金をサッと調べたい時に便利です。</li>
+                        </ul>
+                        
+                        <p style="font-size: 1.15rem; font-weight: bold; color: #3c4043; margin-top: 24px; margin-bottom: 8px;">【駅・エレベーターからつくる】</p>
+                        <p>特定の施設を拠点にした正確なルートを作成します。</p>
+                        <ul class="step-bullets">
+                            <li><strong>操作方法</strong>: 地図上のアイコン（駅やエレベーター）をタップし、詳細パネル内の「ここからのルート」や「ここへのルート」ボタンを押します。</li>
+                            <li><strong>誘導機能</strong>: 出発地未設定の際に「ここへのルート」を押すと、地点指定を促す案内ボタンがパネル内に表示されます。</li>
                         </ul>
                     </section>
                     <section class="how-to-step">
-                        <h3>4. 現在地を表示</h3>
+                        <h3>4. 住所のコピーとリセット</h3>
+                        <p>タクシー利用に便利な機能です。</p>
+                        <ul class="step-bullets">
+                            <li><strong>住所コピー</strong>: 到着地や出発地の詳細な住所をボタン一つでコピーし、電話口で伝えやすくできます。</li>
+                            <li><strong>各種リセット</strong>: 各地点の「リセット」で個別消去、右側の<span style="color: #d32f2f;">リセットボタン</span>で全消去が可能です。</li>
+                        </ul>
+                    </section>
+                    <section class="how-to-step">
+                        <h3>5. 現在地を表示</h3>
                         <p>右側の<svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="vertical-align: middle;"><path d="M12 8C9.79 8 8 9.79 8 12C8 14.21 9.79 16 12 16C14.21 16 16 14.21 16 12C16 9.79 14.21 8 12 8ZM20.94 11C20.48 6.83 17.17 3.52 13 3.06V1H11V3.06C6.83 3.52 3.52 6.83 3.06 11H1V13H3.06C3.52 17.17 6.83 20.48 11 20.94V23H13V20.94C17.17 20.48 20.48 17.17 20.94 13H23V11H20.94ZM12 19C8.13 19 5 15.87 5 12C5 8.13 8.13 5 12 5C15.87 5 19 8.13 19 12C19 15.87 15.87 19 12 19Z" fill="black" /></svg>ボタンを押すと、今いる場所が表示されます。</p>
                     </section>
                 </div>
                 <div class="modal-footer">
                     <button id="close-how-to-use-modal-bottom" class="elder-close-btn">閉じる</button>
                 </div>
+            </div>
+        </div>
+        <!-- 履歴・お気に入りパネル -->
+        <div id="history-panel" class="history-panel" style="display: none;">
+            <div class="history-header">
+                <h3>検索履歴・お気に入り</h3>
+                <button id="close-history" class="close-btn">&times;</button>
+            </div>
+            <div class="history-tabs">
+                <button id="tab-recent" class="history-tab active">最近の検索</button>
+                <button id="tab-favorites" class="history-tab">お気に入り</button>
+            </div>
+            <div id="history-list-container" class="history-list-container">
+                <ul id="history-list" class="history-list">
+                    <!-- 履歴がここに追加されます -->
+                </ul>
+                <p id="history-empty-msg" class="placeholder-text" style="display: none;">履歴がありません。</p>
             </div>
         </div>
     </main>
