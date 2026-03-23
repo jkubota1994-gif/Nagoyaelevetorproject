@@ -109,6 +109,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // 表示モード切り替え（PC/モバイル）
+    const viewToggleBtn = document.getElementById('view-toggle-btn');
+    const viewToggleLabel = document.getElementById('view-toggle-label');
+    if (viewToggleBtn) {
+        viewToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('forced-pc');
+            const isForcedPc = document.body.classList.contains('forced-pc');
+            if (viewToggleLabel) {
+                viewToggleLabel.textContent = isForcedPc ? 'モバイル表示' : 'PC表示';
+            }
+            // マップサイズを再計算
+            setTimeout(() => {
+                map.invalidateSize();
+            }, 300);
+        });
+    }
+
     // 算出根拠モーダルのイベント
     showBasisBtn.addEventListener('click', () => {
         basisModal.style.display = 'flex';
