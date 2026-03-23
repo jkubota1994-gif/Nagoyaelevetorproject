@@ -433,7 +433,8 @@ body.forced-pc .map-overlay.active {
     body:not(.forced-pc) .map-overlay {
         position: absolute;
         width: 100%;
-        height: 70%;
+        max-height: 80%;
+        height: auto;
         bottom: 0;
         top: auto;
         margin-right: 0;
@@ -456,18 +457,31 @@ body.forced-pc .map-overlay.active {
     }
 
     body:not(.forced-pc) .map-controls {
-        bottom: auto;
-        top: calc(180px + env(safe-area-inset-top, 0px)); /* Shift down if notch present */
+        bottom: 20px;
+        top: auto;
         right: 10px;
-        gap: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        z-index: 1002;
     }
     body:not(.forced-pc) .map-btn {
-        width: 44px;
-        height: 44px;
+        width: 36px;
+        height: 36px;
     }
     body:not(.forced-pc) .map-btn-label {
-        font-size: 0.8rem;
-        padding: 2px 8px;
+        display: none; /* Hide labels to save space, rely on icons */
+    }
+    /* Show label on long press or just keep them very small if needed */
+    /* For now, let's keep them but make them smaller and float next to button */
+    body:not(.forced-pc) .map-control-group {
+        flex-direction: row-reverse;
+    }
+    body:not(.forced-pc) .map-btn-label {
+        display: block;
+        font-size: 0.7rem;
+        padding: 2px 6px;
+        white-space: nowrap;
     }
 }
 
@@ -550,31 +564,32 @@ body.forced-pc .map-overlay.active {
     body:not(.forced-pc) .header-content {
         flex-direction: column;
         align-items: flex-start;
-        padding: 12px 16px 8px 16px; /* Increased top padding */
+        padding: 8px 12px;
+        gap: 6px;
     }
     body:not(.forced-pc) .header-search-container {
-        margin-left: 0;
+        display: none; /* Hide by default on very small screens, or compact it */
+    }
+    /* Let's keep it but make it very compact row */
+    body:not(.forced-pc) .header-search-container {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
         width: 100%;
-        display: grid;
-        grid-template-columns: 1fr;
         gap: 8px;
-        margin-top: 8px;
+        padding-bottom: 4px;
+        margin-top: 4px;
     }
     body:not(.forced-pc) .header-search {
-        width: 100%;
-    }
-    body:not(.forced-pc) #start-search-input,
-    body:not(.forced-pc) #dest-search-input,
-    body:not(.forced-pc) #station-search-input {
-        width: 100%;
-        flex: 1;
-    }
-    body:not(.forced-pc) .logo-area h1 {
-        font-size: 1.1rem;
+        flex: 0 0 calc(100% - 40px);
+        min-width: 250px;
     }
     body:not(.forced-pc) .history-btn {
-        justify-content: center;
-        width: 100%;
+        padding: 4px 8px;
+        font-size: 0.8rem;
+    }
+    body:not(.forced-pc) .logo-area h1 {
+        font-size: 1rem;
     }
 }
 
