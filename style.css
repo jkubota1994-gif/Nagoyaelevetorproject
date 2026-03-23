@@ -38,6 +38,7 @@ body {
     position: relative;
     z-index: 1000;
     padding: 12px 24px;
+    padding-top: calc(12px + env(safe-area-inset-top, 0px)); /* Handle status bar/notch */
 }
 
 .header-content {
@@ -456,7 +457,7 @@ body.forced-pc .map-overlay.active {
 
     body:not(.forced-pc) .map-controls {
         bottom: auto;
-        top: 180px;
+        top: calc(180px + env(safe-area-inset-top, 0px)); /* Shift down if notch present */
         right: 10px;
         gap: 8px;
     }
@@ -549,7 +550,7 @@ body.forced-pc .map-overlay.active {
     body:not(.forced-pc) .header-content {
         flex-direction: column;
         align-items: flex-start;
-        padding: 8px 16px;
+        padding: 12px 16px 8px 16px; /* Increased top padding */
     }
     body:not(.forced-pc) .header-search-container {
         margin-left: 0;
