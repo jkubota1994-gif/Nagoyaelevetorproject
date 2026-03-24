@@ -139,6 +139,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // パネル状態管理用ヘルパー
+    function openInfoPanel() {
+        infoPanel.classList.add('active');
+        document.body.classList.add('panel-active');
+    }
+
+    function closeInfoPanel() {
+        infoPanel.classList.remove('active');
+        document.body.classList.remove('panel-active');
+    }
+
     // 駅検索機能
     function searchStation() {
         const query = searchInput.value.trim();
@@ -285,7 +296,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     closePanelBtn.addEventListener('click', () => {
-        infoPanel.classList.remove('active');
+        closeInfoPanel();
         if (routeLine) {
             map.removeLayer(routeLine);
             routeLine = null;
@@ -450,7 +461,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
         
-        infoPanel.classList.add('active');
+        openInfoPanel();
         routeInfoPanel.style.display = 'none';
         if (nearbyElevatorsPanel) nearbyElevatorsPanel.style.display = 'none';
     }
@@ -686,7 +697,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nearbyElevatorsList.appendChild(li);
         });
 
-        infoPanel.classList.add('active');
+        openInfoPanel();
         routeInfoPanel.style.display = 'none';
         nearbyElevatorsPanel.style.display = 'block';
     }
@@ -770,7 +781,7 @@ document.addEventListener('DOMContentLoaded', () => {
             routeTimeSeniorText.textContent = `${seniorTime} 分`;
             // パネルを表示して結果へ。2点指定の場合も詳細情報を表示
             routeInfoPanel.style.display = 'block';
-            infoPanel.classList.add('active'); // パネルを前面に
+            openInfoPanel(); // パネルを前面に
             
             // 下部（結果）へスムーズにスクロール
             setTimeout(() => {
@@ -1089,8 +1100,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                     <p style="font-size: 12px; color: #666; margin-top: 15px;">※ このピンは駅の代表点を示しています。<br>周辺の赤いピンがエレベーターの位置です。</p>
                                 </div>
                             `;
-                        infoPanel.classList.add('active');
-                        infoPanel.classList.add('active');
+                        openInfoPanel();
                     });
 
                 } else if (props.type === 'toilet') {
@@ -1115,7 +1125,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 </div>
                             </div>
                         `;
-                        infoPanel.classList.add('active');
+                        openInfoPanel();
                         document.getElementById('find-route-to-toilet-btn').onclick = () => {
                             findRoute(layer.getLatLng().lat, layer.getLatLng().lng);
                         };
@@ -1177,7 +1187,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             </div>
                         `;
                         elevatorDetails.innerHTML = template;
-                        infoPanel.classList.add('active');
+                        openInfoPanel();
 
                         // ルート検索ボタンのイベントリスナー（動的に追加された要素用）
                         document.getElementById('find-route-btn').onclick = () => {
@@ -1201,6 +1211,6 @@ document.addEventListener('DOMContentLoaded', () => {
     } catch (error) {
         console.error('GeoJSONの読み込みに失敗しました:', error);
         elevatorDetails.innerHTML = `<p style="color: red; padding: 15px;">データの読み込みに失敗しました。<br>表示に必要なデータファイルが存在するか確認してください。</p>`;
-        infoPanel.classList.add('active'); // エラーが見えるようにパネルを表示
+        openInfoPanel(); // エラーが見えるようにパネルを表示
     }
 });

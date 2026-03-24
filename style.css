@@ -343,6 +343,12 @@ body.forced-pc .map-overlay.active {
     gap: 10px;
 }
 
+/* Adjustments when panel is active */
+.panel-active .map-controls {
+    right: 420px; /* Shift left on desktop to avoid sidebar */
+    transition: right 0.3s ease;
+}
+
 .map-btn-label {
     background: rgba(255, 255, 255, 0.9);
     padding: 4px 10px;
@@ -482,6 +488,13 @@ body.forced-pc .map-overlay.active {
         font-size: 0.7rem;
         padding: 2px 6px;
         white-space: nowrap;
+    }
+
+    /* Change behavior when panel is active on mobile */
+    body.panel-active:not(.forced-pc) .map-controls {
+        right: 10px; /* Keep at right */
+        z-index: 900; /* Move behind panel (panel is 1000) */
+        transition: none; /* Instant change to avoid sliding visible on top of panel */
     }
 }
 
