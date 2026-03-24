@@ -5511,8 +5511,8 @@
       },
       "properties": {
         "id": "excel_68",
-        "station": "伏見",
-        "location": "伏見駅周辺",
+        "station": "丸の内",
+        "location": "丸の内駅周辺",
         "description": "地上～地下鉄改札口フロア（桜通線が近い）",
         "status": "稼働中",
         "source": "manual_excel",
@@ -5531,8 +5531,8 @@
       },
       "properties": {
         "id": "excel_69",
-        "station": "伏見",
-        "location": "伏見駅周辺",
+        "station": "丸の内",
+        "location": "丸の内駅周辺",
         "description": "地上～地下鉄改札口フロア（鶴舞線が近い）",
         "status": "稼働中",
         "source": "manual_excel",
