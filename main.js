@@ -507,6 +507,9 @@ document.addEventListener('DOMContentLoaded', () => {
         routeInfoPanel.style.display = 'none';
         summaryPanel.style.display = 'none';
         if (nearbyElevatorsPanel) nearbyElevatorsPanel.style.display = 'none';
+        // 電車ルートパネルも非表示
+        const subwayPanel = document.getElementById('subway-route-panel');
+        if (subwayPanel) subwayPanel.style.display = 'none';
         hideMapHint();
     }
 
@@ -799,6 +802,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (nearbyElevatorsPanel) nearbyElevatorsPanel.style.display = 'none';
             routeInfoPanel.style.display = 'block';
 
+            // 電車ルートの計算（非同期で実行）
+            calculateAndShowSubwayRoute(startLat, startLon, destLat, destLon, distanceKm);
+
         } catch (error) {
             console.error('Routing error:', error);
             // 代替案として直線を表示し、計算値を出す
@@ -830,6 +836,135 @@ document.addEventListener('DOMContentLoaded', () => {
             if (routeLine) map.removeLayer(routeLine);
             routeLine = L.polyline([[startLat, startLon], [destLat, destLon]], { color: '#FF3B30', dashArray: '10, 10' }).addTo(map);
         }
+    }
+
+    // =============================================================
+    // 電車ルート計算・表示機能
+    // =============================================================
+
+    /**
+     * 出発地・目的地の座標から最寄り駅を調べ、電車での所要時間を計算して表示する
+     * @param {number} startLat - 出発地緯度
+     * @param {number} startLon - 出発地経度
+     * @param {number} destLat - 目的地緯度
+     * @param {number} destLon - 目的地経度
+     * @param {number} walkingDistKm - 徒歩ルートの実距離(km)
+     */
+    async function calculateAndShowSubwayRoute(startLat, startLon, destLat, destLon, walkingDistKm) {
+        const subwayPanel = document.getElementById('subway-route-panel');
+        if (!subwayPanel) return;
+
+        // subway-travel-time.js が読み込まれているか確認
+        if (typeof subwayTravelTimeData === 'undefined' || typeof findSubwayRoute === 'undefined') {
+            subwayPanel.style.display = 'none';
+            return;
+        }
+
+        // 最寄り駅を取得
+        const nearestStart = findNearestStationFromCoord(startLat, startLon);
+        const nearestDest = findNearestStationFromCoord(destLat, destLon);
+
+        if (!nearestStart || !nearestDest) {
+            subwayPanel.style.display = 'none';
+            return;
+        }
+
+        // 出発地→乗車駅の徒歩距離
+        const walkToStation = calculateDistance(startLat, startLon, nearestStart.lat, nearestStart.lon);
+        // 降車駅→目的地の徒歩距離
+        const walkFromStation = calculateDistance(nearestDest.lat, nearestDest.lon, destLat, destLon);
+
+        // 徒歩時間（成人 4.0km/h）
+        const walkToStationMin = Math.ceil(walkToStation / 4.0 * 60);
+        const walkFromStationMin = Math.ceil(walkFromStation / 4.0 * 60);
+
+        // 乗車駅と降車駅が同じ場合（徒歩の方が効率的）
+        if (nearestStart.name === nearestDest.name) {
+            subwayPanel.style.display = 'none';
+            return;
+        }
+
+        // 電車ルートを計算
+        const subwayResult = findSubwayRoute(nearestStart.name, nearestDest.name);
+
+        if (!subwayResult.found || subwayResult.time === 0) {
+            subwayPanel.style.display = 'none';
+            return;
+        }
+
+        // 電車利用の合計所要時間
+        const totalSubwayTime = walkToStationMin + subwayResult.time + walkFromStationMin;
+
+        // 徒歩のみの時間（比較用）
+        const walkOnlyTime = Math.ceil(walkingDistKm / 4.0 * 60);
+
+        // 電車の方が遅い場合（駅が遠すぎる場合など）は非表示
+        // ただし、乗車駅まで 500m 以内の場合は表示する
+        const MAX_WALK_TO_STATION_M = 800; // 最大徒歩距離(m)
+        if (walkToStation * 1000 > MAX_WALK_TO_STATION_M || walkFromStation * 1000 > MAX_WALK_TO_STATION_M) {
+            subwayPanel.style.display = 'none';
+            return;
+        }
+
+        // UI の更新
+        document.getElementById('subway-walk-to-station').textContent = `${walkToStationMin} 分 (約${(walkToStation * 1000).toFixed(0)}m)`;
+        document.getElementById('subway-from-station').textContent = nearestStart.name + '駅';
+        document.getElementById('subway-train-time').textContent = `${subwayResult.time} 分`;
+        document.getElementById('subway-to-station').textContent = nearestDest.name + '駅';
+        document.getElementById('subway-walk-from-station').textContent = `${walkFromStationMin} 分 (約${(walkFromStation * 1000).toFixed(0)}m)`;
+        document.getElementById('subway-total-time').textContent = `${totalSubwayTime} 分`;
+
+        // 経由駅のパスを表示
+        const pathEl = document.getElementById('subway-route-path');
+        if (pathEl && subwayResult.route && subwayResult.route.length > 0) {
+            const maxShow = 7; // 表示する最大駅数
+            const route = subwayResult.route;
+            let pathHtml = '<span class="subway-path-label">経路: </span>';
+            
+            if (route.length <= maxShow) {
+                pathHtml += route.map(s => `<span class="subway-path-station">${s}</span>`)
+                    .join('<span class="subway-path-arrow">→</span>');
+            } else {
+                // 省略表示
+                const first = route.slice(0, 3);
+                const last = route.slice(-2);
+                pathHtml += first.map(s => `<span class="subway-path-station">${s}</span>`)
+                    .join('<span class="subway-path-arrow">→</span>');
+                pathHtml += `<span class="subway-path-arrow">→ ... (${route.length - 5}駅) → </span>`;
+                pathHtml += last.map(s => `<span class="subway-path-station">${s}</span>`)
+                    .join('<span class="subway-path-arrow">→</span>');
+            }
+            pathEl.innerHTML = pathHtml;
+        }
+
+        subwayPanel.style.display = 'block';
+    }
+
+    /**
+     * 座標から最寄りの地下鉄駅を返す
+     */
+    function findNearestStationFromCoord(lat, lon) {
+        if (typeof elevatorData === 'undefined') return null;
+        const stations = elevatorData.features.filter(f => f.properties.type === 'station');
+        if (stations.length === 0) return null;
+
+        let nearest = null;
+        let minDist = Infinity;
+        stations.forEach(station => {
+            const slon = station.geometry.coordinates[0];
+            const slat = station.geometry.coordinates[1];
+            const dist = calculateDistance(lat, lon, slat, slon);
+            if (dist < minDist) {
+                minDist = dist;
+                nearest = {
+                    name: station.properties.station,
+                    lat: slat,
+                    lon: slon,
+                    distKm: dist
+                };
+            }
+        });
+        return nearest;
     }
 
     // 次発列車を取得する関数 (方面ごとに2-3本表示)

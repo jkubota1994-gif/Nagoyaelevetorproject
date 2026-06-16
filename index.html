@@ -149,9 +149,48 @@
             </div>
             <!-- ルート情報表示エリア -->
             <div id="route-info" class="route-info-panel" style="display: none;">
+                <!-- 電車利用トータル時間パネル -->
+                <div id="subway-route-panel" class="subway-route-panel" style="display: none;">
+                    <div class="subway-route-header">
+                        <span class="subway-route-icon">🚇</span>
+                        <span class="subway-route-title">電車利用の総所要時間</span>
+                    </div>
+                    <div class="subway-route-body">
+                        <div class="subway-route-row">
+                            <span class="subway-route-label">出発地 → 乗車駅まで徒歩</span>
+                            <span id="subway-walk-to-station" class="subway-route-value">-- 分</span>
+                        </div>
+                        <div class="subway-route-row">
+                            <span class="subway-route-label">🚉 乗車駅</span>
+                            <span id="subway-from-station" class="subway-route-value subway-station-name">--</span>
+                        </div>
+                        <div class="subway-route-row subway-train-row">
+                            <span class="subway-route-label">🚇 電車乗車時間</span>
+                            <span id="subway-train-time" class="subway-route-value subway-highlight">-- 分</span>
+                        </div>
+                        <div class="subway-route-row">
+                            <span class="subway-route-label">🚉 降車駅</span>
+                            <span id="subway-to-station" class="subway-route-value subway-station-name">--</span>
+                        </div>
+                        <div class="subway-route-row">
+                            <span class="subway-route-label">降車駅 → 目的地まで徒歩</span>
+                            <span id="subway-walk-from-station" class="subway-route-value">-- 分</span>
+                        </div>
+                        <div class="subway-route-divider"></div>
+                        <div class="subway-route-row subway-total-row">
+                            <span class="subway-route-label subway-total-label">🕐 合計所要時間（電車利用）</span>
+                            <span id="subway-total-time" class="subway-route-value subway-total-value">-- 分</span>
+                        </div>
+                        <div class="subway-route-row">
+                            <span class="subway-route-label" style="font-size:0.75rem; color:#888;">※ 待ち時間・乗換時間は含まず</span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div id="subway-route-path" class="subway-route-path"></div>
+                </div>
                 <div class="route-stats">
                     <div class="stat-item full-width">
-                        <span class="stat-label">距離</span>
+                        <span class="stat-label">徒歩ルートの距離</span>
                         <span id="route-distance" class="stat-value">-- km</span>
                     </div>
                 </div>
@@ -366,7 +405,8 @@
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="data/all-elevators.js?v=8"></script>
     <script src="data/timetable.js?v=8"></script>
-    <script src="main.js?v=8"></script>
+    <script src="data/subway-travel-time.js?v=1"></script>
+    <script src="main.js?v=9"></script>
 </body>
 
 </html>

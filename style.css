@@ -1393,4 +1393,158 @@ body.forced-pc .map-overlay.active {
     from { opacity: 0; }
     to { opacity: 1; }
 }
+
+/* ===== 電車ルートパネル (Subway Route Panel) ===== */
+.subway-route-panel {
+    background: linear-gradient(135deg, #0b57d0 0%, #1565c0 100%);
+    border-radius: 12px;
+    margin-bottom: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(11, 87, 208, 0.3);
+    animation: slideInSubway 0.4s ease;
+}
+
+@keyframes slideInSubway {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.subway-route-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.subway-route-icon {
+    font-size: 1.4rem;
+}
+
+.subway-route-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.3px;
+}
+
+.subway-route-body {
+    padding: 12px 16px;
+}
+
+.subway-route-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.subway-route-row:last-child {
+    border-bottom: none;
+}
+
+.subway-route-label {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
+    flex: 1;
+}
+
+.subway-route-value {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-align: right;
+}
+
+.subway-station-name {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+}
+
+.subway-train-row {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    padding: 8px !important;
+    margin: 4px 0;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+.subway-highlight {
+    background: rgba(255, 200, 0, 0.2);
+    color: #FFD700 !important;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 1rem !important;
+}
+
+.subway-route-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.3);
+    margin: 8px 0;
+}
+
+.subway-total-row {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    padding: 8px 12px !important;
+    border: none !important;
+    margin-top: 4px;
+}
+
+.subway-total-label {
+    font-size: 0.85rem !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+}
+
+.subway-total-value {
+    font-size: 1.4rem !important;
+    font-weight: 800 !important;
+    color: #FFD700 !important;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+}
+
+.subway-route-path {
+    padding: 10px 16px;
+    background: rgba(0, 0, 0, 0.2);
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    min-height: 0;
+}
+
+.subway-route-path:empty {
+    display: none;
+}
+
+.subway-path-station {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 1px 8px;
+    border-radius: 10px;
+    margin: 2px 2px;
+    font-size: 0.75rem;
+}
+
+.subway-path-arrow {
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0 2px;
+    font-size: 0.7rem;
+}
+
+.subway-path-label {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.5);
+    display: block;
+    margin-bottom: 4px;
+}
+
+/* 電車ルート情報のない場合の非表示 */
+.subway-route-panel[style*="display: none"] {
+    margin-bottom: 0;
+}
 
