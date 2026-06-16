@@ -854,91 +854,230 @@ document.addEventListener('DOMContentLoaded', () => {
         const subwayPanel = document.getElementById('subway-route-panel');
         if (!subwayPanel) return;
 
-        // subway-travel-time.js が読み込まれているか確認
         if (typeof subwayTravelTimeData === 'undefined' || typeof findSubwayRoute === 'undefined') {
             subwayPanel.style.display = 'none';
             return;
         }
 
-        // 最寄り駅を取得
         const nearestStart = findNearestStationFromCoord(startLat, startLon);
-        const nearestDest = findNearestStationFromCoord(destLat, destLon);
+        const nearestDest   = findNearestStationFromCoord(destLat,   destLon);
+        if (!nearestStart || !nearestDest) { subwayPanel.style.display = 'none'; return; }
 
-        if (!nearestStart || !nearestDest) {
-            subwayPanel.style.display = 'none';
-            return;
+        const walkToKm   = calculateDistance(startLat, startLon, nearestStart.lat, nearestStart.lon);
+        const walkFromKm = calculateDistance(nearestDest.lat, nearestDest.lon, destLat, destLon);
+
+        // 駅まで 800m 超は非表示
+        const MAX_M = 800;
+        if (walkToKm * 1000 > MAX_M || walkFromKm * 1000 > MAX_M) {
+            subwayPanel.style.display = 'none'; return;
         }
-
-        // 出発地→乗車駅の徒歩距離
-        const walkToStation = calculateDistance(startLat, startLon, nearestStart.lat, nearestStart.lon);
-        // 降車駅→目的地の徒歩距離
-        const walkFromStation = calculateDistance(nearestDest.lat, nearestDest.lon, destLat, destLon);
-
-        // 徒歩時間（成人 4.0km/h）
-        const walkToStationMin = Math.ceil(walkToStation / 4.0 * 60);
-        const walkFromStationMin = Math.ceil(walkFromStation / 4.0 * 60);
-
-        // 乗車駅と降車駅が同じ場合（徒歩の方が効率的）
         if (nearestStart.name === nearestDest.name) {
-            subwayPanel.style.display = 'none';
-            return;
+            subwayPanel.style.display = 'none'; return;
         }
 
-        // 電車ルートを計算
         const subwayResult = findSubwayRoute(nearestStart.name, nearestDest.name);
-
-        if (!subwayResult.found || subwayResult.time === 0) {
-            subwayPanel.style.display = 'none';
-            return;
+        if (!subwayResult.found || subwayResult.travelTime === 0) {
+            subwayPanel.style.display = 'none'; return;
         }
 
-        // 電車利用の合計所要時間
-        const totalSubwayTime = walkToStationMin + subwayResult.time + walkFromStationMin;
+        // ── 時刻計算の準備 ──────────────────────────────────────────
+        const now           = new Date();
+        const nowMin        = now.getHours() * 60 + now.getMinutes();
+        const dayType       = (now.getDay() === 0 || now.getDay() === 6) ? '土休日' : '平日';
+        const TRANSFER_MIN  = 10; // 乗り換えに要する時間
+        const BOARD_GRACE   = 2;  // 2分以内なら次の電車に乗車可
 
-        // 徒歩のみの時間（比較用）
-        const walkOnlyTime = Math.ceil(walkingDistKm / 4.0 * 60);
+        // 徒歩時間
+        const walkToMin   = Math.ceil(walkToKm   / 4.0 * 60);
+        const walkFromMin = Math.ceil(walkFromKm  / 4.0 * 60);
 
-        // 電車の方が遅い場合（駅が遠すぎる場合など）は非表示
-        // ただし、乗車駅まで 500m 以内の場合は表示する
-        const MAX_WALK_TO_STATION_M = 800; // 最大徒歩距離(m)
-        if (walkToStation * 1000 > MAX_WALK_TO_STATION_M || walkFromStation * 1000 > MAX_WALK_TO_STATION_M) {
-            subwayPanel.style.display = 'none';
-            return;
+        // ── セグメントを路線グループに集約 ──────────────────────────
+        const segments = subwayResult.segments || [];
+        const lineGroups = []; // [{ line, totalTime, transferStation }]
+        if (segments.length > 0) {
+            let curLine  = segments[0].line;
+            let curTime  = 0;
+            for (let i = 0; i < segments.length; i++) {
+                const seg = segments[i];
+                if (seg.line !== curLine) {
+                    lineGroups.push({ line: curLine, totalTime: curTime, transferStation: seg.from });
+                    curLine = seg.line;
+                    curTime = 0;
+                }
+                curTime += seg.time;
+            }
+            lineGroups.push({ line: curLine, totalTime: curTime, transferStation: null });
         }
 
-        // UI の更新
-        document.getElementById('subway-walk-to-station').textContent = `${walkToStationMin} 分 (約${(walkToStation * 1000).toFixed(0)}m)`;
+        // ── 時系列シミュレーション ────────────────────────────────────
+        let simMin = nowMin + walkToMin; // 出発駅到着時刻
+
+        // 最初の電車待ち
+        const firstWaitMin = getWaitTimeForNextTrain(nearestStart.name, simMin, dayType);
+        const firstWaitDisplay = firstWaitMin <= BOARD_GRACE ? 0 : firstWaitMin;
+        simMin += firstWaitDisplay;
+
+        let totalTrainTime    = 0;
+        let totalTransferTime = 0;
+        let totalExtraWait    = 0;
+        const transferDetails = []; // UI 表示用
+
+        for (let i = 0; i < lineGroups.length; i++) {
+            const grp = lineGroups[i];
+            totalTrainTime += grp.totalTime;
+            simMin         += grp.totalTime;
+
+            if (i < lineGroups.length - 1) {
+                // 乗り換え処理
+                const tStation = grp.transferStation;
+                simMin         += TRANSFER_MIN;
+                totalTransferTime += TRANSFER_MIN;
+
+                // 乗り換え後の次の電車待ち（2分以内なら乗車可）
+                const nextWait    = getWaitTimeForNextTrain(tStation, simMin, dayType);
+                const nextWaitEff = nextWait <= BOARD_GRACE ? 0 : nextWait;
+                simMin            += nextWaitEff;
+                totalExtraWait    += nextWaitEff;
+
+                transferDetails.push({
+                    station:      tStation,
+                    fromLine:     grp.line,
+                    toLine:       lineGroups[i + 1].line,
+                    transferTime: TRANSFER_MIN,
+                    rawWait:      nextWait,          // 実際の待ち分
+                    effectWait:   nextWaitEff,        // 適用する待ち分
+                    nextSegTime:  lineGroups[i + 1].totalTime
+                });
+            }
+        }
+
+        const totalTime = walkToMin + firstWaitDisplay + totalTrainTime
+                        + totalTransferTime + totalExtraWait + walkFromMin;
+
+        // ── DOM 更新（固定行） ───────────────────────────────────────
+        document.getElementById('subway-walk-to-station').textContent =
+            `${walkToMin} 分 (約${(walkToKm * 1000).toFixed(0)}m)`;
         document.getElementById('subway-from-station').textContent = nearestStart.name + '駅';
-        document.getElementById('subway-train-time').textContent = `${subwayResult.time} 分`;
-        document.getElementById('subway-to-station').textContent = nearestDest.name + '駅';
-        document.getElementById('subway-walk-from-station').textContent = `${walkFromStationMin} 分 (約${(walkFromStation * 1000).toFixed(0)}m)`;
-        document.getElementById('subway-total-time').textContent = `${totalSubwayTime} 分`;
 
-        // 経由駅のパスを表示
+        const waitLabel = firstWaitDisplay <= BOARD_GRACE
+            ? `${firstWaitMin} 分（次の電車に乗車可）`
+            : `${firstWaitDisplay} 分`;
+        document.getElementById('subway-first-wait').textContent = waitLabel;
+
+        document.getElementById('subway-train-time').textContent = `${totalTrainTime} 分`;
+        document.getElementById('subway-to-station').textContent  = nearestDest.name + '駅';
+        document.getElementById('subway-walk-from-station').textContent =
+            `${walkFromMin} 分 (約${(walkFromKm * 1000).toFixed(0)}m)`;
+        document.getElementById('subway-total-time').textContent = `${totalTime} 分`;
+
+        // ── 乗り換えブロックを動的生成 ──────────────────────────────
+        const transfersContainer = document.getElementById('subway-transfers-container');
+        if (transfersContainer) {
+            if (transferDetails.length > 0) {
+                let html = '';
+                for (const t of transferDetails) {
+                    const waitOk   = t.rawWait <= BOARD_GRACE;
+                    const waitText = waitOk
+                        ? `${t.rawWait} 分（2分以内→乗車可）`
+                        : `${t.effectWait} 分待ち`;
+                    const waitClass = waitOk ? 'subway-wait-ok' : 'subway-wait-needed';
+
+                    html += `
+                    <div class="subway-transfer-block">
+                        <div class="subway-transfer-header">
+                            <span class="subway-transfer-icon">🔄</span>
+                            <span class="subway-transfer-station">${t.station}駅 乗り換え</span>
+                        </div>
+                        <div class="subway-transfer-row">
+                            <span class="subway-transfer-line-label">${t.fromLine}</span>
+                            <span class="subway-transfer-arrow">→</span>
+                            <span class="subway-transfer-line-label">${t.toLine}</span>
+                        </div>
+                        <div class="subway-transfer-detail-row">
+                            <span class="subway-route-label">　乗り換え時間</span>
+                            <span class="subway-route-value">${t.transferTime} 分</span>
+                        </div>
+                        <div class="subway-transfer-detail-row">
+                            <span class="subway-route-label">　次の電車まで待ち</span>
+                            <span class="subway-route-value ${waitClass}">${waitText}</span>
+                        </div>
+                        <div class="subway-transfer-detail-row subway-next-train-row">
+                            <span class="subway-route-label">　🚇 次区間の電車</span>
+                            <span class="subway-route-value subway-highlight">${t.nextSegTime} 分</span>
+                        </div>
+                    </div>`;
+                }
+                transfersContainer.innerHTML = html;
+            } else {
+                transfersContainer.innerHTML = '';
+            }
+        }
+
+        // ── 経路表示 ────────────────────────────────────────────────
         const pathEl = document.getElementById('subway-route-path');
         if (pathEl && subwayResult.route && subwayResult.route.length > 0) {
-            const maxShow = 7; // 表示する最大駅数
-            const route = subwayResult.route;
+            const route  = subwayResult.route;
+            const MAX_SHOW = 8;
             let pathHtml = '<span class="subway-path-label">経路: </span>';
-            
-            if (route.length <= maxShow) {
+            if (route.length <= MAX_SHOW) {
                 pathHtml += route.map(s => `<span class="subway-path-station">${s}</span>`)
-                    .join('<span class="subway-path-arrow">→</span>');
+                                 .join('<span class="subway-path-arrow">→</span>');
             } else {
-                // 省略表示
                 const first = route.slice(0, 3);
-                const last = route.slice(-2);
+                const last  = route.slice(-2);
                 pathHtml += first.map(s => `<span class="subway-path-station">${s}</span>`)
-                    .join('<span class="subway-path-arrow">→</span>');
-                pathHtml += `<span class="subway-path-arrow">→ ... (${route.length - 5}駅) → </span>`;
+                                 .join('<span class="subway-path-arrow">→</span>');
+                pathHtml += `<span class="subway-path-arrow"> … (中間${route.length - 5}駅) … </span>`;
                 pathHtml += last.map(s => `<span class="subway-path-station">${s}</span>`)
-                    .join('<span class="subway-path-arrow">→</span>');
+                                .join('<span class="subway-path-arrow">→</span>');
             }
             pathEl.innerHTML = pathHtml;
         }
 
         subwayPanel.style.display = 'block';
     }
+
+    /**
+     * 指定駅・時刻（深夜0時からの分）で次の電車までの待ち時間を返す
+     * BOARD_GRACE 分以内なら「すぐ乗車可」として 0 または実際の待ち分を返す
+     */
+    function getWaitTimeForNextTrain(stationName, arrivalMinSinceMidnight, dayType) {
+        if (typeof timetableData === 'undefined' || !timetableData[stationName]) {
+            return 5; // データなし → 5分と仮定
+        }
+        const directions = timetableData[stationName];
+        let minWait = Infinity;
+
+        const arrHour = Math.floor(arrivalMinSinceMidnight / 60);
+        const arrMin  = arrivalMinSinceMidnight % 60;
+
+        for (const dir in directions) {
+            const schedule = directions[dir][dayType];
+            if (!schedule) continue;
+
+            // 現在時刻の時から最大3時間先まで探索
+            let found = false;
+            for (let h = arrHour; h <= arrHour + 3 && !found; h++) {
+                const mins = schedule[String(h)];
+                if (!mins || mins.length === 0) continue;
+                for (const m of mins) {
+                    const trainTotalMin = h * 60 + m;
+                    const wait          = trainTotalMin - arrivalMinSinceMidnight;
+                    // -2 分以内（つまり発車2分前以降に到着）なら乗れると判定
+                    if (wait >= -2) {
+                        const actualWait = Math.max(0, wait);
+                        if (actualWait < minWait) minWait = actualWait;
+                        found = true;
+                        break;
+                    }
+                }
+            }
+        }
+
+        return minWait === Infinity ? 8 : minWait; // フォールバック8分
+    }
+
+
 
     /**
      * 座標から最寄りの地下鉄駅を返す

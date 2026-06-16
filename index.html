@@ -164,10 +164,16 @@
                             <span class="subway-route-label">🚉 乗車駅</span>
                             <span id="subway-from-station" class="subway-route-value subway-station-name">--</span>
                         </div>
+                        <div class="subway-route-row">
+                            <span class="subway-route-label">⏱ 電車待ち（時刻表）</span>
+                            <span id="subway-first-wait" class="subway-route-value">-- 分</span>
+                        </div>
                         <div class="subway-route-row subway-train-row">
                             <span class="subway-route-label">🚇 電車乗車時間</span>
                             <span id="subway-train-time" class="subway-route-value subway-highlight">-- 分</span>
                         </div>
+                        <!-- 乗り換え情報（JSで動的挿入） -->
+                        <div id="subway-transfers-container"></div>
                         <div class="subway-route-row">
                             <span class="subway-route-label">🚉 降車駅</span>
                             <span id="subway-to-station" class="subway-route-value subway-station-name">--</span>
@@ -182,7 +188,7 @@
                             <span id="subway-total-time" class="subway-route-value subway-total-value">-- 分</span>
                         </div>
                         <div class="subway-route-row">
-                            <span class="subway-route-label" style="font-size:0.75rem; color:#888;">※ 待ち時間・乗換時間は含まず</span>
+                            <span class="subway-route-label" style="font-size:0.75rem; color:#888;">※ 乗り換え10分込み・時刻表ベース</span>
                             <span></span>
                         </div>
                     </div>

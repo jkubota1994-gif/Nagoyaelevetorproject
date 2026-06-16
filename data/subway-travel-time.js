@@ -175,48 +175,83 @@ const subwayTravelTimeData = {
 })();
 
 // 駅名から路線と接続情報を検索するヘルパー関数
+// 戻り値: { found, travelTime, transfers:[{station,fromLine,toLine}], route:[], segments:[{from,to,line,time}] }
 function findSubwayRoute(fromStation, toStation) {
     const connections = subwayTravelTimeData.connections;
-    
-    if (fromStation === toStation) return { found: true, time: 0, route: [] };
-    
-    // BFS（幅優先探索）でダイクストラ的に最短ルートを探す
-    const visited = new Set();
-    const queue = [{ station: fromStation, time: 0, path: [fromStation], lines: [] }];
-    
+
+    if (fromStation === toStation) {
+        return { found: true, travelTime: 0, time: 0, transfers: [], route: [fromStation], segments: [], lines: [] };
+    }
+
+    // Dijkstra: visited key = "駅名|路線" で同一駅を別路線で再訪可能にする
+    // 乗り換えに小ペナルティ(0.1)を付与し、不要な乗り換えを抑制する
+    const TRANSFER_PENALTY = 0.1;
+    const bestTime = new Map(); // "駅名|路線" → 最小コスト
+
+    const queue = [{
+        station: fromStation,
+        travelTime: 0,
+        path: [fromStation],
+        segments: [],
+        currentLine: null
+    }];
+
     while (queue.length > 0) {
-        // 最小時間のノードを取り出す
-        queue.sort((a, b) => a.time - b.time);
+        queue.sort((a, b) => a.travelTime - b.travelTime);
         const current = queue.shift();
-        
+
+        const key = current.station + '|' + (current.currentLine || '');
+        if (bestTime.has(key) && bestTime.get(key) <= current.travelTime) continue;
+        bestTime.set(key, current.travelTime);
+
         if (current.station === toStation) {
+            // セグメントから乗り換えポイントを抽出
+            const transfers = [];
+            let prevLine = null;
+            for (const seg of current.segments) {
+                if (prevLine !== null && seg.line !== prevLine) {
+                    transfers.push({ station: seg.from, fromLine: prevLine, toLine: seg.line });
+                }
+                prevLine = seg.line;
+            }
+            const pureTime = Math.round(current.travelTime);
             return {
                 found: true,
-                time: current.time,
+                travelTime: pureTime,
+                time: pureTime,           // 後方互換
+                transfers,
                 route: current.path,
-                lines: current.lines
+                segments: current.segments,
+                lines: current.segments.map(s => s.line)
             };
         }
-        
-        if (visited.has(current.station)) continue;
-        visited.add(current.station);
-        
-        // 隣接駅を探す
+
         const neighbors = connections.filter(c => c.from === current.station);
         for (const neighbor of neighbors) {
-            if (!visited.has(neighbor.to)) {
+            const isTransfer = current.currentLine !== null && neighbor.line !== current.currentLine;
+            const newTime = current.travelTime + neighbor.time + (isTransfer ? TRANSFER_PENALTY : 0);
+            const newKey = neighbor.to + '|' + neighbor.line;
+
+            if (!bestTime.has(newKey) || bestTime.get(newKey) > newTime) {
                 queue.push({
                     station: neighbor.to,
-                    time: current.time + neighbor.time,
+                    travelTime: newTime,
                     path: [...current.path, neighbor.to],
-                    lines: [...current.lines, neighbor.line]
+                    segments: [...current.segments, {
+                        from: current.station,
+                        to: neighbor.to,
+                        line: neighbor.line,
+                        time: neighbor.time
+                    }],
+                    currentLine: neighbor.line
                 });
             }
         }
     }
-    
-    return { found: false, time: null, route: [], lines: [] };
+
+    return { found: false, travelTime: null, time: null, transfers: [], route: [], segments: [], lines: [] };
 }
+
 
 // 最寄り駅検索ヘルパー（緯度経度から近い駅を返す）
 function findNearestStation(lat, lon) {

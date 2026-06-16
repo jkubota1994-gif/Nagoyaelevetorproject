@@ -1547,4 +1547,82 @@ body.forced-pc .map-overlay.active {
 .subway-route-panel[style*="display: none"] {
     margin-bottom: 0;
 }
+
+/* ===== 乗り換えブロック (Transfer Block) ===== */
+.subway-transfer-block {
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    margin: 6px 0;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.subway-transfer-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 10px;
+    background: rgba(255, 255, 255, 0.12);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.subway-transfer-icon {
+    font-size: 1rem;
+}
+
+.subway-transfer-station {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.subway-transfer-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.subway-transfer-line-label {
+    font-size: 0.75rem;
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    padding: 2px 8px;
+    border-radius: 10px;
+    white-space: nowrap;
+}
+
+.subway-transfer-arrow {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.8rem;
+}
+
+.subway-transfer-detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.subway-transfer-detail-row:last-child {
+    border-bottom: none;
+}
+
+.subway-next-train-row {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* 待ち時間: 乗車可（緑） vs 追加待ち（黄色） */
+.subway-wait-ok {
+    color: #80FF80 !important;
+    font-size: 0.82rem !important;
+}
+
+.subway-wait-needed {
+    color: #FFD700 !important;
+    font-size: 0.82rem !important;
+}
+
 
