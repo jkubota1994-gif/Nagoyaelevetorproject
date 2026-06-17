@@ -155,6 +155,23 @@
                         <span class="subway-route-icon">🚇</span>
                         <span class="subway-route-title">電車利用の総所要時間</span>
                     </div>
+                    <!-- 駅構内移動時間スライダー -->
+                    <div class="subway-platform-setting">
+                        <div class="platform-setting-row">
+                            <label class="platform-setting-label" for="platform-time-slider">
+                                🚶 駅構内移動時間（各駅）
+                            </label>
+                            <div class="platform-setting-control">
+                                <input type="range" id="platform-time-slider"
+                                       min="0" max="15" step="1" value="5"
+                                       class="platform-slider">
+                                <span id="platform-time-display" class="platform-time-value">5分</span>
+                            </div>
+                        </div>
+                        <div class="platform-setting-scale">
+                            <span>0分</span><span>5分</span><span>10分</span><span>15分</span>
+                        </div>
+                    </div>
                     <div class="subway-route-body">
                         <div class="subway-route-row">
                             <span class="subway-route-label">出発地 → 乗車駅まで徒歩</span>
@@ -163,6 +180,10 @@
                         <div class="subway-route-row">
                             <span class="subway-route-label">🚉 乗車駅</span>
                             <span id="subway-from-station" class="subway-route-value subway-station-name">--</span>
+                        </div>
+                        <div class="subway-route-row subway-platform-row">
+                            <span class="subway-route-label">🚶 駅構内移動時間（入口→ホーム）</span>
+                            <span id="subway-platform-time-display" class="subway-route-value subway-platform-value">各駅 5 分</span>
                         </div>
                         <div class="subway-route-row">
                             <span class="subway-route-label">⏱ 電車待ち（時刻表）</span>

@@ -842,6 +842,30 @@ document.addEventListener('DOMContentLoaded', () => {
     // 電車ルート計算・表示機能
     // =============================================================
 
+    // 最後に検索したルート座標（スライダ変更時の再計算用）
+    let _lastSubwayCoords = null;
+
+    // 駅構内移動時間スライダの初期化（DOM読み込み完了後に一度実行）
+    function initPlatformTimeSlider() {
+        const slider  = document.getElementById('platform-time-slider');
+        const display = document.getElementById('platform-time-display');
+        if (!slider || !display) return;
+        slider.addEventListener('input', () => {
+            display.textContent = slider.value + '分';
+            // スライダ操作だけで即座に再計算
+            if (_lastSubwayCoords) {
+                const { startLat, startLon, destLat, destLon, walkingDistKm } = _lastSubwayCoords;
+                calculateAndShowSubwayRoute(startLat, startLon, destLat, destLon, walkingDistKm);
+            }
+        });
+    }
+    // DOMContentLoaded 後に初期化
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initPlatformTimeSlider);
+    } else {
+        initPlatformTimeSlider();
+    }
+
     /**
      * 出発地・目的地の座標から最寄り駅を調べ、電車での所要時間を計算して表示する
      * @param {number} startLat - 出発地緯度
@@ -879,6 +903,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!subwayResult.found || subwayResult.travelTime === 0) {
             subwayPanel.style.display = 'none'; return;
         }
+
+        // 最後の座標を保存（スライダ変更時の再計算に利用）
+        _lastSubwayCoords = { startLat, startLon, destLat, destLon, walkingDistKm };
+
+        // 駅構内移動時間（スライダ値）
+        const platformSlider  = document.getElementById('platform-time-slider');
+        const platformTimeMin = platformSlider ? parseInt(platformSlider.value) || 5 : 5;
 
         // ── 時刻計算の準備 ──────────────────────────────────────────
         const now           = new Date();
@@ -951,13 +982,20 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        const totalTime = walkToMin + firstWaitDisplay + totalTrainTime
-                        + totalTransferTime + totalExtraWait + walkFromMin;
+        const totalTime = walkToMin + platformTimeMin      // 出発駅: 入口→ホーム
+                        + firstWaitDisplay + totalTrainTime
+                        + totalTransferTime + totalExtraWait
+                        + platformTimeMin                   // 到着駅: ホーム→出口
+                        + walkFromMin;
 
         // ── DOM 更新（固定行） ───────────────────────────────────────
         document.getElementById('subway-walk-to-station').textContent =
             `${walkToMin} 分 (約${(walkToKm * 1000).toFixed(0)}m)`;
         document.getElementById('subway-from-station').textContent = nearestStart.name + '駅';
+
+        // 駅構内移動時間の表示更新
+        const pdEl = document.getElementById('subway-platform-time-display');
+        if (pdEl) pdEl.textContent = `各駅 ${platformTimeMin} 分`;
 
         const waitLabel = firstWaitDisplay <= BOARD_GRACE
             ? `${firstWaitMin} 分（次の電車に乗車可）`

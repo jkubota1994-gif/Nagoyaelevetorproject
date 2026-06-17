@@ -1625,4 +1625,100 @@ body.forced-pc .map-overlay.active {
     font-size: 0.82rem !important;
 }
 
+/* ===== 駅構内移動時間スライダー (Platform Time Slider) ===== */
+.subway-platform-setting {
+    padding: 10px 16px 8px;
+    background: rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.platform-setting-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 4px;
+}
+
+.platform-setting-label {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.85);
+    white-space: nowrap;
+    cursor: default;
+}
+
+.platform-setting-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.platform-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100px;
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.3);
+    outline: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.platform-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #FFD700;
+    cursor: pointer;
+    box-shadow: 0 0 6px rgba(255, 215, 0, 0.5);
+    transition: transform 0.15s;
+}
+
+.platform-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+.platform-slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #FFD700;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 0 6px rgba(255, 215, 0, 0.5);
+}
+
+.platform-time-value {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #FFD700;
+    min-width: 28px;
+    text-align: right;
+}
+
+.platform-setting-scale {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2px 0 2px;
+    font-size: 0.65rem;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: -0.3px;
+}
+
+/* 駅構内移動時間の表示行 */
+.subway-platform-row {
+    background: rgba(255, 215, 0, 0.06);
+    border-radius: 4px;
+}
+
+.subway-platform-value {
+    color: #FFD700 !important;
+    font-size: 0.85rem !important;
+}
+
 
