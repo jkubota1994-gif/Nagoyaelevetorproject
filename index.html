@@ -61,7 +61,9 @@
                 </div>
                 <button id="history-btn" class="history-btn" title="検索履歴・お気に入り">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M13 3C8.03 3 4 7.03 4 12H1L4.89 15.89L4.96 16.03L9 12H6C6 8.13 9.13 5 13 5C16.87 5 20 8.13 20 12C20 15.87 16.87 19 13 19C11.07 19 9.32 18.21 8.06 16.94L6.64 18.36C8.27 19.99 10.51 21 13 21C17.97 21 22 16.97 22 12C22 7.03 17.97 3 13 3ZM12 8V13L16.28 15.54L17 14.33L13.5 12.25V8H12Z" fill="currentColor"/>
+                        <path
+                            d="M13 3C8.03 3 4 7.03 4 12H1L4.89 15.89L4.96 16.03L9 12H6C6 8.13 9.13 5 13 5C16.87 5 20 8.13 20 12C20 15.87 16.87 19 13 19C11.07 19 9.32 18.21 8.06 16.94L6.64 18.36C8.27 19.99 10.51 21 13 21C17.97 21 22 16.97 22 12C22 7.03 17.97 3 13 3ZM12 8V13L16.28 15.54L17 14.33L13.5 12.25V8H12Z"
+                            fill="currentColor" />
                     </svg>
                     <span>履歴</span>
                 </button>
@@ -71,7 +73,7 @@
 
     <main>
         <div id="map"></div>
-    <div id="map-hint" class="map-hint-overlay">地図をタップして出発地を選択してください</div>
+        <div id="map-hint" class="map-hint-overlay">地図をタップして出発地を選択してください</div>
 
         <!-- 現在地ボタン -->
         <div class="map-controls">
@@ -79,7 +81,9 @@
                 <span class="map-btn-label">使い方</span>
                 <button id="how-to-use-btn" class="map-btn how-to-use-btn" title="ツールの使い方">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11 18H13V16H11V18ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM12 6C9.79 6 8 7.79 8 10H10C10 8.9 10.9 8 12 8C13.1 8 14 8.9 14 10C14 12 11 11.75 11 15H13C13 12.75 16 12.5 16 10C16 7.79 14.21 6 12 6Z" fill="currentColor"/>
+                        <path
+                            d="M11 18H13V16H11V18ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM12 6C9.79 6 8 7.79 8 10H10C10 8.9 10.9 8 12 8C13.1 8 14 8.9 14 10C14 12 11 11.75 11 15H13C13 12.75 16 12.5 16 10C16 7.79 14.21 6 12 6Z"
+                            fill="currentColor" />
                     </svg>
                 </button>
             </div>
@@ -116,8 +120,10 @@
                 <span class="map-btn-label">2点指定</span>
                 <button id="two-point-route-btn" class="map-btn two-point-route-btn" title="出発地と目的地を連続で指定">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M21 16.5C21 16.88 20.79 17.21 20.47 17.38L12.57 21.82C12.41 21.94 12.21 22 12 22C11.79 22 11.59 21.94 11.43 21.82L3.53 17.38C3.21 17.21 3 16.88 3 16.5V7.5C3 7.12 3.21 6.79 3.53 6.62L11.43 2.18C11.59 2.06 11.79 2 12 2C12.21 2 12.41 2.06 12.57 2.18L20.47 6.62C20.79 6.79 21 7.12 21 7.5V16.5Z" stroke="currentColor" stroke-width="2" fill="none"/>
-                        <circle cx="12" cy="12" r="3" fill="currentColor"/>
+                        <path
+                            d="M21 16.5C21 16.88 20.79 17.21 20.47 17.38L12.57 21.82C12.41 21.94 12.21 22 12 22C11.79 22 11.59 21.94 11.43 21.82L3.53 17.38C3.21 17.21 3 16.88 3 16.5V7.5C3 7.12 3.21 6.79 3.53 6.62L11.43 2.18C11.59 2.06 11.79 2 12 2C12.21 2 12.41 2.06 12.57 2.18L20.47 6.62C20.79 6.79 21 7.12 21 7.5V16.5Z"
+                            stroke="currentColor" stroke-width="2" fill="none" />
+                        <circle cx="12" cy="12" r="3" fill="currentColor" />
                     </svg>
                 </button>
             </div>
@@ -125,7 +131,9 @@
                 <span class="map-btn-label" id="view-toggle-label">PC表示</span>
                 <button id="view-toggle-btn" class="map-btn view-toggle-btn" title="表示モードを切り替え（PC/モバイル）">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20 18C21.1 18 22 17.1 22 16V6C22 4.89 21.1 4 20 4H4C2.89 4 2 4.89 2 6V16C2 17.1 2.89 18 4 18H0V20H24V18H20ZM4 6H20V16H4V6Z" fill="currentColor"/>
+                        <path
+                            d="M20 18C21.1 18 22 17.1 22 16V6C22 4.89 21.1 4 20 4H4C2.89 4 2 4.89 2 6V16C2 17.1 2.89 18 4 18H0V20H24V18H20ZM4 6H20V16H4V6Z"
+                            fill="currentColor" />
                     </svg>
                 </button>
             </div>
@@ -133,7 +141,9 @@
                 <span class="map-btn-label">リセット</span>
                 <button id="bulk-reset-btn-map" class="map-btn bulk-reset-btn" title="出発地・到着地を同時にリセット">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4C7.58 4 4.01 7.58 4.01 12C4.01 16.42 7.58 20 12 20C15.73 20 18.84 17.45 19.73 14H17.65C16.83 16.33 14.61 18 12 18C8.69 18 6 15.31 6 12C6 8.69 8.69 6 12 6C13.66 6 15.14 6.69 16.22 7.78L13 11H20V4L17.65 6.35Z" fill="currentColor"/>
+                        <path
+                            d="M17.65 6.35C16.2 4.9 14.21 4 12 4C7.58 4 4.01 7.58 4.01 12C4.01 16.42 7.58 20 12 20C15.73 20 18.84 17.45 19.73 14H17.65C16.83 16.33 14.61 18 12 18C8.69 18 6 15.31 6 12C6 8.69 8.69 6 12 6C13.66 6 15.14 6.69 16.22 7.78L13 11H20V4L17.65 6.35Z"
+                            fill="currentColor" />
                     </svg>
                 </button>
             </div>
@@ -162,20 +172,24 @@
                                 🚶 駅構内移動時間（各駅）
                             </label>
                             <div class="platform-setting-control">
-                                <input type="range" id="platform-time-slider"
-                                       min="0" max="15" step="1" value="5"
-                                       class="platform-slider">
+                                <input type="range" id="platform-time-slider" min="0" max="15" step="1" value="5"
+                                    class="platform-slider">
                                 <span id="platform-time-display" class="platform-time-value">5分</span>
                             </div>
                         </div>
-                        <div class="platform-setting-scale">
-                            <span>0分</span><span>5分</span><span>10分</span><span>15分</span>
+                        <div class="platform-setting-scale-wrapper">
+                            <div class="platform-setting-scale">
+                                <span>0</span><span>5</span><span>10</span><span>15</span>
+                            </div>
                         </div>
                     </div>
                     <div class="subway-route-body">
                         <div class="subway-route-row">
                             <span class="subway-route-label">出発地 → 乗車駅まで徒歩</span>
-                            <span id="subway-walk-to-station" class="subway-route-value">-- 分</span>
+                            <span style="display:flex;align-items:center;gap:8px;">
+                                <span id="subway-walk-to-station" class="subway-route-value">-- 分</span>
+                                <button id="walk-to-station-btn" class="walk-guide-btn" title="徒歩ルートを案内">🗺</button>
+                            </span>
                         </div>
                         <div class="subway-route-row">
                             <span class="subway-route-label">🚉 乗車駅</span>
@@ -183,7 +197,8 @@
                         </div>
                         <div class="subway-route-row subway-platform-row">
                             <span class="subway-route-label">🚶 駅構内移動時間（入口→ホーム）</span>
-                            <span id="subway-platform-time-display" class="subway-route-value subway-platform-value">各駅 5 分</span>
+                            <span id="subway-platform-time-display" class="subway-route-value subway-platform-value">各駅
+                                5 分</span>
                         </div>
                         <div class="subway-route-row">
                             <span class="subway-route-label">⏱ 電車待ち（時刻表）</span>
@@ -201,7 +216,10 @@
                         </div>
                         <div class="subway-route-row">
                             <span class="subway-route-label">降車駅 → 目的地まで徒歩</span>
-                            <span id="subway-walk-from-station" class="subway-route-value">-- 分</span>
+                            <span style="display:flex;align-items:center;gap:8px;">
+                                <span id="subway-walk-from-station" class="subway-route-value">-- 分</span>
+                                <button id="walk-from-station-btn" class="walk-guide-btn" title="徒歩ルートを案内">🗺</button>
+                            </span>
                         </div>
                         <div class="subway-route-divider"></div>
                         <div class="subway-route-row subway-total-row">
@@ -209,7 +227,8 @@
                             <span id="subway-total-time" class="subway-route-value subway-total-value">-- 分</span>
                         </div>
                         <div class="subway-route-row">
-                            <span class="subway-route-label" style="font-size:0.75rem; color:#888;">※ 乗り換え10分込み・時刻表ベース</span>
+                            <span class="subway-route-label" style="font-size:0.75rem; color:#888;">※
+                                乗り換え10分込み・時刻表ベース</span>
                             <span></span>
                         </div>
                     </div>
@@ -259,7 +278,7 @@
                 <!-- タクシー配車エリア -->
                 <div class="taxi-contact-container">
                     <h5 class="instructions-title">タクシーを呼ぶ</h5>
-                    
+
                     <!-- 住所表示・コピーセクション -->
                     <div class="current-addresses">
                         <div class="address-item">
@@ -267,8 +286,10 @@
                                 <span class="address-label start">出発地:</span>
                                 <span id="start-address-display" class="address-value">未設定</span>
                                 <div class="address-actions">
-                                    <button class="copy-btn" onclick="copyDisplayAddress('start-address-display')" title="住所をコピー">コピー</button>
-                                    <button class="reset-location-btn" onclick="resetLocation('start')" title="出発地をリセット">リセット</button>
+                                    <button class="copy-btn" onclick="copyDisplayAddress('start-address-display')"
+                                        title="住所をコピー">コピー</button>
+                                    <button class="reset-location-btn" onclick="resetLocation('start')"
+                                        title="出発地をリセット">リセット</button>
                                 </div>
                             </div>
                         </div>
@@ -277,8 +298,10 @@
                                 <span class="address-label dest">到着地:</span>
                                 <span id="dest-address-display" class="address-value">未設定</span>
                                 <div class="address-actions">
-                                    <button class="copy-btn" onclick="copyDisplayAddress('dest-address-display')" title="住所をコピー">コピー</button>
-                                    <button class="reset-location-btn" onclick="resetLocation('dest')" title="目的地をリセット">リセット</button>
+                                    <button class="copy-btn" onclick="copyDisplayAddress('dest-address-display')"
+                                        title="住所をコピー">コピー</button>
+                                    <button class="reset-location-btn" onclick="resetLocation('dest')"
+                                        title="目的地をリセット">リセット</button>
                                 </div>
                             </div>
                         </div>
@@ -321,6 +344,46 @@
                 </ul>
             </div>
         </div>
+        </div>
+
+        <!-- 徒歩ルート案内 ボトムシート -->
+        <div id="walk-guide-modal" class="walk-guide-sheet" style="display: none;">
+            <!-- ドラッグハンドル -->
+            <div class="walk-guide-drag-handle" id="walk-guide-drag-handle">
+                <div class="walk-guide-drag-pill"></div>
+            </div>
+            <div class="walk-guide-inner">
+                <div class="walk-guide-header">
+                    <div class="walk-guide-title-wrap">
+                        <span class="walk-guide-icon">🚶</span>
+                        <div>
+                            <h3 id="walk-guide-title">徒歩ルート案内</h3>
+                            <p id="walk-guide-subtitle" class="walk-guide-subtitle">出発地 → 乗車駅</p>
+                        </div>
+                    </div>
+                    <button id="close-walk-guide-modal" class="close-btn">&times;</button>
+                </div>
+                <div class="walk-guide-summary">
+                    <div class="walk-guide-stat">
+                        <span class="walk-guide-stat-label">距離</span>
+                        <span id="walk-guide-distance" class="walk-guide-stat-value">-- m</span>
+                    </div>
+                    <div class="walk-guide-stat">
+                        <span class="walk-guide-stat-label">所要時間（成人）</span>
+                        <span id="walk-guide-time-adult" class="walk-guide-stat-value">-- 分</span>
+                    </div>
+                    <div class="walk-guide-stat">
+                        <span class="walk-guide-stat-label">所要時間（高齢者）</span>
+                        <span id="walk-guide-time-senior" class="walk-guide-stat-value">-- 分</span>
+                    </div>
+                </div>
+                <div class="walk-guide-body">
+                    <h4 class="walk-guide-steps-title">📍 徒歩ルートの手順</h4>
+                    <ul id="walk-guide-steps-list" class="walk-guide-steps">
+                        <li class="walk-guide-loading">ルートを検索中...</li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
         <!-- 算出根拠モーダル -->
@@ -371,19 +434,26 @@
                             <div class="exp-item"><span class="exp-tag start-tag">出発地</span>：出発する場所を住所や地名で検索</div>
                             <div class="exp-item"><span class="exp-tag dest-tag">目的地</span>：行きたい場所を住所や地名で検索</div>
                             <div class="exp-item"><span class="exp-tag station-tag-small">駅名</span>：特定の駅を名前で検索</div>
-                            <div class="exp-item"><span class="exp-tag elevator-tag-small">エレベーター</span>：地図上の赤いピンを直接タップして選択</div>
+                            <div class="exp-item"><span
+                                    class="exp-tag elevator-tag-small">エレベーター</span>：地図上の赤いピンを直接タップして選択</div>
                         </div>
                     </section>
                     <section class="how-to-step">
                         <h3>3. 道程をつくる</h3>
-                        <p style="font-size: 1.15rem; font-weight: bold; color: #3c4043; margin-top: 10px; margin-bottom: 8px;">【2点指定モードでつくる】</p>
+                        <p
+                            style="font-size: 1.15rem; font-weight: bold; color: #3c4043; margin-top: 10px; margin-bottom: 8px;">
+                            【2点指定モードでつくる】</p>
                         <p>地図上の好きな2地点を直接結ぶルートを作成します。</p>
                         <ul class="step-bullets">
-                            <li><strong>操作方法</strong>: 右側の<span style="color: #6200ee;">2点指定ボタン</span>を押した後、地図上の「出発地」→「目的地」の順に2回タップするだけで即座にルートが表示されます。</li>
+                            <li><strong>操作方法</strong>: 右側の<span
+                                    style="color: #6200ee;">2点指定ボタン</span>を押した後、地図上の「出発地」→「目的地」の順に2回タップするだけで即座にルートが表示されます。
+                            </li>
                             <li><strong>用途</strong>: 駅以外の場所間のルートやタクシー料金をサッと調べたい時に便利です。</li>
                         </ul>
-                        
-                        <p style="font-size: 1.15rem; font-weight: bold; color: #3c4043; margin-top: 24px; margin-bottom: 8px;">【駅・エレベーターからつくる】</p>
+
+                        <p
+                            style="font-size: 1.15rem; font-weight: bold; color: #3c4043; margin-top: 24px; margin-bottom: 8px;">
+                            【駅・エレベーターからつくる】</p>
                         <p>特定の施設を拠点にした正確なルートを作成します。</p>
                         <ul class="step-bullets">
                             <li><strong>操作方法</strong>: 地図上のアイコン（駅やエレベーター）をタップし、詳細パネル内の「ここからのルート」や「ここへのルート」ボタンを押します。</li>
@@ -395,12 +465,18 @@
                         <p>タクシー利用に便利な機能です。</p>
                         <ul class="step-bullets">
                             <li><strong>住所コピー</strong>: 到着地や出発地の詳細な住所をボタン一つでコピーし、電話口で伝えやすくできます。</li>
-                            <li><strong>各種リセット</strong>: 各地点の「リセット」で個別消去、右側の<span style="color: #d32f2f;">リセットボタン</span>で全消去が可能です。</li>
+                            <li><strong>各種リセット</strong>: 各地点の「リセット」で個別消去、右側の<span
+                                    style="color: #d32f2f;">リセットボタン</span>で全消去が可能です。</li>
                         </ul>
                     </section>
                     <section class="how-to-step">
                         <h3>5. 現在地を表示</h3>
-                        <p>右側の<svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="vertical-align: middle;"><path d="M12 8C9.79 8 8 9.79 8 12C8 14.21 9.79 16 12 16C14.21 16 16 14.21 16 12C16 9.79 14.21 8 12 8ZM20.94 11C20.48 6.83 17.17 3.52 13 3.06V1H11V3.06C6.83 3.52 3.52 6.83 3.06 11H1V13H3.06C3.52 17.17 6.83 20.48 11 20.94V23H13V20.94C17.17 20.48 20.48 17.17 20.94 13H23V11H20.94ZM12 19C8.13 19 5 15.87 5 12C5 8.13 8.13 5 12 5C15.87 5 19 8.13 19 12C19 15.87 15.87 19 12 19Z" fill="black" /></svg>ボタンを押すと、今いる場所が表示されます。</p>
+                        <p>右側の<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                style="vertical-align: middle;">
+                                <path
+                                    d="M12 8C9.79 8 8 9.79 8 12C8 14.21 9.79 16 12 16C14.21 16 16 14.21 16 12C16 9.79 14.21 8 12 8ZM20.94 11C20.48 6.83 17.17 3.52 13 3.06V1H11V3.06C6.83 3.52 3.52 6.83 3.06 11H1V13H3.06C3.52 17.17 6.83 20.48 11 20.94V23H13V20.94C17.17 20.48 20.48 17.17 20.94 13H23V11H20.94ZM12 19C8.13 19 5 15.87 5 12C5 8.13 8.13 5 12 5C15.87 5 19 8.13 19 12C19 15.87 15.87 19 12 19Z"
+                                    fill="black" />
+                            </svg>ボタンを押すと、今いる場所が表示されます。</p>
                     </section>
                 </div>
                 <div class="modal-footer">

@@ -1701,13 +1701,21 @@ body.forced-pc .map-overlay.active {
     text-align: right;
 }
 
+/* スケールをスライダーの幅(100px)に正確に合わせる */
+.platform-setting-scale-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 36px; /* time-value(28px) + gap(8px) */
+}
+
 .platform-setting-scale {
     display: flex;
     justify-content: space-between;
-    padding: 0 2px 0 2px;
+    width: 100px;  /* スライダーと同じ幅 */
     font-size: 0.65rem;
     color: rgba(255, 255, 255, 0.4);
     letter-spacing: -0.3px;
+    margin-top: 2px;
 }
 
 /* 駅構内移動時間の表示行 */
@@ -1721,4 +1729,207 @@ body.forced-pc .map-overlay.active {
     font-size: 0.85rem !important;
 }
 
+/* ===== 徒歩案内モーダル (Walk Guide Modal) ===== */
+/* ===== 徒歩案内 ボトムシート (Walk Guide Bottom Sheet) ===== */
+
+/* シート本体：画面下部に固定、マップはその上に見える */
+.walk-guide-sheet {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 96%;
+    max-width: 580px;
+    z-index: 1800;
+    /* 背景なし → マップが見え続ける */
+    pointer-events: none; /* シート外（マップ上部）はタッチ・クリック透過 */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+/* ドラッグハンドルエリア（ここだけマップより手前） */
+.walk-guide-drag-handle {
+    pointer-events: all;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 0 4px;
+    cursor: ns-resize;
+    background: transparent;
+    user-select: none;
+}
+
+.walk-guide-drag-pill {
+    width: 40px;
+    height: 5px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 3px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+}
+
+/* パネル本体 */
+.walk-guide-inner {
+    pointer-events: all;
+    background: var(--surface-color, #fff);
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 -4px 24px rgba(0,0,0,0.22);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    max-height: 82vh; /* 最大高さ制限 */
+    animation: walkSheetIn 0.32s cubic-bezier(0.32,0.72,0,1);
+}
+
+@keyframes walkSheetIn {
+    from { transform: translateY(100%); opacity: 0.6; }
+    to   { transform: translateY(0);    opacity: 1;   }
+}
+
+/* ヘッダー */
+.walk-guide-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 18px;
+    background: linear-gradient(135deg, #FF3B30, #D32F2F);
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.walk-guide-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.walk-guide-icon {
+    font-size: 1.7rem;
+}
+
+.walk-guide-header h3 {
+    color: #fff;
+    font-size: 1rem;
+    margin: 0;
+    font-weight: 700;
+}
+
+.walk-guide-subtitle {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.75);
+    margin: 2px 0 0 0;
+}
+
+/* 統計バー */
+.walk-guide-summary {
+    display: flex;
+    justify-content: space-around;
+    background: linear-gradient(135deg, #ffebee, #ffcdd2);
+    padding: 12px 16px;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.walk-guide-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+.walk-guide-stat-label {
+    font-size: 0.68rem;
+    color: #5f6368;
+    white-space: nowrap;
+}
+
+.walk-guide-stat-value {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #FF3B30;
+}
+
+/* 手順リスト */
+.walk-guide-body {
+    padding: 14px 18px 16px;
+    overflow-y: auto;
+    flex: 1 1 0;
+    /* iOS Safari スクロールサポート */
+    -webkit-overflow-scrolling: touch;
+}
+
+.walk-guide-steps-title {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--secondary-color, #333);
+    margin: 0 0 10px 0;
+}
+
+.walk-guide-steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.walk-guide-steps li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 9px 11px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #FF3B30;
+    font-size: 0.86rem;
+    color: var(--text-primary, #202124);
+    line-height: 1.5;
+}
+
+.walk-guide-loading {
+    color: var(--text-secondary, #888) !important;
+    font-style: italic;
+    border-left-color: var(--border-color, #ddd) !important;
+    justify-content: center;
+}
+
+.walk-step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #FF3B30;
+    color: white;
+    border-radius: 50%;
+    width: 21px;
+    height: 21px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+/* 🗺ボタン（電車パネル内） */
+.walk-guide-btn {
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 6px;
+    padding: 3px 7px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    color: white;
+    transition: background 0.2s;
+    line-height: 1;
+}
+
+.walk-guide-btn:hover {
+    background: rgba(255,255,255,0.35);
+}
+
+/* モバイル：シートを少し高く */
+@media (max-width: 600px) {
+    .walk-guide-inner {
+        max-height: 85vh; 
+    }
+}
 
