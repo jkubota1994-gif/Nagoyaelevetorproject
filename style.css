@@ -261,8 +261,8 @@ body.forced-pc .map-overlay.active {
 .panel-content {
     padding: 16px;
     overflow-y: auto;
-    flex: 1;
-    min-height: 0;
+    flex: 1 1 180px; /* 最低180px確保してflexで伸縮 */
+    min-height: 180px; /* エレベーター情報が潰れないよう固定値で確保 */
     scrollbar-width: thin;
     scrollbar-color: var(--border-color) transparent;
 }
@@ -890,8 +890,9 @@ body.forced-pc .map-overlay.active {
 }
 
 .route-info-panel {
-    max-height: 100%;
+    max-height: 340px; /* 下部ルート情報が大きくなりすぎないよう制限 */
     overflow-y: auto;
+    flex-shrink: 0;
 }
 
 /* --- Elder Friendly "How to Use" Modal --- */

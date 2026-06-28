@@ -33,11 +33,16 @@ document.addEventListener('DOMContentLoaded', () => {
     let walkToStationLine = null; // 出発地→乗車駅の徒歩ルート表示用
     let routeStepMarkers = L.layerGroup().addTo(map);
 
-    // 徒歩ルートライン（ラベル含む）を安全に消去
+    // 徒歩ルートライン（ラベル・番号ピン含む）を安全に消去
     function clearWalkToStationLine() {
         if (walkToStationLine) {
             if (walkToStationLine._stationLabel) {
                 map.removeLayer(walkToStationLine._stationLabel);
+            }
+            // 番号ピン（ステップマーカー）を削除
+            if (walkToStationLine._stepMarkers) {
+                walkToStationLine._stepMarkers.forEach(m => map.removeLayer(m));
+                walkToStationLine._stepMarkers = [];
             }
             map.removeLayer(walkToStationLine);
             walkToStationLine = null;
