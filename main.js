@@ -30,7 +30,24 @@ document.addEventListener('DOMContentLoaded', () => {
     let userLocationMarker = null;
     let destLocationMarker = null;
     let routeLine = null;
+    let walkToStationLine = null; // 出発地→乗車駅の徒歩ルート表示用
     let routeStepMarkers = L.layerGroup().addTo(map);
+
+    // 徒歩ルートライン（ラベル・番号ピン含む）を安全に消去
+    function clearWalkToStationLine() {
+        if (walkToStationLine) {
+            if (walkToStationLine._stationLabel) {
+                map.removeLayer(walkToStationLine._stationLabel);
+            }
+            // 番号ピン（ステップマーカー）を削除
+            if (walkToStationLine._stepMarkers) {
+                walkToStationLine._stepMarkers.forEach(m => map.removeLayer(m));
+                walkToStationLine._stepMarkers = [];
+            }
+            map.removeLayer(walkToStationLine);
+            walkToStationLine = null;
+        }
+    }
 
     // 稼働状況に応じたスタイル変更用の関数
     function getStatusClass(status) {
@@ -57,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const routeTaxiFareText = document.getElementById('route-taxi-fare');
     const routeInstructionsList = document.getElementById('route-instructions-list');
     const clearRouteBtn = document.getElementById('clear-route-btn');
-    
+
     // モーダルと検索の要素
     const basisModal = document.getElementById('basis-modal');
     const showBasisBtn = document.getElementById('show-basis-btn');
@@ -68,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const startSearchBtn = document.getElementById('start-search-btn');
     const destSearchInput = document.getElementById('dest-search-input');
     const destSearchBtn = document.getElementById('dest-search-btn');
-    
+
     // 履歴・お気に入り関連の要素
     const historyBtn = document.getElementById('history-btn');
     const historyPanel = document.getElementById('history-panel');
@@ -87,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentStartAddress = "未設定";
     let currentDestAddress = "未設定";
     let currentHistoryTab = 'recent'; // 'recent' or 'favorites'
-    
+
     // 使い方モーダルの要素
     const howToUseModal = document.getElementById('how-to-use-modal');
     const howToUseBtn = document.getElementById('how-to-use-btn');
@@ -194,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const result = data[0];
                 const latlng = [parseFloat(result.lat), parseFloat(result.lon)];
                 const address = formatAddress(result.address, result.display_name);
-                
+
                 if (type === 'start') {
                     currentStartAddress = address;
                     updateAddressUI('start', address);
@@ -235,7 +252,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 住所を日本向けにフォーマットする
     function formatAddress(addr, displayName) {
         if (!addr) return displayName.split(',')[0];
-        
+
         // 日本の住所順に構成（Nominatimのタグから動的に抽出）
         const parts = [];
         if (addr.province || addr.state) parts.push(addr.province || addr.state);
@@ -247,13 +264,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (addr.village) parts.push(addr.village);
         if (addr.neighbourhood) parts.push(addr.neighbourhood);
         if (addr.road) parts.push(addr.road);
-        
+
         // 番地・号を追加
         let houseInfo = "";
         if (addr.house_number) houseInfo = addr.house_number;
         if (addr.block_number) houseInfo += (houseInfo ? "-" : "") + addr.block_number;
         if (houseInfo) parts.push(houseInfo);
-        
+
         if (parts.length > 0) {
             // 重複を除去して結合
             return parts.reduce((acc, curr, idx) => {
@@ -262,7 +279,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return acc + curr;
             }, "");
         }
-        
+
         return displayName.split(',')[0];
     }
 
@@ -277,7 +294,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // コピー機能 (window関数として公開)
-    window.copyDisplayAddress = function(elementId) {
+    window.copyDisplayAddress = function (elementId) {
         const text = document.getElementById(elementId).textContent;
         if (text === '未設定') return;
         navigator.clipboard.writeText(text).then(() => {
@@ -436,7 +453,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function showNavGuidance(missingType) {
         const label = missingType === 'start' ? '出発地' : '目的地';
         const buttonText = `地図から${label}を選択`;
-        
+
         elevatorDetails.innerHTML = `
             <div class="nav-guide-container">
                 <span class="nav-guide-msg">${label}が未設定です。</span>
@@ -446,7 +463,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </div>
         `;
-        
+
         document.getElementById(`guide-set-${missingType}-btn`).onclick = () => {
             toggleMode(missingType);
         };
@@ -460,14 +477,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert('出発地と目的地の両方を設定してください。');
             }
         };
-        
+
         openInfoPanel();
         routeInfoPanel.style.display = 'none';
         if (nearbyElevatorsPanel) nearbyElevatorsPanel.style.display = 'none';
     }
 
     // マーカーと住所のリセット機能
-    window.resetLocation = function(type) {
+    window.resetLocation = function (type) {
         if (type === 'start') {
             if (userLocationMarker) {
                 map.removeLayer(userLocationMarker);
@@ -483,12 +500,12 @@ document.addEventListener('DOMContentLoaded', () => {
             currentDestAddress = "未設定";
             updateAddressUI('dest', "未設定");
         }
-        
+
         clearCurrentRoute();
     };
 
     // すべてリセット
-    window.resetAll = function() {
+    window.resetAll = function () {
         if (userLocationMarker) { map.removeLayer(userLocationMarker); userLocationMarker = null; }
         if (destLocationMarker) { map.removeLayer(destLocationMarker); destLocationMarker = null; }
         currentStartAddress = "未設定";
@@ -503,10 +520,14 @@ document.addEventListener('DOMContentLoaded', () => {
             map.removeLayer(routeLine);
             routeLine = null;
         }
+        clearWalkToStationLine();
         if (routeStepMarkers) routeStepMarkers.clearLayers();
         routeInfoPanel.style.display = 'none';
         summaryPanel.style.display = 'none';
         if (nearbyElevatorsPanel) nearbyElevatorsPanel.style.display = 'none';
+        // 電車ルートパネルも非表示
+        const subwayPanel = document.getElementById('subway-route-panel');
+        if (subwayPanel) subwayPanel.style.display = 'none';
         hideMapHint();
     }
 
@@ -516,7 +537,7 @@ document.addEventListener('DOMContentLoaded', () => {
             isCustomStartMode = false;
             customStartBtn.classList.remove('active');
             hideMapHint();
-            
+
             // 両方の地点が揃っていれば自動検索
             if (destLocationMarker) {
                 const startPos = userLocationMarker.getLatLng();
@@ -615,14 +636,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 深夜料金 (2割増)
         const nightFare = Math.floor((baseFare * 1.2) / 10) * 10;
-        
+
         // 大型車 (目安として1.3倍程度とする)
         const largeFare = Math.floor((baseFare * 1.3) / 10) * 10;
 
-        return { 
-            standard: baseFare, 
-            night: nightFare, 
-            large: largeFare 
+        return {
+            standard: baseFare,
+            night: nightFare,
+            large: largeFare
         };
     }
 
@@ -632,7 +653,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const modifier = step.maneuver.modifier || '';
         const name = step.name || '';
         const distance = Math.round(step.distance);
-        
+
         // 番号付きバッジの生成
         const numberBadge = `<span class="step-number-text">${index}</span>`;
 
@@ -653,18 +674,18 @@ document.addEventListener('DOMContentLoaded', () => {
         if (name) {
             text = `「<strong>${name}</strong>」を${text}`;
         }
-        
+
         if (distance > 0 && type !== 'arrive') {
             text += ` (約 ${distance}m)`;
         }
-        
+
         return numberBadge + text;
     }
 
     // 近接エレベーターの検索
     function findNearbyElevators(lat, lon) {
         if (typeof elevatorData === 'undefined' || !elevatorData.features) return;
-        
+
         const elevators = elevatorData.features.filter(f => f.properties.type !== 'station');
         const distances = elevators.map(elevator => {
             const elon = elevator.geometry.coordinates[0];
@@ -685,7 +706,7 @@ document.addEventListener('DOMContentLoaded', () => {
             li.style.cursor = 'pointer';
             li.style.color = '#0b57d0';
             li.innerHTML = `<strong>${item.properties.station}駅</strong>: ${(item.distance * 1000).toFixed(0)}m<br><span style="font-size: 0.75rem; color: #666;">${item.properties.location || item.properties.description || 'エレベーター'}</span>`;
-            
+
             li.addEventListener('click', () => {
                 const elon = item.geometry.coordinates[0];
                 const elat = item.geometry.coordinates[1];
@@ -693,7 +714,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Trigger route finding from this elevator to destination
                 findRouteBetween(elat, elon, lat, lon);
             });
-            
+
             nearbyElevatorsList.appendChild(li);
         });
 
@@ -729,11 +750,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const route = data.routes[0];
             const distanceKm = route.distance / 1000;
             const distanceStr = distanceKm.toFixed(2); // km
-            
+
             // 成人: 4.0km/h, 高齢者: 3.5km/h
             const adultTime = Math.ceil(distanceKm / 4.0 * 60);
             const seniorTime = Math.ceil(distanceKm / 3.5 * 60);
-            
+
             // タクシー料金
             const taxiFare = calculateTaxiFare(distanceKm);
 
@@ -782,7 +803,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // パネルを表示して結果へ。2点指定の場合も詳細情報を表示
             routeInfoPanel.style.display = 'block';
             openInfoPanel(); // パネルを前面に
-            
+
             // 下部（結果）へスムーズにスクロール
             setTimeout(() => {
                 routeInfoPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -790,14 +811,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // ルートが正常に見つかったタイミングで履歴に保存
             saveToHistory(currentStartAddress, currentDestAddress);
-            
+
             // 表示方法: 比較表を更新
             document.getElementById('fare-standard-day').textContent = `約${taxiFare.standard}円`;
             document.getElementById('fare-standard-night').textContent = `約${taxiFare.night}円`;
             document.getElementById('fare-large-day').textContent = `約${taxiFare.large}円`;
-            
+
             if (nearbyElevatorsPanel) nearbyElevatorsPanel.style.display = 'none';
             routeInfoPanel.style.display = 'block';
+
+            // 電車ルートの計算（非同期で実行）
+            calculateAndShowSubwayRoute(startLat, startLon, destLat, destLon, distanceKm);
 
         } catch (error) {
             console.error('Routing error:', error);
@@ -813,7 +837,7 @@ document.addEventListener('DOMContentLoaded', () => {
             routeDistanceText.textContent = `${estimatedRouteDist.toFixed(2)} km (直線概算)`;
             routeTimeAdultText.textContent = `${adultTime} 分 (目安)`;
             routeTimeSeniorText.textContent = `${seniorTime} 分 (目安)`;
-            
+
             // 正常なルートが見つからなくても、検索自体は行われたため履歴に保存
             saveToHistory(currentStartAddress, currentDestAddress);
 
@@ -821,9 +845,9 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('fare-standard-day').textContent = `約${taxiFare.standard}円`;
             document.getElementById('fare-standard-night').textContent = `約${taxiFare.night}円`;
             document.getElementById('fare-large-day').textContent = `約${taxiFare.large}円`;
-            
+
             routeInstructionsList.innerHTML = '<li>直線距離で計算したため、詳細な案内は表示できません。</li>';
-            
+
             if (nearbyElevatorsPanel) nearbyElevatorsPanel.style.display = 'none';
             routeInfoPanel.style.display = 'block';
 
@@ -832,34 +856,349 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // =============================================================
+    // 電車ルート計算・表示機能
+    // =============================================================
+
+    // 最後に検索したルート座標（スライダ変更時の再計算用）
+    let _lastSubwayCoords = null;
+
+    // 駅構内移動時間スライダの初期化（DOM読み込み完了後に一度実行）
+    function initPlatformTimeSlider() {
+        const slider = document.getElementById('platform-time-slider');
+        const display = document.getElementById('platform-time-display');
+        if (!slider || !display) return;
+        slider.addEventListener('input', () => {
+            display.textContent = slider.value + '分';
+            // スライダ操作だけで即座に再計算
+            if (_lastSubwayCoords) {
+                const { startLat, startLon, destLat, destLon, walkingDistKm } = _lastSubwayCoords;
+                calculateAndShowSubwayRoute(startLat, startLon, destLat, destLon, walkingDistKm);
+            }
+        });
+    }
+    // DOMContentLoaded 後に初期化
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initPlatformTimeSlider);
+    } else {
+        initPlatformTimeSlider();
+    }
+
+    /**
+     * 出発地・目的地の座標から最寄り駅を調べ、電車での所要時間を計算して表示する
+     * @param {number} startLat - 出発地緯度
+     * @param {number} startLon - 出発地経度
+     * @param {number} destLat - 目的地緯度
+     * @param {number} destLon - 目的地経度
+     * @param {number} walkingDistKm - 徒歩ルートの実距離(km)
+     */
+    async function calculateAndShowSubwayRoute(startLat, startLon, destLat, destLon, walkingDistKm) {
+        const subwayPanel = document.getElementById('subway-route-panel');
+        if (!subwayPanel) return;
+
+        if (typeof subwayTravelTimeData === 'undefined' || typeof findSubwayRoute === 'undefined') {
+            subwayPanel.style.display = 'none';
+            return;
+        }
+
+        const nearestStart = findNearestStationFromCoord(startLat, startLon);
+        const nearestDest = findNearestStationFromCoord(destLat, destLon);
+        if (!nearestStart || !nearestDest) { subwayPanel.style.display = 'none'; return; }
+
+        const walkToKm = calculateDistance(startLat, startLon, nearestStart.lat, nearestStart.lon);
+        const walkFromKm = calculateDistance(nearestDest.lat, nearestDest.lon, destLat, destLon);
+
+        // 駅まで 800m 超は非表示
+        const MAX_M = 800;
+        if (walkToKm * 1000 > MAX_M || walkFromKm * 1000 > MAX_M) {
+            subwayPanel.style.display = 'none'; return;
+        }
+        if (nearestStart.name === nearestDest.name) {
+            subwayPanel.style.display = 'none'; return;
+        }
+
+        const subwayResult = findSubwayRoute(nearestStart.name, nearestDest.name);
+        if (!subwayResult.found || subwayResult.travelTime === 0) {
+            subwayPanel.style.display = 'none'; return;
+        }
+
+        // 最後の座標を保存（スライダ変更時の再計算に利用）
+        _lastSubwayCoords = {
+            startLat, startLon, destLat, destLon, walkingDistKm,
+            nearestStartLat: nearestStart.lat, nearestStartLon: nearestStart.lon,
+            nearestStartName: nearestStart.name,
+            nearestDestLat: nearestDest.lat, nearestDestLon: nearestDest.lon,
+            nearestDestName: nearestDest.name
+        };
+
+        // 駅構内移動時間（スライダ値）
+        const platformSlider = document.getElementById('platform-time-slider');
+        const platformTimeMin = platformSlider ? parseInt(platformSlider.value) || 5 : 5;
+
+        // ── 時刻計算の準備 ──────────────────────────────────────────
+        const now = new Date();
+        const nowMin = now.getHours() * 60 + now.getMinutes();
+        const dayType = (now.getDay() === 0 || now.getDay() === 6) ? '土休日' : '平日';
+        const TRANSFER_MIN = 10; // 乗り換えに要する時間
+        const BOARD_GRACE = 2;  // 2分以内なら次の電車に乗車可
+
+        // 徒歩時間
+        const walkToMin = Math.ceil(walkToKm / 4.0 * 60);
+        const walkFromMin = Math.ceil(walkFromKm / 4.0 * 60);
+
+        // ── セグメントを路線グループに集約 ──────────────────────────
+        const segments = subwayResult.segments || [];
+        const lineGroups = []; // [{ line, totalTime, transferStation }]
+        if (segments.length > 0) {
+            let curLine = segments[0].line;
+            let curTime = 0;
+            for (let i = 0; i < segments.length; i++) {
+                const seg = segments[i];
+                if (seg.line !== curLine) {
+                    lineGroups.push({ line: curLine, totalTime: curTime, transferStation: seg.from });
+                    curLine = seg.line;
+                    curTime = 0;
+                }
+                curTime += seg.time;
+            }
+            lineGroups.push({ line: curLine, totalTime: curTime, transferStation: null });
+        }
+
+        // ── 時系列シミュレーション ────────────────────────────────────
+        // 出発地 → 駅入口までの徒歩 + 入口→ホームの駅構内移動時間を加算
+        // これによりスライダー変化がホーム到着時刻に反映され、待ち時間も変わる
+        let simMin = nowMin + walkToMin + platformTimeMin; // 出発駅ホーム到着時刻
+
+        // 最初の電車待ち
+        const firstWaitMin = getWaitTimeForNextTrain(nearestStart.name, simMin, dayType);
+        const firstWaitDisplay = firstWaitMin <= BOARD_GRACE ? 0 : firstWaitMin;
+        simMin += firstWaitDisplay;
+
+        let totalTrainTime = 0;
+        let totalTransferTime = 0;
+        let totalExtraWait = 0;
+        const transferDetails = []; // UI 表示用
+
+        for (let i = 0; i < lineGroups.length; i++) {
+            const grp = lineGroups[i];
+            totalTrainTime += grp.totalTime;
+            simMin += grp.totalTime;
+
+            if (i < lineGroups.length - 1) {
+                // 乗り換え処理
+                const tStation = grp.transferStation;
+                simMin += TRANSFER_MIN;
+                totalTransferTime += TRANSFER_MIN;
+
+                // 乗り換え後の次の電車待ち（2分以内なら乗車可）
+                const nextWait = getWaitTimeForNextTrain(tStation, simMin, dayType);
+                const nextWaitEff = nextWait <= BOARD_GRACE ? 0 : nextWait;
+                simMin += nextWaitEff;
+                totalExtraWait += nextWaitEff;
+
+                transferDetails.push({
+                    station: tStation,
+                    fromLine: grp.line,
+                    toLine: lineGroups[i + 1].line,
+                    transferTime: TRANSFER_MIN,
+                    rawWait: nextWait,          // 実際の待ち分
+                    effectWait: nextWaitEff,        // 適用する待ち分
+                    nextSegTime: lineGroups[i + 1].totalTime
+                });
+            }
+        }
+
+        const totalTime = walkToMin + platformTimeMin      // 出発駅: 入口→ホーム
+            + firstWaitDisplay + totalTrainTime
+            + totalTransferTime + totalExtraWait
+            + platformTimeMin                   // 到着駅: ホーム→出口
+            + walkFromMin;
+
+        // ── DOM 更新（固定行） ───────────────────────────────────────
+        document.getElementById('subway-walk-to-station').textContent =
+            `${walkToMin} 分 (約${(walkToKm * 1000).toFixed(0)}m)`;
+        document.getElementById('subway-from-station').textContent = nearestStart.name + '駅';
+
+        // 駅構内移動時間の表示更新
+        const pdEl = document.getElementById('subway-platform-time-display');
+        if (pdEl) pdEl.textContent = `各駅 ${platformTimeMin} 分`;
+
+        const waitLabel = firstWaitMin <= BOARD_GRACE
+            ? `${firstWaitMin} 分（次の電車に乗車可）`
+            : `${firstWaitMin} 分`;
+        document.getElementById('subway-first-wait').textContent = waitLabel;
+
+        document.getElementById('subway-train-time').textContent = `${totalTrainTime} 分`;
+        document.getElementById('subway-to-station').textContent = nearestDest.name + '駅';
+        document.getElementById('subway-walk-from-station').textContent =
+            `${walkFromMin} 分 (約${(walkFromKm * 1000).toFixed(0)}m)`;
+        document.getElementById('subway-total-time').textContent = `${totalTime} 分`;
+
+        // ── 乗り換えブロックを動的生成 ──────────────────────────────
+        const transfersContainer = document.getElementById('subway-transfers-container');
+        if (transfersContainer) {
+            if (transferDetails.length > 0) {
+                let html = '';
+                for (const t of transferDetails) {
+                    const waitOk = t.rawWait <= BOARD_GRACE;
+                    const waitText = waitOk
+                        ? `${t.rawWait} 分（2分以内→乗車可）`
+                        : `${t.effectWait} 分待ち`;
+                    const waitClass = waitOk ? 'subway-wait-ok' : 'subway-wait-needed';
+
+                    html += `
+                    <div class="subway-transfer-block">
+                        <div class="subway-transfer-header">
+                            <span class="subway-transfer-icon">🔄</span>
+                            <span class="subway-transfer-station">${t.station}駅 乗り換え</span>
+                        </div>
+                        <div class="subway-transfer-row">
+                            <span class="subway-transfer-line-label">${t.fromLine}</span>
+                            <span class="subway-transfer-arrow">→</span>
+                            <span class="subway-transfer-line-label">${t.toLine}</span>
+                        </div>
+                        <div class="subway-transfer-detail-row">
+                            <span class="subway-route-label">　乗り換え時間</span>
+                            <span class="subway-route-value">${t.transferTime} 分</span>
+                        </div>
+                        <div class="subway-transfer-detail-row">
+                            <span class="subway-route-label">　次の電車まで待ち</span>
+                            <span class="subway-route-value ${waitClass}">${waitText}</span>
+                        </div>
+                        <div class="subway-transfer-detail-row subway-next-train-row">
+                            <span class="subway-route-label">　🚇 次区間の電車</span>
+                            <span class="subway-route-value subway-highlight">${t.nextSegTime} 分</span>
+                        </div>
+                    </div>`;
+                }
+                transfersContainer.innerHTML = html;
+            } else {
+                transfersContainer.innerHTML = '';
+            }
+        }
+
+        // ── 経路表示 ────────────────────────────────────────────────
+        const pathEl = document.getElementById('subway-route-path');
+        if (pathEl && subwayResult.route && subwayResult.route.length > 0) {
+            const route = subwayResult.route;
+            const MAX_SHOW = 8;
+            let pathHtml = '<span class="subway-path-label">経路: </span>';
+            if (route.length <= MAX_SHOW) {
+                pathHtml += route.map(s => `<span class="subway-path-station">${s}</span>`)
+                    .join('<span class="subway-path-arrow">→</span>');
+            } else {
+                const first = route.slice(0, 3);
+                const last = route.slice(-2);
+                pathHtml += first.map(s => `<span class="subway-path-station">${s}</span>`)
+                    .join('<span class="subway-path-arrow">→</span>');
+                pathHtml += `<span class="subway-path-arrow"> … (中間${route.length - 5}駅) … </span>`;
+                pathHtml += last.map(s => `<span class="subway-path-station">${s}</span>`)
+                    .join('<span class="subway-path-arrow">→</span>');
+            }
+            pathEl.innerHTML = pathHtml;
+        }
+
+        subwayPanel.style.display = 'block';
+    }
+
+    /**
+     * 指定駅・時刻（深夜0時からの分）で次の電車までの待ち時間を返す
+     * BOARD_GRACE 分以内なら「すぐ乗車可」として 0 または実際の待ち分を返す
+     */
+    function getWaitTimeForNextTrain(stationName, arrivalMinSinceMidnight, dayType) {
+        if (typeof timetableData === 'undefined' || !timetableData[stationName]) {
+            return 5; // データなし → 5分と仮定
+        }
+        const directions = timetableData[stationName];
+        let minWait = Infinity;
+
+        const arrHour = Math.floor(arrivalMinSinceMidnight / 60);
+
+        for (const dir in directions) {
+            const schedule = directions[dir][dayType];
+            if (!schedule) continue;
+
+            // 現在時刻の時から最大3時間先まで探索
+            // 0時台をまたぐ場合は h%24 でキー正規化して時刻表を参照
+            let found = false;
+            for (let h = arrHour; h <= arrHour + 3 && !found; h++) {
+                const hKey = String(h % 24); // 24→"0", 25→"1" に正規化
+                const mins = schedule[hKey];
+                if (!mins || mins.length === 0) continue;
+                for (const m of mins) {
+                    // hはそのまま（24時台維持）で累積分を計算し、差を取る
+                    const trainTotalMin = h * 60 + m;
+                    const wait = trainTotalMin - arrivalMinSinceMidnight;
+                    // 0分以上 = まだ出発していない電車のみ対象（乗車可）
+                    if (wait >= 0) {
+                        if (wait < minWait) minWait = wait;
+                        found = true;
+                        break;
+                    }
+                }
+            }
+        }
+
+        return minWait === Infinity ? 8 : minWait; // フォールバック8分
+    }
+
+
+
+    /**
+     * 座標から最寄りの地下鉄駅を返す
+     */
+    function findNearestStationFromCoord(lat, lon) {
+        if (typeof elevatorData === 'undefined') return null;
+        const stations = elevatorData.features.filter(f => f.properties.type === 'station');
+        if (stations.length === 0) return null;
+
+        let nearest = null;
+        let minDist = Infinity;
+        stations.forEach(station => {
+            const slon = station.geometry.coordinates[0];
+            const slat = station.geometry.coordinates[1];
+            const dist = calculateDistance(lat, lon, slat, slon);
+            if (dist < minDist) {
+                minDist = dist;
+                nearest = {
+                    name: station.properties.station,
+                    lat: slat,
+                    lon: slon,
+                    distKm: dist
+                };
+            }
+        });
+        return nearest;
+    }
+
     // 次発列車を取得する関数 (方面ごとに2-3本表示)
     function getNextTrain(stationName) {
         if (!stationName) return { error: "駅名が不明です" };
         stationName = stationName.trim();
         if (typeof timetableData === 'undefined') return { error: "時刻表ファイルが読み込まれていません" };
         if (!timetableData[stationName]) return { error: "データがありません (" + stationName + ")" };
-        
+
         const now = new Date();
         const hr = now.getHours();
         const min = now.getMinutes();
-        
+
         const day = now.getDay();
         const isWeekend = (day === 0 || day === 6);
         const dayType = isWeekend ? "土休日" : "平日";
-        
+
         const directions = timetableData[stationName];
         let allDirectionsHtml = [];
-        
+
         for (const dir in directions) {
             const timeTable = directions[dir][dayType];
             if (!timeTable) continue;
-            
+
             let currentHr = hr;
             let currentMin = min;
             let dirTrains = [];
-            
+
             // 各方面ごとに直近3本を探す
-            while(currentHr < 25 && dirTrains.length < 3) {
+            while (currentHr < 25 && dirTrains.length < 3) {
                 if (timeTable[currentHr]) {
                     for (let m of timeTable[currentHr]) {
                         if (currentHr > hr || m >= currentMin) {
@@ -876,11 +1215,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 currentHr++;
                 currentMin = 0;
             }
-            
+
             // 方面ごとのHTML構築
             let dirHtml = `<div style="margin-bottom: 8px;">
                 <div style="font-size: 0.8rem; font-weight: bold; color: var(--secondary-color); border-left: 3px solid var(--primary-color); padding-left: 6px; margin-bottom: 4px;">${dir}方面</div>`;
-            
+
             if (dirTrains.length > 0) {
                 dirHtml += dirTrains.map(t => {
                     let diffText = t.diffMin === 0 ? "まもなく発車" : `あと ${t.diffMin} 分`;
@@ -895,7 +1234,7 @@ document.addEventListener('DOMContentLoaded', () => {
             dirHtml += `</div>`;
             allDirectionsHtml.push(dirHtml);
         }
-        
+
         if (allDirectionsHtml.length > 0) {
             return { info: allDirectionsHtml.join('') };
         }
@@ -908,14 +1247,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function saveToHistory(start, dest) {
         if (start === '未設定' || dest === '未設定') return;
-        
+
         // 重複チェック
         const exists = searchHistory.find(h => h.start === start && h.dest === dest);
         if (exists) return;
 
         searchHistory.unshift({ start, dest, id: Date.now() });
         if (searchHistory.length > 20) searchHistory.pop();
-        
+
         localStorage.setItem('nagoya_elevator_history', JSON.stringify(searchHistory));
         if (currentHistoryTab === 'recent') renderHistory();
     }
@@ -925,7 +1264,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderHistory() {
         historyList.innerHTML = '';
         const items = currentHistoryTab === 'recent' ? searchHistory : searchFavorites;
-        
+
         if (items.length === 0) {
             historyEmptyMsg.style.display = 'block';
             return;
@@ -935,9 +1274,9 @@ document.addEventListener('DOMContentLoaded', () => {
         items.forEach((item, index) => {
             const li = document.createElement('li');
             li.className = 'history-item';
-            
+
             const isFav = searchFavorites.some(f => f.start === item.start && f.dest === item.dest);
-            
+
             li.innerHTML = `
                 <div class="history-item-content">
                     <div class="history-item-title">${item.start} → ${item.dest}</div>
@@ -948,7 +1287,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </svg>
                 </button>
             `;
-            
+
             // 履歴クリックで検索実行
             li.querySelector('.history-item-content').addEventListener('click', () => {
                 startSearchInput.value = item.start;
@@ -1213,4 +1552,227 @@ document.addEventListener('DOMContentLoaded', () => {
         elevatorDetails.innerHTML = `<p style="color: red; padding: 15px;">データの読み込みに失敗しました。<br>表示に必要なデータファイルが存在するか確認してください。</p>`;
         openInfoPanel(); // エラーが見えるようにパネルを表示
     }
+
+    // =============================================================
+    // 徒歩案内モーダル (Walk Guide Modal)
+    // DOMContentLoaded 内に配置することで _lastSubwayCoords / translateManeuver にアクセス可能
+    // =============================================================
+    (function initWalkGuideModal() {
+        const walkGuideModal = document.getElementById('walk-guide-modal');
+        const closeWalkGuideBtn = document.getElementById('close-walk-guide-modal');
+        const walkToStationBtn = document.getElementById('walk-to-station-btn');
+
+        if (!walkGuideModal || !closeWalkGuideBtn || !walkToStationBtn) return;
+
+        // モーダルを閉じる
+        function closeWalkModal() {
+            walkGuideModal.style.display = 'none';
+            // マップ上の徒歩ルートを消去
+            clearWalkToStationLine();
+        }
+        closeWalkGuideBtn.addEventListener('click', closeWalkModal);
+        // ボトムシートに変更したため背景クリック閉じは不要（オーバーレイなし）
+
+        // ── ドラッグハンドルでシートの高さを変更 ────────────────────
+        const dragHandle = document.getElementById('walk-guide-drag-handle');
+        const innerPanel = walkGuideModal.querySelector('.walk-guide-inner');
+        let isDragging = false, dragStartY = 0, dragStartH = 0;
+
+        function onDragStart(e) {
+            isDragging = true;
+            dragStartY = e.type === 'touchstart' ? e.touches[0].clientY : e.clientY;
+            dragStartH = innerPanel.offsetHeight;
+            document.addEventListener('mousemove', onDragMove);
+            document.addEventListener('mouseup', onDragEnd);
+            document.addEventListener('touchmove', onDragMove, { passive: false });
+            document.addEventListener('touchend', onDragEnd);
+        }
+        function onDragMove(e) {
+            if (!isDragging) return;
+            if (e.cancelable) e.preventDefault();
+            const clientY = e.type === 'touchmove' ? e.touches[0].clientY : e.clientY;
+            const delta = dragStartY - clientY;  // 上に引っ張ると delta 正
+            const newH = Math.min(
+                Math.max(dragStartH + delta, 120),   // 最小 120px
+                window.innerHeight * 0.82            // 最大 82vh
+            );
+            innerPanel.style.height = newH + 'px';
+        }
+        function onDragEnd() {
+            isDragging = false;
+            document.removeEventListener('mousemove', onDragMove);
+            document.removeEventListener('mouseup', onDragEnd);
+            document.removeEventListener('touchmove', onDragMove);
+            document.removeEventListener('touchend', onDragEnd);
+        }
+        if (dragHandle) {
+            dragHandle.addEventListener('mousedown', onDragStart);
+            dragHandle.addEventListener('touchstart', onDragStart, { passive: true });
+        }
+
+        // 汎用：徒歩案内を表示する関数
+        async function showWalkGuide(isToStation) {
+            if (!_lastSubwayCoords) {
+                alert('先にルート検索を行ってください。');
+                return;
+            }
+
+            const { 
+                startLat, startLon, nearestStartLat, nearestStartLon, nearestStartName,
+                destLat, destLon, nearestDestLat, nearestDestLon, nearestDestName 
+            } = _lastSubwayCoords;
+
+            const fromLat = isToStation ? startLat : nearestDestLat;
+            const fromLon = isToStation ? startLon : nearestDestLon;
+            const toLat   = isToStation ? nearestStartLat : destLat;
+            const toLon   = isToStation ? nearestStartLon : destLon;
+            const targetName = isToStation ? nearestStartName : nearestDestName; // 駅のラベル用
+
+            if (fromLat == null || fromLon == null || toLat == null || toLon == null) {
+                alert('位置情報が取得できませんでした。');
+                return;
+            }
+
+            // サブタイトルを設定
+            const subtitle = isToStation 
+                ? `出発地 → ${nearestStartName}駅` 
+                : `${nearestDestName}駅 → 目的地`;
+            document.getElementById('walk-guide-subtitle').textContent = subtitle;
+
+            // 統計情報をリセット
+            document.getElementById('walk-guide-distance').textContent = '計算中...';
+            document.getElementById('walk-guide-time-adult').textContent = '計算中...';
+            document.getElementById('walk-guide-time-senior').textContent = '計算中...';
+            const stepsList = document.getElementById('walk-guide-steps-list');
+            if (stepsList) stepsList.innerHTML = '<li class="walk-guide-loading">ルートを検索中...</li>';
+
+            // 既存の徒歩ルートを消去
+            clearWalkToStationLine();
+
+            // ボトムシートを表示（オーバーレイなし、下部に小さく表示）
+            innerPanel.style.height = '45vh'; // 初期高さを確保（手順リストを見せるため）
+            innerPanel.style.maxHeight = '82vh'; // CSSではなくJSで最大を再設定
+            walkGuideModal.style.display = 'block';
+
+            // OSRMで徒歩ルートを取得
+            try {
+                const url = `https://router.project-osrm.org/route/v1/foot/${fromLon},${fromLat};${toLon},${toLat}?overview=full&geometries=geojson&steps=true`;
+                const response = await fetch(url);
+                const data = await response.json();
+
+                if (data.code !== 'Ok' || !data.routes || data.routes.length === 0) {
+                    throw new Error('ルートが見つかりませんでした');
+                }
+
+                const route = data.routes[0];
+                const distanceM = route.distance;
+                const distanceKm = distanceM / 1000;
+                const adultMin = Math.ceil(distanceKm / 4.0 * 60);
+                const seniorMin = Math.ceil(distanceKm / 3.5 * 60);
+
+                // 統計を更新
+                document.getElementById('walk-guide-distance').textContent =
+                    distanceM >= 1000
+                        ? `${distanceKm.toFixed(2)} km`
+                        : `${Math.round(distanceM)} m`;
+                document.getElementById('walk-guide-time-adult').textContent = `${adultMin} 分`;
+                document.getElementById('walk-guide-time-senior').textContent = `${seniorMin} 分`;
+
+                // ── マップ上に駅までのルートを描画 ──────────────────────────
+                const coords = route.geometry.coordinates.map(c => [c[1], c[0]]);
+                walkToStationLine = L.polyline(coords, {
+                    color: '#FF3B30',      // 赤にして青いルートよりも目立たせる
+                    weight: 6,
+                    opacity: 0.9,
+                    dashArray: '12, 8',   // はっきりとした破線
+                    lineJoin: 'round'
+                }).addTo(map);
+
+                // ルートが見えるようにマップを調整（下部パネルが被るため、下側のパディングを大きく確保）
+                map.fitBounds(walkToStationLine.getBounds(), {
+                    paddingTopLeft: [50, 50],
+                    paddingBottomRight: [50, window.innerHeight * 0.45], // 下側のパディングをボトムシート分大きく確保
+                    maxZoom: 17
+                });
+
+                // 駅マーカー（出発駅または降車駅）のラベル位置は、
+                // isToStation が true なら終点 (toLat, toLon)
+                // isToStation が false なら起点 (fromLat, fromLon)
+                const labelLat = isToStation ? toLat : fromLat;
+                const labelLon = isToStation ? toLon : fromLon;
+
+                const stationIcon = L.divIcon({
+                    className: '',
+                    html: `<div style="
+                        background:#FF8C00; color:white; padding:4px 10px;
+                        border-radius:16px; font-size:0.8rem; font-weight:700;
+                        border:2px solid white; white-space:nowrap;
+                        box-shadow:0 2px 6px rgba(0,0,0,0.3);
+                        transform:translate(-50%,-130%);
+                    ">${targetName}駅</div>`,
+                    iconSize: [0, 0], iconAnchor: [0, 0]
+                });
+                // 駅ラベルも walkToStationLine に紐付けて管理
+                walkToStationLine._stationLabel = L.marker([labelLat, labelLon], { icon: stationIcon }).addTo(map);
+
+
+
+                // ステップを生成
+                if (stepsList) {
+                    const steps = (route.legs[0] && route.legs[0].steps) ? route.legs[0].steps : [];
+                    stepsList.innerHTML = '';
+                    if (steps.length === 0) {
+                        stepsList.innerHTML = '<li class="walk-guide-loading">詳細な案内データがありません。</li>';
+                    } else {
+                        steps.forEach((step, idx) => {
+                            const text = translateManeuver(step, idx + 1);
+                            if (!text) return;
+
+                            // マップ上にステップのマーカー（番号ピン）を追加
+                            if (step.maneuver && step.maneuver.location) {
+                                const lat = step.maneuver.location[1];
+                                const lon = step.maneuver.location[0];
+                                const stepIcon = L.divIcon({
+                                    className: '',
+                                    html: `<div class="walk-step-num" style="transform: translate(-50%, -50%); box-shadow: 0 2px 4px rgba(0,0,0,0.3); border: 2px solid white;">${idx + 1}</div>`,
+                                    iconSize: [0, 0],
+                                    iconAnchor: [0, 0]
+                                });
+                                const marker = L.marker([lat, lon], { icon: stepIcon }).addTo(map);
+                                if (!walkToStationLine._stepMarkers) walkToStationLine._stepMarkers = [];
+                                walkToStationLine._stepMarkers.push(marker);
+                            }
+
+                            const li = document.createElement('li');
+                            const numSpan = document.createElement('span');
+                            numSpan.className = 'walk-step-num';
+                            numSpan.textContent = idx + 1;
+                            const txtSpan = document.createElement('span');
+                            const tempDiv = document.createElement('div');
+                            tempDiv.innerHTML = text;
+                            const badge = tempDiv.querySelector('.step-number-text');
+                            if (badge) badge.remove();
+                            txtSpan.innerHTML = tempDiv.innerHTML;
+                            li.appendChild(numSpan);
+                            li.appendChild(txtSpan);
+                            stepsList.appendChild(li);
+                        });
+                    }
+                }
+            } catch (err) {
+                console.error('Walk guide fetch error:', err);
+                stepsList.innerHTML = '<li class="walk-guide-loading">ルートの取得に失敗しました。ネットワーク接続を確認してください。</li>';
+            }
+        } // showWalkGuide 関数閉じ
+
+        walkToStationBtn.addEventListener('click', () => showWalkGuide(true));
+
+        const walkFromStationBtn = document.getElementById('walk-from-station-btn');
+        if (walkFromStationBtn) {
+            walkFromStationBtn.addEventListener('click', () => showWalkGuide(false));
+        }
+    })();
+
 });
+
+
