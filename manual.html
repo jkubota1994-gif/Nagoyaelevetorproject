@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>名古屋地下鉄エレベーターマップ 使い方</title>
+    <style>
+        /* 印刷・PDF向けのスタイル設定 */
+        @page {
+            size: A4 portrait;
+            margin: 20mm;
+        }
+        body {
+            /* 高齢者が見やすいユニバーサルデザインフォントを指定 */
+            font-family: 'BIZ UDPGothic', 'Noto Sans JP', 'Meiryo', sans-serif;
+            font-size: 16pt;
+            line-height: 1.6;
+            color: #222;
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            font-size: 26pt;
+            color: #004d40;
+            border-bottom: 4px solid #004d40;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            font-size: 20pt;
+            color: #fff;
+            background-color: #00796b;
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin-top: 40px;
+            margin-bottom: 15px;
+        }
+        h3 {
+            font-size: 18pt;
+            color: #00796b;
+            border-left: 6px solid #00796b;
+            padding-left: 10px;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        .step-box {
+            background-color: #f1f8e9;
+            border: 2px solid #c5e1a5;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            page-break-inside: avoid;
+        }
+        ul {
+            margin: 0;
+            padding-left: 30px;
+        }
+        li {
+            margin-bottom: 12px;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #d32f2f;
+        }
+        .icon {
+            font-size: 20pt;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+        .btn-style {
+            display: inline-block;
+            background-color: #e0e0e0;
+            border: 1px solid #999;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .page-break {
+            page-break-before: always;
+        }
+        .footer {
+            text-align: center;
+            font-size: 12pt;
+            color: #666;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>名古屋地下鉄エレベーターマップ<br>ご利用マニュアル</h1>
+    <p>このアプリは、車椅子やベビーカーをご利用の方、お身体の不自由な方が、駅のエレベーターをスムーズに探せるように作られています。</p>
+
+    <h2>基本的な使い方</h2>
+
+    <div class="step-box">
+        <h3>1. 地図を見る</h3>
+        <p>地図上には、以下のアイコンが表示されています。気になる場所を指で押す（タップする）と、詳しい情報が出ます。</p>
+        <ul>
+            <li><span class="icon">🟥</span> <strong>赤いピン（エレベーター）</strong>：地上と駅を結ぶエレベーターです。</li>
+            <li><span class="icon">🚉</span> <strong>駅の入り口</strong>：駅の場所を示します。</li>
+            <li><span class="icon">🚻</span> <strong>多目的トイレ</strong>：車椅子で入れるトイレです。</li>
+        </ul>
+    </div>
+
+    <div class="step-box">
+        <h3>2. 行きたい場所を探す</h3>
+        <p>画面の上の入力欄から、場所を探せます。</p>
+        <ul>
+            <li><strong>「出発地」</strong>：今いる場所や、出発する住所を入力します。</li>
+            <li><strong>「目的地」</strong>：これから行きたい場所を入力します。</li>
+        </ul>
+        <p>※ 過去に調べた場所は、右上にある「履歴」ボタンからすぐに呼び出せます。</p>
+    </div>
+
+    <div class="step-box">
+        <h3>3. 現在地を表示する</h3>
+        <p>画面の右側にある <span class="btn-style">現在地</span> ボタンを押すと、今あなたが居る場所が地図の中心に表示されます。</p>
+    </div>
+
+    <!-- ここで改ページ -->
+    <div class="page-break"></div>
+
+    <h2>ルート案内（道順の調べ方）</h2>
+
+    <div class="step-box">
+        <h3>1. 電車での移動時間を調べる</h3>
+        <p>出発地から目的地までの、<strong>電車を使ったトータル時間</strong>が分かります。</p>
+        <ul>
+            <li><span class="highlight">歩くペースを調整：</span>「駅構内移動時間」の目盛りを動かすと、ご自身の歩くペースに合わせて時間を再計算します。</li>
+        </ul>
+    </div>
+
+    <div class="step-box">
+        <h3>2. 徒歩の道順を地図で見る</h3>
+        <p>ルート案内の画面で、「降車駅 → 目的地まで徒歩」の横にある <strong>「🗺」ボタン</strong> を押してください。</p>
+        <p>駅から目的地までの安全な歩き方が、地図上に青い線で表示されます。</p>
+    </div>
+
+    <div class="step-box">
+        <h3>3. 地図上で直接2点をつなぐ</h3>
+        <p>右側の <span class="btn-style">2点指定</span> ボタンを押したあと、地図上を「1回目（出発地）」「2回目（目的地）」の順に押すと、その2つの場所を結ぶルートがすぐに表示されます。</p>
+    </div>
+
+    <h2>便利な機能</h2>
+
+    <div class="step-box">
+        <h3>タクシーの料金目安と手配</h3>
+        <p>ルート案内の下の方に、タクシーの情報が表示されます。</p>
+        <ul>
+            <li><strong>料金の比較</strong>：距離から計算した「昼間」と「深夜」のだいたいの料金が分かります。</li>
+            <li><strong>タクシーを呼ぶ</strong>：画面下に表示されているタクシー会社（つばめグループ、名タクなど）の名前を押すと、そのまま電話をかけることができます。</li>
+            <li><strong>住所をコピー</strong>：電話で運転手さんに住所を伝えやすいよう、住所の横にある「コピー」ボタンを押してご利用ください。</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <p>名古屋地下鉄エレベーターマップ</p>
+    </div>
+
+</body>
+</html>
